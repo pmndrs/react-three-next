@@ -1,0 +1,4 @@
+{
+  "watch": ["server/**/*.js"],
+  "exec": "nodemon --exec server/index.js"
+}
