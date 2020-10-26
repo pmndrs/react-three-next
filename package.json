@@ -6,8 +6,8 @@
     "lint": "npm run prettier && npm run eslint && npm run stylelint",
     "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
-    "prettier": "prettier '**/*.{js,jsx,md}'",
-    "dev": "nodemon --exec babel-node server/index.js",
+    "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
+    "dev": "next dev",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node build/index.js"
   },

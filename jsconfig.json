@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*":["src/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["./src/**/*", "./pages/**/*"],
