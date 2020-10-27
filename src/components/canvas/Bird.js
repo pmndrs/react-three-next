@@ -10,7 +10,7 @@ const Bird = ({ speed, factor, url, ...props }) => {
   console.log(gltf)
   useEffect(() => void mixer.clipAction(gltf.animations[0], group.current).play(), [gltf.animations, mixer])
 
-  useFrame((delta) => {
+  useFrame((state, delta) => {
     group.current.rotation.y += Math.sin((delta * factor) / 2) * Math.cos((delta * factor) / 2) * 1.5
     mixer.update(delta * speed)
   })

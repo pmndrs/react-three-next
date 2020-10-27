@@ -1,16 +1,16 @@
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-import { Canvas } from 'react-three-fiber'
 import { OrbitControls } from '@react-three/drei'
+import LDom from '@/components/dom/_layout'
+import { Suspense } from 'react'
 // import Bird from "../components/Bird";
 
 const Bird = dynamic(() => import('../components/canvas/Bird'), { ssr: false })
 
 const Birds = () => {
   return new Array(5).fill().map((_, i) => {
-    const x = (15 + Math.random() * 30) * (Math.round(Math.random()) ? -1 : 1)
+    const x = (7.5 + Math.random() * 15) * (Math.round(Math.random()) ? -1 : 1)
     const y = -10 + Math.random() * 20
-    const z = -5 + Math.random() * 10
+    const z = -2.5 + Math.random() * 5
     const bird = ['stork', 'parrot', 'flamingo'][Math.round(Math.random() * 2)]
     let speed = bird === 'stork' ? 0.5 : bird === 'flamingo' ? 2 : 5
     let factor =
@@ -29,16 +29,31 @@ const Birds = () => {
   })
 }
 
-const BirdsPage = () => {
+const BirdsCanvas = () => {
   return (
-    <Canvas camera={{ position: [0, 0, 35] }}>
+    <group position={[0, 0, -25]}>
       <ambientLight intensity={2} />
       <pointLight position={[40, 40, 40]} />
       <OrbitControls />
       <Suspense fallback={null}>
         <Birds />
       </Suspense>
-    </Canvas>
+    </group>
+  )
+}
+
+const BoxesDom = () => {
+  return <h1>BIRDS DOM</h1>
+}
+
+const BirdsPage = () => {
+  return (
+    <>
+      <LDom>
+        <BoxesDom />
+      </LDom>
+      <BirdsCanvas />
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { useFrame } from 'react-three-fiber'
 import { Box } from '@react-three/drei'
 import LDom from '@/components/dom/_layout'
+import useStore from '@/helpers/store'
 
 // export async function getStaticProps(context) {
 //   return {
@@ -13,9 +14,8 @@ import LDom from '@/components/dom/_layout'
 
 const MyBox = (props) => {
   const mesh = useRef()
-
   const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
+  const router = useStore((state) => state.router)
 
   useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
 
@@ -23,8 +23,11 @@ const MyBox = (props) => {
     <Box
       args={[1, 1, 1]}
       ref={mesh}
-      scale={active ? [6, 6, 6] : [5, 5, 5]}
-      onClick={() => setActive(!active)}
+      scale={hovered ? [6, 6, 6] : [5, 5, 5]}
+      onClick={() => {
+        console.log(router)
+        router.replace(`/birds`)
+      }}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
       {...props}
@@ -34,23 +37,21 @@ const MyBox = (props) => {
   )
 }
 
-const BoxesCanvas = () => {
+const BoxesCanvas = ({ router }) => {
   return (
-    <>
-      <group position={[0, 0, -35]}>
-        <ambientLight intensity={2} />
-        <pointLight position={[40, 40, 40]} />
-        <MyBox position={[10, 0, 0]} />
-        <MyBox position={[-10, 0, 0]} />
-        <MyBox position={[0, 10, 0]} />
-        <MyBox position={[0, -10, 0]} />
-      </group>
-    </>
+    <group position={[0, 0, -35]}>
+      <ambientLight intensity={2} />
+      <pointLight position={[40, 40, 40]} />
+      <MyBox position={[10, 0, 0]} />
+      <MyBox position={[-10, 0, 0]} />
+      <MyBox position={[0, 10, 0]} />
+      <MyBox position={[0, -10, 0]} />
+    </group>
   )
 }
 
 const BoxesDom = () => {
-  return <h1>BOXES DOM</h1>
+  return <h1>Click on a Box to navigate</h1>
 }
 
 const Index = () => {
@@ -59,6 +60,8 @@ const Index = () => {
       <LDom>
         <BoxesDom />
       </LDom>
+      {/* todo replace with zustand  */}
+
       <BoxesCanvas />
     </>
   )
