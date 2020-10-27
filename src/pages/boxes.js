@@ -1,6 +1,15 @@
 import { useRef, useState } from 'react'
-import { Canvas, useFrame } from 'react-three-fiber'
+import { useFrame } from 'react-three-fiber'
 import { OrbitControls, Box } from '@react-three/drei'
+import LDom from '@/components/dom/_layout'
+
+// export async function getStaticProps(context) {
+//   return {
+//     props: {
+//       canvas: true,
+//     },
+//   }
+// }
 
 const MyBox = (props) => {
   const mesh = useRef()
@@ -25,9 +34,9 @@ const MyBox = (props) => {
   )
 }
 
-const BoxesPage = () => {
+const BoxesCanvas = () => {
   return (
-    <Canvas camera={{ position: [0, 0, 35] }}>
+    <>
       <ambientLight intensity={2} />
       <pointLight position={[40, 40, 40]} />
       <MyBox position={[10, 0, 0]} />
@@ -35,7 +44,22 @@ const BoxesPage = () => {
       <MyBox position={[0, 10, 0]} />
       <MyBox position={[0, -10, 0]} />
       <OrbitControls />
-    </Canvas>
+    </>
+  )
+}
+
+const BoxesDom = () => {
+  return <h1>BOXES DOM</h1>
+}
+
+const BoxesPage = () => {
+  return (
+    <>
+      <BoxesCanvas />
+      <LDom>
+        <BoxesDom />
+      </LDom>
+    </>
   )
 }
 

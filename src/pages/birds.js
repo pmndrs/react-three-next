@@ -4,7 +4,7 @@ import { Canvas } from 'react-three-fiber'
 import { OrbitControls } from '@react-three/drei'
 // import Bird from "../components/Bird";
 
-const Bird = dynamic(() => import('../components/Bird'), { ssr: false })
+const Bird = dynamic(() => import('../components/canvas/Bird'), { ssr: false })
 
 const Birds = () => {
   return new Array(5).fill().map((_, i) => {
