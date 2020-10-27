@@ -1,4 +1,4 @@
-import { Suspense, useCallback } from 'react'
+import { useCallback } from 'react'
 import { Canvas } from 'react-three-fiber'
 import * as THREE from 'three'
 import { isDesktop } from 'react-device-detect'
@@ -15,7 +15,7 @@ const LCanvas = ({ children }) => {
       shadowMap={false}
       onPointerMove={onMouseMove}
       gl={{ powerPreference: 'high-performance', antialias: false, stencil: false, alpha: false }}
-      camera={{ fov: 45 }}
+      camera={{ position: [0, 0, 0], fov: 45 }}
       pixelRatio={1}
       onCreated={({ gl, scene, events }) => {
         scene.background = new THREE.Color(0x111111)

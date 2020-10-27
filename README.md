@@ -1,3 +1,7 @@
+## Demo :
+
+[https://r3f-next-starter.vercel.app/](https://r3f-next-starter.vercel.app/)
+
 ## How to use
 
 ```bash
@@ -44,15 +48,19 @@ My css class is not applied on my dom [CSS Modules — Local Scope](https://gith
 
 ### Todo :
 
+- enable dom events + share events between main dom and canvas + useScroll and useGesture by default
+- Navigation
+- Loading Canvas + Html example override
+- Gltf + animation
 - Zustand ?
+- useGesture example
 - Basic helpers folder
 - Clean shaders in helpers example
 - Use use-asset repo to prefetch assets
 - Update architecture based on sharing materials && geos
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
-- Gltf animation
-- useGesture example
+
 - Flag React to experimental and concurrent attribut to Canvas for Double Buffering (<-- way too much unstable)
 - other lib for anim ?
 - Make bash scripts for git && deploy

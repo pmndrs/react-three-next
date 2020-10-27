@@ -47,8 +47,8 @@ export const HtmlStatic = forwardRef((_ref, ref) => {
         fullscreen && {
           top: 0,
           left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
+          width: '100%',
+          height: '100%',
           zIndex: 1,
           pointerEvents: 'none',
         },
