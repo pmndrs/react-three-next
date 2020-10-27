@@ -25,7 +25,6 @@ npx create-r3f-app <next> my-app <sass>
 
 - Es6
 - Nextjs
-- [Jotai](https://github.com/pmndrs/jotai)
 - Eslint
 - Babel
 - Scss
@@ -52,6 +51,8 @@ My css class is not applied on my dom [CSS Modules — Local Scope](https://gith
 - Navigation
 - Loading Canvas + Html example override
 - Gltf + animation
+- PWA
+-
 - Zustand ?
 - useGesture example
 - Basic helpers folder

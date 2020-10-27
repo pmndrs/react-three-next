@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <div id='_dom'></div>
       <LCanvas>
         <Component {...pageProps} />
       </LCanvas>

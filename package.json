@@ -90,7 +90,6 @@
     "eslint-plugin-standard": "^4.0.2",
     "global": "^4.4.0",
     "husky": "^4.3.0",
-    "jotai": "^0.10.1",
     "lint-staged": "^10.5.0",
     "next": "^10.0.0",
     "next-compose-plugins": "^2.2.0",
