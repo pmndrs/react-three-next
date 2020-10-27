@@ -35,10 +35,10 @@ const BirdsPage = () => {
       <ambientLight intensity={2} />
       <pointLight position={[40, 40, 40]} />
       <OrbitControls />
-          <Suspense fallback={null}>
+      <Suspense fallback={null}>
         <Birds />
       </Suspense>
-      </Canvas>
+    </Canvas>
   )
 }
 

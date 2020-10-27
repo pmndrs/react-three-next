@@ -18,17 +18,17 @@ const Bird = ({ speed, factor, url, ...props }) => {
   return (
     <group ref={group}>
       <scene name='Scene' {...props}>
-            <mesh
-              name="Object_0"
-              morphTargetDictionary={gltf.nodes['Object_0'].morphTargetDictionary}
+        <mesh
+          name='Object_0'
+          morphTargetDictionary={gltf.nodes['Object_0'].morphTargetDictionary}
           morphTargetInfluences={gltf.nodes['Object_0'].morphTargetInfluences}
-              rotation={[1.5707964611537577, 0, 0]}
+          rotation={[1.5707964611537577, 0, 0]}
         >
-              <bufferGeometry attach="geometry" {...gltf.nodes['Object_0'].geometry} />
-              <meshStandardMaterial attach="material" {...gltf.materials['Material_0_COLOR_0']} />
+          <bufferGeometry attach='geometry' {...gltf.nodes['Object_0'].geometry} />
+          <meshStandardMaterial attach='material' {...gltf.materials['Material_0_COLOR_0']} />
         </mesh>
-        </scene>
-      </group>
+      </scene>
+    </group>
   )
 }
 

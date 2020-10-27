@@ -11,30 +11,30 @@ const MyBox = (props) => {
   useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
 
   return (
-      <Box
-        args={[1, 1, 1]}
-        {...props}
-        ref={mesh}
+    <Box
+      args={[1, 1, 1]}
+      ref={mesh}
       scale={active ? [6, 6, 6] : [5, 5, 5]}
       onClick={() => setActive(!active)}
-        onPointerOver={() => setHover(true)}
+      onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
+      {...props}
     >
-        <meshStandardMaterial attach="material" color={hovered ? '#2b6c76' : '#720b23'} />
+      <meshStandardMaterial attach='material' color={hovered ? '#2b6c76' : '#720b23'} />
     </Box>
   )
 }
 
 const BoxesPage = () => {
   return (
-      <Canvas camera={{ position: [0, 0, 35] }}>
-        <ambientLight intensity={2} />
-        <pointLight position={[40, 40, 40]} />
-        <MyBox position={[10, 0, 0]} />
+    <Canvas camera={{ position: [0, 0, 35] }}>
+      <ambientLight intensity={2} />
+      <pointLight position={[40, 40, 40]} />
+      <MyBox position={[10, 0, 0]} />
       <MyBox position={[-10, 0, 0]} />
       <MyBox position={[0, 10, 0]} />
-        <MyBox position={[0, -10, 0]} />
-        <OrbitControls />
+      <MyBox position={[0, -10, 0]} />
+      <OrbitControls />
     </Canvas>
   )
 }
