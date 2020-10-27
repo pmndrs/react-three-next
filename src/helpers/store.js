@@ -2,9 +2,10 @@ import create from 'zustand'
 
 const useStore = create((set, get) => {
   return {
+    loading: false,
+    dom: null,
     router: {},
     updateRoute: (router) => {
-      console.log(router)
       // pre-loading events here ?
       set({ router })
     },

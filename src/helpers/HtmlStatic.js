@@ -5,7 +5,7 @@ import _objectWithoutPropertiesLoose from '@babel/runtime/helpers/esm/objectWith
 import { useEffect, forwardRef, useState, useRef, useMemo, createElement } from 'react'
 import { unmountComponentAtNode, render as ReactDomRender } from 'react-dom'
 
-export const HtmlStatic = forwardRef((_ref, ref) => {
+const HtmlStatic = forwardRef((_ref, ref) => {
   var _portal$current
 
   let { children, style, className, fullscreen, prepend, portal } = _ref,
@@ -48,9 +48,8 @@ export const HtmlStatic = forwardRef((_ref, ref) => {
           top: 0,
           left: 0,
           width: '100%',
-          height: '100%',
+          // height: '100%',
           zIndex: 1,
-          pointerEvents: 'none',
         },
         style
       ),
@@ -76,3 +75,5 @@ export const HtmlStatic = forwardRef((_ref, ref) => {
     })
   )
 })
+
+export { HtmlStatic }

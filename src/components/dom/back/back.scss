@@ -1,0 +1,37 @@
+@keyframes pulse {
+  0%   {transform: scale(-1) translate3d(-3px, 0, 0);}
+  100%   {transform: scale(-1) translate3d(-6px, 0, 0);}
+}
+
+.back-btn {
+  position: fixed;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.back-btn p {
+  padding: 0 0 0 20px;
+  color: #fff;
+}
+
+.back-icn {
+  width: 21px;
+  height: 16px;
+  transform: scale(-1);
+  fill: #fff;
+  animation-name: pulse;
+  animation-duration: .8s;
+  animation-timing-function: ease-in-out;
+  animation-delay: .3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

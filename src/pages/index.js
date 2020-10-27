@@ -25,8 +25,7 @@ const MyBox = (props) => {
       ref={mesh}
       scale={hovered ? [6, 6, 6] : [5, 5, 5]}
       onClick={() => {
-        console.log(router)
-        router.replace(`/birds`)
+        router.push(`/birds`)
       }}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}

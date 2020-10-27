@@ -52,7 +52,7 @@ My css class is not applied on my dom [CSS Modules — Local Scope](https://gith
 - Loading Canvas + Html example override
 - Gltf + animation
 - PWA
--
+- Add heads
 - Zustand ?
 - useGesture example
 - Basic helpers folder

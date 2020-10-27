@@ -21,11 +21,11 @@ const nextConfig = {
 module.exports = plugins(
   [
     withSass({
-      cssModules: true,
-      cssLoaderOptions: {
-        importLoaders: 1,
-        localIdentName: '[local]___[hash:base64:5]',
-      },
+      cssModules: false,
+      // cssLoaderOptions: {
+      //   importLoaders: 1,
+      //   localIdentName: '[local]___[hash:base64:5]',
+      // },
     }),
     [images, { exclude: path.resolve(__dirname, 'src/assets/svg') }],
     [reactSvg, { include: path.resolve(__dirname, 'src/assets/svg') }],

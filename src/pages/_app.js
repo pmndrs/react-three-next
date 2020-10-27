@@ -2,19 +2,23 @@ import '../assets/scss/index.scss'
 import LCanvas from '@/components/canvas/_layout'
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-  const updateRoute = useStore((state) => state.updateRoute)
+  const dom = useRef()
 
   useEffect(() => {
-    updateRoute(router)
-  }, [updateRoute, router])
+    useStore.setState({ router: router })
+  }, [router])
+
+  useEffect(() => {
+    useStore.setState({ dom: dom.current })
+  }, [dom])
 
   return (
     <>
-      <div id='_dom'></div>
+      <div ref={dom} id='_dom'></div>
       <LCanvas>
         <Component {...pageProps} />
       </LCanvas>
