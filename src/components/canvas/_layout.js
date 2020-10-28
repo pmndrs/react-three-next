@@ -12,6 +12,7 @@ const LCanvas = ({ children }) => {
 
   return (
     <Canvas
+      concurrent
       shadowMap={false}
       onPointerMove={onMouseMove}
       gl={{ powerPreference: 'high-performance', antialias: false, stencil: false, alpha: false }}

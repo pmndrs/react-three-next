@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
-import { OrbitControls } from '@react-three/drei'
-import LDom from '@/components/dom/_layout'
+// import { OrbitControls } from '@react-three/drei'
+import Dom from '@/components/dom/container'
 import { Suspense } from 'react'
 import BackButton from '@/components/dom/back/back'
 // import Bird from "../components/Bird";
@@ -35,7 +35,6 @@ const BirdsCanvas = () => {
     <group position={[0, 0, -25]}>
       <ambientLight intensity={2} />
       <pointLight position={[40, 40, 40]} />
-      <OrbitControls />
       <Suspense fallback={null}>
         <Birds />
       </Suspense>
@@ -55,9 +54,9 @@ const BoxesDom = () => {
 const BirdsPage = () => {
   return (
     <>
-      <LDom>
+      <Dom>
         <BoxesDom />
-      </LDom>
+      </Dom>
       <BirdsCanvas />
     </>
   )

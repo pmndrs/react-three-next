@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { useFrame } from 'react-three-fiber'
 import { Box } from '@react-three/drei'
-import LDom from '@/components/dom/_layout'
+import Dom from '@/components/dom/container'
 import useStore from '@/helpers/store'
 
 // export async function getStaticProps(context) {
@@ -17,7 +17,11 @@ const MyBox = (props) => {
   const [hovered, setHover] = useState(false)
   const router = useStore((state) => state.router)
 
-  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+  useFrame(() => {
+    if (mesh.current) {
+      mesh.current.rotation.x = mesh.current.rotation.y += 0.01
+    }
+  })
 
   return (
     <Box
@@ -56,12 +60,11 @@ const BoxesDom = () => {
 const Index = () => {
   return (
     <>
-      <LDom>
+      <Dom>
         <BoxesDom />
-      </LDom>
-      {/* todo replace with zustand  */}
-
+      </Dom>
       <BoxesCanvas />
+      {/* todo replace with zustand  */}
     </>
   )
 }

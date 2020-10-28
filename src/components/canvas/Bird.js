@@ -19,7 +19,7 @@ const Bird = ({ speed, factor, url, ...props }) => {
 
   return (
     <group ref={group}>
-      <scene name='Scene' {...props}>
+      <group name='Scene' {...props}>
         <mesh
           name='Object_0'
           morphTargetDictionary={gltf.nodes['Object_0'].morphTargetDictionary}
@@ -29,7 +29,7 @@ const Bird = ({ speed, factor, url, ...props }) => {
           <bufferGeometry attach='geometry' {...gltf.nodes['Object_0'].geometry} />
           <meshStandardMaterial attach='material' {...gltf.materials['Material_0_COLOR_0']} />
         </mesh>
-      </scene>
+      </group>
     </group>
   )
 }

@@ -1,7 +1,7 @@
 import { HtmlStatic } from '@/helpers/HtmlStatic'
 import useStore from '@/helpers/store'
 
-const LDom = ({ children }) => {
+const Dom = ({ children }) => {
   const dom = useStore((state) => state.dom)
   return (
     <HtmlStatic fullscreen portal={dom}>
@@ -10,4 +10,4 @@ const LDom = ({ children }) => {
   )
 }
 
-export default LDom
+export default Dom
