@@ -5,13 +5,13 @@
 ## How to use
 
 ```bash
-yarn create r3f-app <next> my-app <sass>
+yarn create r3f-app next my-app sass
 ```
 
 or
 
 ```bash
-npx create-r3f-app <next> my-app <sass>
+npx create-r3f-app next my-app sass
 ```
 
 ## Available Scripts
@@ -33,24 +33,18 @@ npx create-r3f-app <next> my-app <sass>
 - [Threejs](https://github.com/mrdoob/three.js/): A lightweight, 3D library with a default WebGL renderer. The library also provides Canvas 2D, SVG and CSS3D - renderers in the examples.
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
 - [drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
+- Post processing
 - React Devices Detect
 
 ## features
 
 - Code Splitting
-- CSS Modules - Local Scope
-- Canvas content and DOM in one page
-
-## docs
-
-My css class is not applied on my dom [CSS Modules — Local Scope](https://github.com/css-modules/css-modules/blob/master/docs/local-scope.md#css-modules--local-scope)
+- Canvas content and DOM loaded by page
+- Custom loading
 
 ### Todo :
 
 - enable dom events + share events between main dom and canvas + useScroll and useGesture by default
-- Navigation
-- Loading Canvas + Html example override
-- Gltf + animation
 - PWA
 - Add heads
 - Zustand ?

@@ -27,6 +27,7 @@ module.exports = plugins(
   [
     withSass({
       cssModules: false,
+      // this is for css code spliting (scope restricted to file)
       // cssLoaderOptions: {
       //   importLoaders: 1,
       //   localIdentName: '[local]___[hash:base64:5]',
