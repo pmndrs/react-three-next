@@ -9,7 +9,12 @@ const videos = require('next-videos')
 const fonts = require('next-fonts')
 const reactSvg = require('next-react-svg')
 
-const withTM = require('next-transpile-modules')(['@react-three/drei', 'three', 'postprocessing'])
+const withTM = require('next-transpile-modules')([
+  '@react-three/drei',
+  'three',
+  '@react-spring/three',
+  'react-postprocessing',
+])
 
 const nextConfig = {
   target: 'serverless',

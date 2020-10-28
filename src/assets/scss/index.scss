@@ -1,5 +1,5 @@
 html, body {
-  background: #000000;
+  background: #ffffff;
 }
 body {
   margin: 0;
@@ -17,9 +17,13 @@ body {
   /* Smoothing */
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+#__next {
+  position: relative;
+  height: 100%;
 }
 
 canvas {
@@ -34,7 +38,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-content: center;
-  color: #f1f1f1;
+  color: #111111;
 }
 
 .main {
@@ -45,11 +49,10 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #f1f1f1;
 }
 
 a {
-  color: white;
+  color: 111111;
   display: block;
   text-decoration: unset;
   font-size: 20px;

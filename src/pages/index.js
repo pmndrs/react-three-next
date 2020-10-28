@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react'
 import { useFrame } from 'react-three-fiber'
-import { Box } from '@react-three/drei'
 import Dom from '@/components/dom/container'
 import useStore from '@/helpers/store'
+import { a, useSpring } from '@react-spring/three'
 
 // export async function getStaticProps(context) {
 //   return {
@@ -17,6 +17,8 @@ const MyBox = (props) => {
   const [hovered, setHover] = useState(false)
   const router = useStore((state) => state.router)
 
+  const { scale } = useSpring({ scale: hovered ? 7 : 5, from: { scale: 5 } })
+
   useFrame(() => {
     if (mesh.current) {
       mesh.current.rotation.x = mesh.current.rotation.y += 0.01
@@ -24,31 +26,29 @@ const MyBox = (props) => {
   })
 
   return (
-    <Box
-      args={[1, 1, 1]}
+    <a.mesh
       ref={mesh}
-      scale={hovered ? [6, 6, 6] : [5, 5, 5]}
+      scale={scale.to((s) => [s, s, s])}
       onClick={() => {
         router.push(`/birds`)
       }}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
+      onPointerOver={(e) => setHover(true)}
+      onPointerOut={(e) => setHover(false)}
       {...props}
     >
-      <meshStandardMaterial attach='material' color={hovered ? '#2b6c76' : '#720b23'} />
-    </Box>
+      <boxBufferGeometry args={[0.5, 0.5, 0.5]} />
+      <meshStandardMaterial attach='material' color={hovered ? '#87ceeb' : '#333333'} />
+    </a.mesh>
   )
 }
 
-const BoxesCanvas = ({ router }) => {
+const BoxesCanvas = () => {
   return (
-    <group position={[0, 0, -35]}>
-      <ambientLight intensity={2} />
-      <pointLight position={[40, 40, 40]} />
-      <MyBox position={[10, 0, 0]} />
-      <MyBox position={[-10, 0, 0]} />
+    <group position={[0, 0, -20]}>
+      <MyBox position={[10, 0, -5]} />
+      <MyBox position={[-10, 0, -5]} />
       <MyBox position={[0, 10, 0]} />
-      <MyBox position={[0, -10, 0]} />
+      <MyBox position={[0, -5, 5]} />
     </group>
   )
 }
@@ -58,13 +58,14 @@ const BoxesDom = () => {
 }
 
 const Index = () => {
+  useStore.setState({ loading: false })
+
   return (
     <>
       <Dom>
         <BoxesDom />
       </Dom>
       <BoxesCanvas />
-      {/* todo replace with zustand  */}
     </>
   )
 }

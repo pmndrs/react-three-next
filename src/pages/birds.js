@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Dom from '@/components/dom/container'
 import { Suspense } from 'react'
 import BackButton from '@/components/dom/back/back'
+import useStore from '@/helpers/store'
 // import Bird from "../components/Bird";
 
 const Bird = dynamic(() => import('../components/canvas/Bird'), { ssr: false })
@@ -10,7 +11,7 @@ const Bird = dynamic(() => import('../components/canvas/Bird'), { ssr: false })
 const Birds = () => {
   return new Array(5).fill().map((_, i) => {
     const x = (7.5 + Math.random() * 15) * (Math.round(Math.random()) ? -1 : 1)
-    const y = -10 + Math.random() * 20
+    const y = -7.5 + Math.random() * 5
     const z = -2.5 + Math.random() * 5
     const bird = ['stork', 'parrot', 'flamingo'][Math.round(Math.random() * 2)]
     let speed = bird === 'stork' ? 0.5 : bird === 'flamingo' ? 2 : 5
@@ -52,6 +53,8 @@ const BoxesDom = () => {
 }
 
 const BirdsPage = () => {
+  useStore.setState({ loading: false })
+
   return (
     <>
       <Dom>

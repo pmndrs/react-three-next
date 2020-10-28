@@ -9,7 +9,7 @@
   top: 20px;
   left: 20px;
   padding: 10px;
-  font-weight: 300;
+  font-weight: bold;
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -20,14 +20,15 @@
 
 .back-btn p {
   padding: 0 0 0 20px;
-  color: #fff;
+  color: #111111;
+  font-size: 18px;
 }
 
 .back-icn {
   width: 21px;
   height: 16px;
   transform: scale(-1);
-  fill: #fff;
+  fill: #111111;
   animation-name: pulse;
   animation-duration: .8s;
   animation-timing-function: ease-in-out;

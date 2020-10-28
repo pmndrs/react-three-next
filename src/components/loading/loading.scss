@@ -1,0 +1,28 @@
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  pointer-events: none;
+  width: 350px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  span {
+    font-size: 26px;
+    line-height: 1;
+    position: absolute;
+    z-index: 1;
+    font-weight: bold;
+  }
+  svg {
+    position: absolute;
+  }
+}
+.loader.hide {
+  opacity: 0;
+  transition: opacity .6s ease-out;
+}
