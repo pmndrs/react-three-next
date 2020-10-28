@@ -43,21 +43,23 @@ npx create-r3f-app next my-app sass
 - Concurrent mode with React experimental
 - Code Splitting
 - Canvas content and DOM loaded by page
-- Custom loading
+- Customizable loading
 
 ### Todo :
 
-- enable dom events + share events between main dom and canvas + useScroll and useGesture by default
+- Custom middleware delay for transitions between routes
+- Meta data and heads
 - PWA
-- Add heads
 - useGesture example
 - Basic helpers folder
 - Clean shaders in helpers example
-- Prefetch assets
-- Update architecture based on sharing materials && geos
+- enable dom events + share events between main dom and canvas + useScroll and useGesture by default
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
-- Make bash scripts for git && deploy
+
+- v2 - Prefetch assets
+- v2 - Update architecture based on sharing materials && geos
+- v2 - Make bash scripts for git && deploy
 
 #### Deluxe Todo :
 
