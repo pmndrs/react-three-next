@@ -1,3 +1,5 @@
+# React Three Fiber + Next ES6 starter
+
 ## Demo :
 
 [https://r3f-next-starter.vercel.app/](https://r3f-next-starter.vercel.app/)
@@ -38,6 +40,7 @@ npx create-r3f-app next my-app sass
 
 ## features
 
+- Concurrent mode with React experimental
 - Code Splitting
 - Canvas content and DOM loaded by page
 - Custom loading
@@ -47,17 +50,13 @@ npx create-r3f-app next my-app sass
 - enable dom events + share events between main dom and canvas + useScroll and useGesture by default
 - PWA
 - Add heads
-- Zustand ?
 - useGesture example
 - Basic helpers folder
 - Clean shaders in helpers example
-- Use use-asset repo to prefetch assets
+- Prefetch assets
 - Update architecture based on sharing materials && geos
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
-
-- Flag React to experimental and concurrent attribut to Canvas for Double Buffering (<-- way too much unstable)
-- other lib for anim ?
 - Make bash scripts for git && deploy
 
 #### Deluxe Todo :
