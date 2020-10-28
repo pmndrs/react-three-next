@@ -12,7 +12,7 @@ const reactSvg = require('next-react-svg')
 const withTM = require('next-transpile-modules')([
   '@react-three/drei',
   'three',
-  '@react-spring/three',
+  'react-spring',
   'postprocessing',
   'react-postprocessing',
 ])

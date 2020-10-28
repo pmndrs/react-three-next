@@ -1,5 +1,5 @@
-import express from 'express'
-import next from 'next'
+const express = require('express')
+const next = require('next')
 
 const { PORT, NODE_ENV } = process.env
 const port = PORT ? parseInt(PORT, 10) : 3000
