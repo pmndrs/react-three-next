@@ -7587,7 +7587,7 @@ postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postprocessing@^6.17.1:
+postprocessing@^6.17.1, postprocessing@^6.17.4:
   version "6.17.4"
   resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.17.4.tgz#015c1e8c8d04243875b0da4b52e9f3a407e2d3ec"
   integrity sha512-rW22ucag46rPfOMKfHjEsUszVYrdvUd3q64muEq8cEqFgQRivmGS43Eijsho16CBigIF7CTb6yxHj5YtC+XCAQ==
