@@ -14,6 +14,9 @@ const LCanvas = ({ children }) => {
     <Canvas
       concurrent
       shadowMap={false}
+      style={{
+        position: 'absolute',
+      }}
       onPointerMove={onMouseMove}
       gl={{ powerPreference: 'high-performance', antialias: false, stencil: false, alpha: false }}
       camera={{ position: [0, 0, 0], fov: 45 }}

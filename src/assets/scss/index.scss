@@ -1,10 +1,25 @@
+html, body {
+  background: #000000;
+}
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100vh;
-  background: lavender;
   overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* Adjust font size */
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Font varient */
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  /* Smoothing */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
 
 canvas {
@@ -19,11 +34,10 @@ h1 {
   display: flex;
   justify-content: center;
   align-content: center;
-  color: hotpink;
+  color: #f1f1f1;
 }
 
 .main {
-  background: hotpink;
   padding: 50px;
   border-radius: 4px;
   display: flex;
@@ -31,7 +45,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #f1f1f1;
 }
 
 a {
