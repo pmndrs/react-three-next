@@ -16,13 +16,6 @@ const withTM = require('next-transpile-modules')([
   'react-postprocessing',
 ])
 
-const nextConfig = {
-  target: 'serverless',
-  webpack: (config) => {
-    return config
-  },
-}
-
 module.exports = plugins(
   [
     withSass({
@@ -32,6 +25,14 @@ module.exports = plugins(
       //   importLoaders: 1,
       //   localIdentName: '[local]___[hash:base64:5]',
       // },
+      webpack: (config) => {
+        config.module.rules.push({
+          test: /\.(glsl|vs|fs|vert|frag)$/,
+          exclude: /node_modules/,
+          use: ['raw-loader', 'glslify-loader'],
+        })
+        return config
+      },
     }),
     [images, { exclude: path.resolve(__dirname, 'src/assets/svg') }],
     [reactSvg, { include: path.resolve(__dirname, 'src/assets/svg') }],
@@ -39,5 +40,8 @@ module.exports = plugins(
     videos,
     withTM,
   ],
-  nextConfig
+  {
+    target: 'serverless',
+    // webpack getting override by withSass
+  }
 )

@@ -10,5 +10,7 @@
       }
     ]
   ],
-  "plugins": []
+  "plugins": [
+    "babel-plugin-glsl"
+  ]
 }
