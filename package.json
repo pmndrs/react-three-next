@@ -57,14 +57,14 @@
     }
   },
   "dependencies": {
-    "@react-spring/three": "^9.0.0-rc.3",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "lerp": "^1.0.3",
     "nodemon": "^2.0.6",
     "stylelint": "^13.7.2"
   },
   "devDependencies": {
+    "lerp": "^1.0.3",
+    "@react-spring/three": "^9.0.0-rc.3",
     "@babel/node": "^7.12.1",
     "@babel/plugin-transform-react-jsx-compat": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
