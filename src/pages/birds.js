@@ -1,10 +1,8 @@
 import dynamic from 'next/dynamic'
-// import { OrbitControls } from '@react-three/drei'
 import Dom from '@/components/dom/container'
 import { Suspense } from 'react'
 import BackButton from '@/components/dom/back/back'
 import useStore from '@/helpers/store'
-import Preload from '@/components/loading/loading'
 
 const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), { ssr: false })
 
@@ -36,7 +34,7 @@ const BirdsCanvas = () => {
     <group position={[0, 0, -25]}>
       <ambientLight intensity={2} />
       <pointLight position={[40, 40, 40]} />
-      <Suspense fallback={<Preload />}>
+      <Suspense fallback={null}>
         <Birds />
       </Suspense>
     </group>

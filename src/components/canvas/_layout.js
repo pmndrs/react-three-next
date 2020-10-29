@@ -4,7 +4,6 @@ import * as THREE from 'three'
 import { ContactShadows } from '@react-three/drei'
 import { EdgeDetectionMode } from 'postprocessing'
 import { EffectComposer, SMAA } from '@react-three/postprocessing'
-import Preload from '../loading/loading'
 
 const Rig = () => {
   const { camera, mouse } = useThree()
@@ -49,7 +48,7 @@ const LCanvas = ({ children }) => {
         scene.background = new THREE.Color(0xffffff)
       }}
     >
-      <Suspense fallback={<Preload />}>
+      <Suspense fallback={null}>
         <CanvasTemplateAdds />
       </Suspense>
       {children}
