@@ -1,13 +1,10 @@
-import { Suspense, useCallback, useEffect, useRef } from 'react'
+import { Suspense } from 'react'
 import { Canvas, useFrame, useThree } from 'react-three-fiber'
 import * as THREE from 'three'
-import { isDesktop } from 'react-device-detect'
-import { a, useSpring } from '@react-spring/three'
-import { ContactShadows, useProgress } from '@react-three/drei'
+import { ContactShadows } from '@react-three/drei'
 import { EdgeDetectionMode } from 'postprocessing'
-import { EffectComposer, SMAA } from 'react-postprocessing'
-import useStore from '@/helpers/store'
-import lerp from 'lerp'
+import { EffectComposer, SMAA } from '@react-three/postprocessing'
+import Preload from '../loading/loading'
 
 const Rig = () => {
   const { camera, mouse } = useThree()
@@ -52,7 +49,7 @@ const LCanvas = ({ children }) => {
         scene.background = new THREE.Color(0xffffff)
       }}
     >
-      <Suspense fallback={null}>
+      <Suspense fallback={<Preload />}>
         <CanvasTemplateAdds />
       </Suspense>
       {children}

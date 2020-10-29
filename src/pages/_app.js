@@ -3,7 +3,6 @@ import LCanvas from '@/components/canvas/_layout'
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
 import { useEffect, useRef } from 'react'
-import Preload from '@/components/loading/loading'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -23,7 +22,6 @@ function MyApp({ Component, pageProps }) {
       <LCanvas>
         <Component {...pageProps} />
       </LCanvas>
-      <Preload />
     </>
   )
 }

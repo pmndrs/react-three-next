@@ -3,6 +3,7 @@ import { useSpring, a } from 'react-spring'
 import { useProgress } from '@react-three/drei'
 import useStore from '@/helpers/store'
 import './loading.scss'
+import Dom from '../dom/container'
 
 function ProgressRing({ radius, stroke, progress }) {
   const normalizedRadius = radius - stroke * 2
@@ -50,10 +51,12 @@ function Preload() {
   const progress = useProgress((state) => state.progress)
 
   return (
-    <a.div style={{ opacity: opacity, transform: transform }} className={`loader`}>
-      <Progress />
-      <span>{Math.round(progress * 10) / 10}</span>
-    </a.div>
+    <Dom>
+      <a.div style={{ opacity: opacity, transform: transform }} className={`loader`}>
+        <Progress />
+        <span>{Math.round(progress * 10) / 10}</span>
+      </a.div>
+    </Dom>
   )
 }
 

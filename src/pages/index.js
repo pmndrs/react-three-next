@@ -22,7 +22,7 @@ const BoxesCanvas = () => {
 }
 
 const BoxesDom = () => {
-  return <h1>Click on a Box to navigate</h1>
+  return <h1>R3F Starter - Click on a box to navigate</h1>
 }
 
 const Index = () => {

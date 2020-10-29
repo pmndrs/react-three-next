@@ -110,7 +110,7 @@
     "react": "^0.0.0-experimental-4ead6b530",
     "react-device-detect": "^1.14.0",
     "react-dom": "^0.0.0-experimental-4ead6b530",
-    "react-postprocessing": "^1.4.0",
+    "@react-three/postprocessing": "^1.4.1",
     "react-spring": "^8.0.27",
     "react-three-fiber": "5.1.3",
     "stylelint-config-sass-guidelines": "^7.1.0",

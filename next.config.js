@@ -13,7 +13,7 @@ const withTM = require('next-transpile-modules')([
   '@react-three/drei',
   'three',
   'postprocessing',
-  'react-postprocessing',
+  '@react-three/postprocessing',
 ])
 
 module.exports = plugins(
