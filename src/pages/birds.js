@@ -3,6 +3,7 @@ import Dom from '@/components/dom/container'
 import { Suspense } from 'react'
 import BackButton from '@/components/dom/back/back'
 import useStore from '@/helpers/store'
+import { Helmet } from 'react-helmet'
 
 const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), { ssr: false })
 
@@ -56,6 +57,7 @@ const BirdsPage = () => {
   return (
     <>
       <Dom>
+        <Helmet title={'Oiseaux'} />
         <BoxesDom />
       </Dom>
       <BirdsCanvas />

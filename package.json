@@ -61,6 +61,7 @@
     "express": "^4.17.1",
     "next": "^10.0.0",
     "nodemon": "^2.0.6",
+    "react-helmet": "^6.1.0",
     "replace-in-file": "^6.1.0",
     "stylelint": "^13.7.2"
   },

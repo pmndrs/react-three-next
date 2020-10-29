@@ -1,15 +1,8 @@
-import { Suspense } from 'react'
 import Dom from '@/components/dom/container'
 import useStore from '@/helpers/store'
 import MyBox from '@/components/canvas/MyBox/MyBox'
+import { Helmet } from 'react-helmet'
 
-// export async function getStaticProps(context) {
-//   return {
-//     props: {
-//       canvas: true,
-//     },
-//   }
-// }
 const BoxesCanvas = () => {
   return (
     <group position={[0, 0, -20]}>
@@ -31,6 +24,7 @@ const Index = () => {
   return (
     <>
       <Dom>
+        <Helmet title={'Welcome'} />
         <BoxesDom />
       </Dom>
       <BoxesCanvas />

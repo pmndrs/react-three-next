@@ -13,30 +13,23 @@ const withTM = require('next-transpile-modules')(['@react-three/drei', 'three', 
 
 module.exports = plugins(
   [
-    withSass({
-      cssModules: false,
-      // this is for css code spliting (scope restricted to file)
-      // cssLoaderOptions: {
-      //   importLoaders: 1,
-      //   localIdentName: '[local]___[hash:base64:5]',
-      // },
-      webpack: (config) => {
-        config.module.rules.push({
-          test: /\.(glsl|vs|fs|vert|frag)$/,
-          exclude: /node_modules/,
-          use: ['raw-loader', 'glslify-loader'],
-        })
-        return config
-      },
-    }),
     [images, { exclude: path.resolve(__dirname, 'src/assets/svg') }],
     [reactSvg, { include: path.resolve(__dirname, 'src/assets/svg') }],
+    withSass,
     fonts,
     videos,
     withTM,
   ],
   {
     target: 'serverless',
+    webpack: (config) => {
+      config.module.rules.push({
+        test: /\.(glsl|vs|fs|vert|frag)$/,
+        exclude: /node_modules/,
+        use: ['raw-loader', 'glslify-loader'],
+      })
+      return config
+    },
     // webpack getting override by withSass
   }
 )
