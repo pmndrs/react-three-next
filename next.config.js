@@ -9,12 +9,7 @@ const videos = require('next-videos')
 const fonts = require('next-fonts')
 const reactSvg = require('next-react-svg')
 
-const withTM = require('next-transpile-modules')([
-  '@react-three/drei',
-  'three',
-  'postprocessing',
-  '@react-three/postprocessing',
-])
+const withTM = require('next-transpile-modules')(['@react-three/drei', 'three', 'postprocessing'])
 
 module.exports = plugins(
   [
