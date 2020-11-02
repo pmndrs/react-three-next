@@ -16,6 +16,17 @@ or
 npx create-r3f-app next my-app sass
 ```
 
+## Features
+
+- Concurrent mode with React experimental
+- Code Splitting
+- Canvas content and DOM loaded by page
+- Transitions between routes
+- Dynamic meta data and header using helmet
+- Customizable loading
+- Meta data and heads using Helmet
+- Support glsl, images and svg imports
+
 ## Available Scripts
 
 - yarn dev
@@ -39,18 +50,7 @@ npx create-r3f-app next my-app sass
 - Post processing
 - React Devices Detect
 
-## features
-
-- Concurrent mode with React experimental
-- Code Splitting
-- Canvas content and DOM loaded by page
-- Transitions between routes
-- Dynamic meta data and header using helmet
-- Customizable loading
-- Meta data and heads using Helmet
-- Support glsl, images and svg imports
-
-### Todo :
+#### Todo :
 
 - Custom middleware delay for transitions between routes
 - PWA
@@ -58,12 +58,10 @@ npx create-r3f-app next my-app sass
 - Complex nested routes and layouts
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
-
 - [module middle] Add custom middleware to access backend data + ENV files
 - [module auth] Manage auth on routes for login
 - [module gui] Custom GUI in dev mod https://github.com/cocopon/tweakpane
 - [module scroll] enable dom events + share events between main dom and canvas + useScroll and useGesture by default
-
 - v2 - Prefetch assets
 - v2 - Update architecture based on sharing materials && geos
 - v2 - Make bash scripts for git && deploy
