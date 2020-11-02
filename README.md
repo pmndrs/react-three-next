@@ -31,7 +31,7 @@ const Page = () => {
   useStore.setState({ loading: false })
   return (
     <>
-      {/* canvas content, always but be first  */}
+      {/* canvas content, require to always be first  */}
       <Canvas />
       {/* dom content, it's not required  */}
       <Dom />
