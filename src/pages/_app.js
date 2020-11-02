@@ -76,7 +76,11 @@ function MyApp({ Component, pageProps }) {
     },
   ]
 
-  return <SplitApp canvas={comp[0] || comp} dom={comp[1]} items={items} />
+  return (
+    <>
+      <SplitApp canvas={comp[0] || comp} dom={comp[1]} items={items} />{' '}
+    </>
+  )
 }
 
 export default MyApp

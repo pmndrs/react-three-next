@@ -11,6 +11,18 @@ const reactSvg = require('next-react-svg')
 
 const withTM = require('next-transpile-modules')(['@react-three/drei', 'three', 'postprocessing'])
 
+const nextConfig = {
+  // target: 'serverless',
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      exclude: /node_modules/,
+      use: ['raw-loader', 'glslify-loader'],
+    })
+    return config
+  },
+}
+
 module.exports = plugins(
   [
     [images, { exclude: path.resolve(__dirname, 'src/assets/svg') }],
@@ -20,16 +32,5 @@ module.exports = plugins(
     videos,
     withTM,
   ],
-  {
-    target: 'serverless',
-    webpack: (config) => {
-      config.module.rules.push({
-        test: /\.(glsl|vs|fs|vert|frag)$/,
-        exclude: /node_modules/,
-        use: ['raw-loader', 'glslify-loader'],
-      })
-      return config
-    },
-    // webpack getting override by withSass
-  }
+  nextConfig
 )
