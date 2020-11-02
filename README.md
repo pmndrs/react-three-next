@@ -24,7 +24,6 @@ npx create-r3f-app next my-app sass
 - Transitions between routes
 - Dynamic meta data and header using helmet
 - Customizable loading
-- Meta data and heads using Helmet
 - Support glsl, images and svg imports
 
 ## Available Scripts

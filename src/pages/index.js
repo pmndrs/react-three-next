@@ -3,7 +3,7 @@ import MyBox from '@/components/canvas/MyBox/MyBox'
 import { Helmet } from 'react-helmet'
 
 const BoxesDom = () => {
-  return <h1>R3F Starter - Click on a box to navigate</h1>
+  return <h1>R3F Next Starter - Click on a box to navigate</h1>
 }
 
 const Dom = () => {

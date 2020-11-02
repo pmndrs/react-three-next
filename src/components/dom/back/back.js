@@ -1,20 +1,12 @@
 import useStore from '@/helpers/store'
 import './back.scss'
+import Link from 'next/link'
 
 function BackButton() {
-  const router = useStore((state) => state.router)
-
   return (
-    <div
-      href='/'
-      as={`/`}
-      onClick={() => {
-        // useStore.setState({ loading: true })
-        router.push(`/`)
-      }}
-    >
+    <Link href='/' as={`/`}>
       <button className='back-btn'>⬅ Back</button>
-    </div>
+    </Link>
   )
 }
 
