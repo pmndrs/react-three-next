@@ -6,15 +6,42 @@
 
 ## How to use
 
+### Installation
 ```bash
 yarn create r3f-app next my-app sass
 ```
-
 or
-
 ```bash
 npx create-r3f-app next my-app sass
 ```
+
+
+### Architecture
+For the moment this is required to work with Canvas + Dom
+```
+export async function getStaticProps(context) {
+  return {
+    props: {
+      r3f: true, // r3f signal to our _app.js that the page will contains canvas content and not only dom
+    },
+  }
+}
+
+const Page = () => {
+  useStore.setState({ loading: false })
+  return (
+    <>
+      {/* canvas content, always but be first  */}
+      <Canvas />
+      {/* dom content, it's not required  */}
+      <Dom />
+    </>
+  )
+}
+
+export default Page
+```
+
 
 ## Features
 
