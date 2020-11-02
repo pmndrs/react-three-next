@@ -4,14 +4,23 @@ import { useFrame } from 'react-three-fiber'
 import { useGLTF } from '@react-three/drei'
 
 const Bird = ({ speed, factor, url, ...props }) => {
-  const gltf = useGLTF(url)
+  const { nodes, materials, animations } = useGLTF(url)
   const group = useRef()
   const [mixer] = useState(() => new THREE.AnimationMixer())
 
-  useEffect(() => void mixer.clipAction(gltf.animations[0], group.current).play(), [gltf.animations, mixer])
+  const actions = useRef()
+
+  useEffect(() => {
+    actions.current = {
+      animation_0: mixer.clipAction(animations[0], group.current).play(),
+    }
+    return () => animations.forEach((clip) => mixer.uncacheClip(clip))
+  }, [animations, mixer])
+
+  // useEffect(() => void mixer.clipAction(gltf.animations[0], group.current).play(), [gltf.animations, mixer])
 
   useFrame((state, delta) => {
-    if (group.current && gltf && gltf.animations) {
+    if (group.current && nodes && animations) {
       group.current.rotation.y += Math.sin((delta * factor) / 2) * Math.cos((delta * factor) / 2) * 1.5
       mixer.update(delta * speed)
     }
@@ -22,13 +31,12 @@ const Bird = ({ speed, factor, url, ...props }) => {
       <group name='Scene' {...props}>
         <mesh
           name='Object_0'
-          morphTargetDictionary={gltf.nodes['Object_0'].morphTargetDictionary}
-          morphTargetInfluences={gltf.nodes['Object_0'].morphTargetInfluences}
+          geometry={nodes['Object_0'].geometry}
+          material={materials['Material_0_COLOR_0']}
+          morphTargetDictionary={nodes['Object_0'].morphTargetDictionary}
+          morphTargetInfluences={nodes['Object_0'].morphTargetInfluences}
           rotation={[1.5707964611537577, 0, 0]}
-        >
-          <bufferGeometry attach='geometry' {...gltf.nodes['Object_0'].geometry} />
-          <meshStandardMaterial attach='material' {...gltf.materials['Material_0_COLOR_0']} />
-        </mesh>
+        />
       </group>
     </group>
   )

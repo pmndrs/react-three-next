@@ -1,3 +1,4 @@
+import { createRef } from 'react'
 import create from 'zustand'
 
 const useStore = create((set, get) => {
@@ -11,5 +12,9 @@ const useStore = create((set, get) => {
     },
   }
 })
+
+export const useStaticStore = {
+  router: createRef(),
+}
 
 export default useStore

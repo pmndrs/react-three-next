@@ -32,6 +32,7 @@ npx create-r3f-app next my-app sass
 - Scss
 - Prettier
 - Husky
+- Helmet
 - [Threejs](https://github.com/mrdoob/three.js/): A lightweight, 3D library with a default WebGL renderer. The library also provides Canvas 2D, SVG and CSS3D - renderers in the examples.
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
 - [drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
@@ -43,12 +44,12 @@ npx create-r3f-app next my-app sass
 - Concurrent mode with React experimental
 - Code Splitting
 - Canvas content and DOM loaded by page
+- Transitions between routes
+- Dynamic meta data and header using helmet
 - Customizable loading
 
 ### Todo :
 
-- Custom middleware delay for transitions between routes
-- Meta data and heads
 - PWA
 - useGesture example
 - Basic helpers folder

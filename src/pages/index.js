@@ -1,9 +1,23 @@
-import Dom from '@/components/dom/container'
 import useStore from '@/helpers/store'
 import MyBox from '@/components/canvas/MyBox/MyBox'
 import { Helmet } from 'react-helmet'
 
-const BoxesCanvas = () => {
+const BoxesDom = () => {
+  return <h1>R3F Starter - Click on a box to navigate</h1>
+}
+
+const Dom = () => {
+  useStore.setState({ loading: false })
+
+  return (
+    <>
+      <Helmet title={'Welcome'} />
+      <BoxesDom />
+    </>
+  )
+}
+
+const Canvas = () => {
   return (
     <group position={[0, 0, -20]}>
       <MyBox position={[10, 0, -5]} />
@@ -14,22 +28,15 @@ const BoxesCanvas = () => {
   )
 }
 
-const BoxesDom = () => {
-  return <h1>R3F Starter - Click on a box to navigate</h1>
-}
-
-const Index = () => {
+// canvas is required and dom is optional
+const Page = () => {
   useStore.setState({ loading: false })
-
   return (
     <>
-      <Dom>
-        <Helmet title={'Welcome'} />
-        <BoxesDom />
-      </Dom>
-      <BoxesCanvas />
+      <Canvas />
+      <Dom />
     </>
   )
 }
 
-export default Index
+export default Page

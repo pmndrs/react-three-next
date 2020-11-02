@@ -27,13 +27,24 @@ body {
 }
 
 canvas {
+  top: 0;
   width: 100%;
   height: 100vh;
   &:focus {
     outline: none;
   }
 }
-
+.dom {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
 h1 {
   display: flex;
   justify-content: center;

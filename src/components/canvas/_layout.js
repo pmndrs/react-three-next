@@ -33,6 +33,7 @@ const CanvasTemplateAdds = () => {
     </>
   )
 }
+
 const LCanvas = ({ children }) => {
   return (
     <Canvas
@@ -40,11 +41,13 @@ const LCanvas = ({ children }) => {
       colorManagement
       style={{
         position: 'absolute',
+        top: 0,
       }}
       gl={{ powerPreference: 'high-performance', antialias: false, stencil: false, depth: false, alpha: false }}
       camera={{ position: [0, 0, 0], near: 5, far: 100 }}
       pixelRatio={1}
       onCreated={({ gl, scene }) => {
+        // gl.toneMappingExposure = 1.5
         scene.background = new THREE.Color(0xffffff)
       }}
     >

@@ -1,11 +1,10 @@
-import dynamic from 'next/dynamic'
-import Dom from '@/components/dom/container'
 import { Suspense } from 'react'
 import BackButton from '@/components/dom/back/back'
 import useStore from '@/helpers/store'
 import { Helmet } from 'react-helmet'
-
-const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), { ssr: false })
+import Bird from '@/components/canvas/Bird/Bird'
+// import dynamic from 'next/dynamic'
+// const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), { ssr: false })
 
 const Birds = () => {
   return new Array(5).fill().map((_, i) => {
@@ -30,7 +29,7 @@ const Birds = () => {
   })
 }
 
-const BirdsCanvas = () => {
+const Canvas = () => {
   return (
     <group position={[0, 0, -25]}>
       <ambientLight intensity={2} />
@@ -42,27 +41,24 @@ const BirdsCanvas = () => {
   )
 }
 
-const BoxesDom = () => {
+const Dom = () => {
   return (
     <div>
+      <Helmet title={'Oiseaux'} />
       <BackButton />
       <h1>BIRDS DOM</h1>
     </div>
   )
 }
 
-const BirdsPage = () => {
+const Page = () => {
   useStore.setState({ loading: false })
-
   return (
     <>
-      <Dom>
-        <Helmet title={'Oiseaux'} />
-        <BoxesDom />
-      </Dom>
-      <BirdsCanvas />
+      <Canvas />
+      <Dom />
     </>
   )
 }
 
-export default BirdsPage
+export default Page
