@@ -56,30 +56,27 @@ function SplitApp({ canvas, dom, items }) {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-  const dom = useRef()
-  // children 0 must be canvas and children is optional dom
-  const comp = Component().props.children
-
+  let comp = null
+  let items = null
+  if (pageProps.r3f) {
+    // children 0 must be canvas and children is optional dom
+    comp = Component().props.children
+    items = [
+      {
+        id: router.route,
+        component: comp[0],
+        pageProps,
+      },
+    ]
+  }
   useEffect(() => {
     useStore.setState({ router: router })
   }, [router])
 
-  useEffect(() => {
-    useStore.setState({ dom: dom.current })
-  }, [dom])
-
-  const items = [
-    {
-      id: router.route,
-      component: comp[0],
-      pageProps,
-    },
-  ]
-
-  return (
-    <>
-      <SplitApp canvas={comp[0] || comp} dom={comp[1]} items={items} />{' '}
-    </>
+  return pageProps.r3f ? (
+    <SplitApp canvas={comp[0] || comp} dom={comp[1]} items={items} />
+  ) : (
+    <Component {...pageProps} />
   )
 }
 

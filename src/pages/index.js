@@ -28,6 +28,14 @@ const Canvas = () => {
   )
 }
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      r3f: true,
+    },
+  }
+}
+
 // canvas is required and dom is optional
 const Page = () => {
   useStore.setState({ loading: false })

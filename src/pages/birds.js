@@ -51,6 +51,14 @@ const Dom = () => {
   )
 }
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      r3f: true,
+    },
+  }
+}
+
 const Page = () => {
   useStore.setState({ loading: false })
   return (

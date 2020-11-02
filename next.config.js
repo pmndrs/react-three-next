@@ -12,7 +12,7 @@ const reactSvg = require('next-react-svg')
 const withTM = require('next-transpile-modules')(['@react-three/drei', 'three', 'postprocessing'])
 
 const nextConfig = {
-  target: 'serverless',
+  // target: 'serverless',
   webpack(config) {
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
