@@ -17,7 +17,7 @@ npx create-r3f-app next my-app sass
 
 
 ### Architecture
-For the moment this is required to work with Canvas + Dom
+For the moment this is required for every page in the pages/ folder to work with Canvas + Dom
 ```
 export async function getStaticProps(context) {
   return {
@@ -31,7 +31,7 @@ const Page = () => {
   useStore.setState({ loading: false })
   return (
     <>
-      {/* canvas content, require to always be first  */}
+      {/* canvas content, need to be first  */}
       <Canvas />
       {/* dom content, it's not required  */}
       <Dom />
