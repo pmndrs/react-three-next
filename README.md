@@ -47,16 +47,22 @@ npx create-r3f-app next my-app sass
 - Transitions between routes
 - Dynamic meta data and header using helmet
 - Customizable loading
+- Meta data and heads using Helmet
+- Support glsl, images and svg imports
 
 ### Todo :
 
+- Custom middleware delay for transitions between routes
 - PWA
-- useGesture example
 - Basic helpers folder
-- Clean shaders in helpers example
-- enable dom events + share events between main dom and canvas + useScroll and useGesture by default
+- Complex nested routes and layouts
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
+
+- [module middle] Add custom middleware to access backend data + ENV files
+- [module auth] Manage auth on routes for login
+- [module gui] Custom GUI in dev mod https://github.com/cocopon/tweakpane
+- [module scroll] enable dom events + share events between main dom and canvas + useScroll and useGesture by default
 
 - v2 - Prefetch assets
 - v2 - Update architecture based on sharing materials && geos
