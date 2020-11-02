@@ -22,7 +22,7 @@ For the moment this is required for every page in the pages/ folder to work with
 export async function getStaticProps(context) {
   return {
     props: {
-      r3f: true, // r3f signal to our _app.js that the page will contains canvas content and not only dom
+      r3f: true, // r3f signal to our _app.js that the page will also contains canvas content and not only dom
     },
   }
 }
@@ -49,7 +49,7 @@ export default Page
 - Code Splitting
 - Canvas content and DOM loaded by page
 - Transitions between routes
-- Dynamic meta data and header using helmet
+- Dynamic meta data and header using Helmet
 - Customizable loading
 - Support glsl, images and svg imports
 
@@ -78,9 +78,8 @@ export default Page
 
 #### Todo :
 
-- Custom middleware delay for transitions between routes
+- App.js more flex to accept dom or canvas as optional
 - PWA
-- Basic helpers folder
 - Complex nested routes and layouts
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
@@ -88,6 +87,8 @@ export default Page
 - [module auth] Manage auth on routes for login
 - [module gui] Custom GUI in dev mod https://github.com/cocopon/tweakpane
 - [module scroll] enable dom events + share events between main dom and canvas + useScroll and useGesture by default
+
+- v2 - Override NextJS and make a custom Component that automatically detect R3F and inject in canvas instead
 - v2 - Prefetch assets
 - v2 - Update architecture based on sharing materials && geos
 - v2 - Make bash scripts for git && deploy
