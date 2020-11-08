@@ -1,4 +1,4 @@
-import favicon from './assets/images/favicon.png'
+// import favicon from './assets/images/favicon.png'
 import share from './assets/images/share.png'
 
 const title = 'R3F Next Starter'
@@ -31,6 +31,19 @@ export const helmet = {
     { name: 'twitter:site', content: '@onirenaud' },
     { name: 'twitter:creator', content: '@onirenaud' },
     { name: 'twitter:description', content: description },
+
+    { name: 'msapplication-TileColor', content: '#da532c' },
+    { name: 'msapplication-config', content: '/icons/browserconfig.xml' },
+    { name: 'theme-color', content: '#ffffff' },
   ],
-  link: [{ rel: 'icon', type: 'image/x-icon', href: favicon }],
+  link: [
+    // { rel: 'icon', type:  'image/x-icon', href:  favicon },
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon-32x32.png' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/favicon-16x16.png' },
+    { rel: 'manifest', href: '/manifest.json' },
+    { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#5bbad5' },
+    { rel: 'shortcut icon', href: '/favicon.ico' },
+  ],
 }
