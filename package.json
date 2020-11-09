@@ -60,6 +60,7 @@
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "next": "^10.0.0",
+    "next-pwa": "^3.1.5",
     "nodemon": "^2.0.6",
     "react-helmet": "^6.1.0",
     "replace-in-file": "^6.1.0",

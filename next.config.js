@@ -10,6 +10,7 @@ const fonts = require('next-fonts')
 const reactSvg = require('next-react-svg')
 
 const withTM = require('next-transpile-modules')(['@react-three/drei', 'three', 'postprocessing'])
+const withPWA = require('next-pwa')
 
 const nextConfig = {
   // target: 'serverless',
@@ -31,6 +32,7 @@ module.exports = plugins(
     fonts,
     videos,
     withTM,
+    [withPWA, { pwa: { disable: false, dest: 'public' } }],
   ],
   nextConfig
 )
