@@ -80,7 +80,6 @@ export default Page
 #### Todo :
 
 - App.js more flex to accept dom or canvas as optional
-- PWA
 - Complex nested routes and layouts
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
