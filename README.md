@@ -52,6 +52,7 @@ export default Page
 - Dynamic meta data and header using Helmet
 - Customizable loading
 - Support glsl, images and svg imports
+- PWA Support
 
 ## Available Scripts
 
