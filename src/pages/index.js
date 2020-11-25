@@ -7,8 +7,6 @@ const BoxesDom = () => {
 }
 
 const Dom = () => {
-  useStore.setState({ loading: false })
-
   return (
     <>
       <Helmet title={'Welcome'} />

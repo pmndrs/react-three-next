@@ -21,7 +21,7 @@ function SplitApp({ canvas, dom, items }) {
           initial={{ opacity: 0, transform: 'scale(0)' }}
           enter={{ opacity: 1, transform: `scale(1)` }}
           leave={{ opacity: 0, position: 'absolute', top: 0, transform: `scale(0)` }}
-          config={() => (n) => n !== 'scale' && config.gentle}
+          config={() => (n) => n !== 'scale' && config.slow}
         >
           {(styles) => (
             <animated.div style={{ ...styles, width: '100%', top: 0, left: 0 }} className='dom'>
@@ -39,7 +39,7 @@ function SplitApp({ canvas, dom, items }) {
             from={{ position: [0, 0, -20], rotation: [0, Math.PI, 0], scale: [0, 0, 0] }}
             enter={{ position: [0, 0, 0], rotation: [0, 0, 0], scale: [1, 1, 1] }}
             leave={{ position: [0, 0, -10], rotation: [0, -Math.PI, 0], scale: [0, 0, 0] }}
-            config={() => (n) => n !== 'scale' && config.gentle}
+            config={() => (n) => n !== 'scale' && config.slow}
           >
             {(styles, { pageProps, Component }) => (
               <a.group {...styles} {...pageProps}>
