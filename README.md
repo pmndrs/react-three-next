@@ -46,10 +46,10 @@ export default Page
 ## Features
 
 - Concurrent mode with React experimental
-- Code Splitting
+- Code Splitting <-- TODO remove
 - Canvas content and DOM loaded by page
-- Transitions between routes
-- Dynamic meta data and header using Helmet
+- Transitions between routes <-- Make to another "full-features" branch
+- Dynamic meta data and header using Helmet <-- Make to another "full-features" branch
 - Customizable loading
 - Support glsl, images and svg imports
 - PWA Support
@@ -79,10 +79,12 @@ export default Page
 
 #### Todo :
 
+- Tailwind branch + Make default
 - App.js more flex to accept dom or canvas as optional
 - Complex nested routes and layouts
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
+- add another repo for modules -->
 - [module middle] Add custom middleware to access backend data + ENV files
 - [module auth] Manage auth on routes for login
 - [module gui] Custom GUI in dev mod https://github.com/cocopon/tweakpane
