@@ -8,7 +8,7 @@ import { helmet } from '../config'
 
 import '../assets/styles/globals.css'
 
-function SplitApp({ canvas, dom, items }) {
+function SplitApp({ canvas, dom }) {
   return (
     <>
       <Helmet {...helmet} />
@@ -21,32 +21,20 @@ function SplitApp({ canvas, dom, items }) {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-  let comp = null
-  let items = null
+  let comp = [...Component().props.children]
   let r3fArr = []
-
-  comp = [...Component().props.children]
+  let compArr = []
 
   Children.forEach(comp, (child) => {
-    if (child.props.r3f) {
-      r3fArr = r3fArr.concat(comp.splice(child, 1))
-    }
+    child.props.r3f ? r3fArr.push(child) : compArr.push(child)
   })
-
-  items = [
-    {
-      id: router.route,
-      component: comp[0],
-      pageProps,
-    },
-  ]
 
   useEffect(() => {
     useStore.setState({ router: router })
   }, [router])
 
   return r3fArr.length > 0 ? (
-    <SplitApp canvas={r3fArr} dom={comp} items={items} />
+    <SplitApp canvas={r3fArr} dom={compArr} />
   ) : (
     <Component {...pageProps} />
   )

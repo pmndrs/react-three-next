@@ -15,8 +15,6 @@ const Dom = () => {
     <>
       <Helmet title={'Welcome'} />
       <BoxesDom />
-
-      <h2>2</h2>
     </>
   )
 }
@@ -28,6 +26,13 @@ const BoxGroup = () => {
       <MyBox position={[-10, 0, -5]} />
       <MyBox position={[0, 10, 0]} />
       <MyBox position={[0, -5, 5]} />
+    </group>
+  )
+}
+const BoxGroup2 = () => {
+  return (
+    <group position={[0, 0, -10]}>
+      <MyBox position={[5, 0, -5]} />
     </group>
   )
 }
