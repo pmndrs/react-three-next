@@ -26,8 +26,7 @@ npx create-r3f-app next my-app <tailwind?|sass?>
 - Customizable loading
 - Support glsl, images and svg imports
 - PWA Support
-- Code Splitting <-- TODO change to a deepFilter that automatically change
-- Dynamic meta data and header using Helmet <-- Make to a helper/module "full-features"
+- Dynamic meta data and header using Helmet <-- Make to a helper/module
 
 ### Architecture
 
@@ -38,7 +37,7 @@ const Page = () => {
   return (
     <>
       <h1>Hello !</h1>
-      {/* simply add the r3f prop to the parent component */}
+      {/* Simply add the r3f prop to the parent component -> */}
       <Group r3f />
       <h2>Bonjour.</h2>
     </>
