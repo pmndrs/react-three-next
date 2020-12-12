@@ -22,7 +22,7 @@ npx create-r3f-app next my-app <tailwind?|sass?>
 
 - Concurrent mode with React experimental
 - Dark mode management
-- Canvas content and DOM loaded by page
+- Automatically inject r3f component in the Canvas layout
 - Customizable loading
 - Support glsl, images and svg imports
 - PWA Support
@@ -31,25 +31,16 @@ npx create-r3f-app next my-app <tailwind?|sass?>
 
 ### Architecture
 
-For the moment this is required for every page in the pages/ folder to work with Canvas + Dom
+You just need to page that the component is a Threejs component. For that simply add the r3f prop and that's it!
 
 ```
-export async function getStaticProps(context) {
-  return {
-    props: {
-      r3f: true, // r3f signal to our _app.js that the page will also contains canvas content and not only dom
-    },
-  }
-}
-
 const Page = () => {
-  useStore.setState({ loading: false })
   return (
     <>
-      {/* canvas content, need to be first  */}
-      <Canvas />
-      {/* dom content, it's not required  */}
-      <Dom />
+      <h1>Hello !</h1>
+      {/* simply add the r3f prop to the parent component */}
+      <Group r3f />
+      <h2>Bonjour.</h2>
     </>
   )
 }
@@ -94,7 +85,6 @@ export default Page
 - [module gui] Custom GUI in dev mod https://github.com/cocopon/tweakpane
 - [module scroll] enable dom events + share events between main dom and canvas + useScroll and useGesture by default
 
-- v2 - Override NextJS and make a custom Component that automatically detect R3F and inject in canvas instead
 - v2 - Prefetch assets
 - v2 - Update architecture based on sharing materials && geos
 - v2 - Make bash scripts for git && deploy

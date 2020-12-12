@@ -14,7 +14,11 @@ const Birds = () => {
     const bird = ['stork', 'parrot', 'flamingo'][Math.round(Math.random() * 2)]
     let speed = bird === 'stork' ? 0.5 : bird === 'flamingo' ? 2 : 5
     let factor =
-      bird === 'stork' ? 0.5 + Math.random() : bird === 'flamingo' ? 0.25 + Math.random() : 1 + Math.random() - 0.5
+      bird === 'stork'
+        ? 0.5 + Math.random()
+        : bird === 'flamingo'
+        ? 0.25 + Math.random()
+        : 1 + Math.random() - 0.5
 
     return (
       <Bird
@@ -51,19 +55,11 @@ const Dom = () => {
   )
 }
 
-export async function getStaticProps(context) {
-  return {
-    props: {
-      r3f: true,
-    },
-  }
-}
-
 const Page = () => {
   useStore.setState({ loading: false })
   return (
     <>
-      <Canvas />
+      <Canvas r3f />
       <Dom />
     </>
   )

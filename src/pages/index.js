@@ -15,11 +15,13 @@ const Dom = () => {
     <>
       <Helmet title={'Welcome'} />
       <BoxesDom />
+
+      <h2>2</h2>
     </>
   )
 }
 
-const Canvas = () => {
+const BoxGroup = () => {
   return (
     <group position={[0, 0, -20]}>
       <MyBox position={[10, 0, -5]} />
@@ -29,21 +31,12 @@ const Canvas = () => {
     </group>
   )
 }
-
-export async function getStaticProps(context) {
-  return {
-    props: {
-      r3f: true,
-    },
-  }
-}
-
 // canvas is required and dom is optional
 const Page = () => {
   useStore.setState({ loading: false })
   return (
     <>
-      <Canvas />
+      <BoxGroup r3f />
       <Dom />
     </>
   )
