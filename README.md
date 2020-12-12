@@ -40,6 +40,7 @@ const Page = () => {
       {/* Simply add the r3f prop to the parent component -> */}
       <Group r3f />
       <h2>Bonjour.</h2>
+      <MeshComponent r3f />
     </>
   )
 }
