@@ -1,4 +1,5 @@
 # React Three Fiber + Next ES6 starter
+The main strenght of this architecture is that it will automatically pick the R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
 
 ## Demo :
 
