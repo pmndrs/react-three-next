@@ -36,6 +36,7 @@ const BoxGroup2 = () => {
     </group>
   )
 }
+
 // canvas is required and dom is optional
 const Page = () => {
   useStore.setState({ loading: false })

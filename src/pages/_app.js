@@ -24,11 +24,9 @@ function MyApp({ Component, pageProps }) {
   let comp = [...Component().props.children]
   let r3fArr = []
   let compArr = []
-  let isR3f = false
   Children.forEach(comp, (child) => {
-    if (child.props.r3f) {
+    if (child.props && child.props.r3f) {
       r3fArr.push(child)
-      isR3f = true
     } else {
       compArr.push(child)
     }
@@ -38,7 +36,7 @@ function MyApp({ Component, pageProps }) {
     useStore.setState({ router: router })
   }, [router])
 
-  return isR3f ? (
+  return r3fArr.length > 0 ? (
     <SplitApp canvas={r3fArr} dom={compArr} />
   ) : (
     <Component {...pageProps} />
