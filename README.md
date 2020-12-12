@@ -9,13 +9,13 @@
 ### Installation
 
 ```bash
-yarn create r3f-app next my-app sass
+yarn create r3f-app next my-app <tailwind?|sass>
 ```
 
 or
 
 ```bash
-npx create-r3f-app next my-app sass
+npx create-r3f-app next my-app <tailwind?|sass>
 ```
 
 ### Architecture
@@ -49,10 +49,9 @@ export default Page
 ## Features
 
 - Concurrent mode with React experimental
-- Code Splitting <-- TODO remove
+- Code Splitting <-- TODO change to a deepFilter that automatically change
 - Canvas content and DOM loaded by page
-- Transitions between routes <-- Make to another "full-features" branch
-- Dynamic meta data and header using Helmet <-- Make to another "full-features" branch
+- Dynamic meta data and header using Helmet <-- Make to a helper/module "full-features"
 - Customizable loading
 - Support glsl, images and svg imports
 - PWA Support
@@ -70,6 +69,7 @@ export default Page
 - Nextjs
 - Eslint
 - Babel
+- Tailwind
 - Scss [Scss branch]
 - Prettier
 - Husky
@@ -82,7 +82,6 @@ export default Page
 
 #### Todo :
 
-- Tailwind branch + Make default
 - Add a switch helper to toggle dark mode : https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
 - App.js more flex to accept dom or canvas as optional
 - Complex nested routes and layouts
