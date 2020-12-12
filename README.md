@@ -18,6 +18,17 @@ or
 npx create-r3f-app next my-app <tailwind?|sass?>
 ```
 
+## Features
+
+- Concurrent mode with React experimental
+- Dark mode management
+- Canvas content and DOM loaded by page
+- Customizable loading
+- Support glsl, images and svg imports
+- PWA Support
+- Code Splitting <-- TODO change to a deepFilter that automatically change
+- Dynamic meta data and header using Helmet <-- Make to a helper/module "full-features"
+
 ### Architecture
 
 For the moment this is required for every page in the pages/ folder to work with Canvas + Dom
@@ -45,17 +56,6 @@ const Page = () => {
 
 export default Page
 ```
-
-## Features
-
-- Concurrent mode with React experimental
-- Dark mode management
-- Canvas content and DOM loaded by page
-- Customizable loading
-- Support glsl, images and svg imports
-- PWA Support
-- Code Splitting <-- TODO change to a deepFilter that automatically change
-- Dynamic meta data and header using Helmet <-- Make to a helper/module "full-features"
 
 ## Available Scripts
 
