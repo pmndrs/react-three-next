@@ -7,17 +7,21 @@
 ## How to use
 
 ### Installation
+
 ```bash
 yarn create r3f-app next my-app sass
 ```
+
 or
+
 ```bash
 npx create-r3f-app next my-app sass
 ```
 
-
 ### Architecture
+
 For the moment this is required for every page in the pages/ folder to work with Canvas + Dom
+
 ```
 export async function getStaticProps(context) {
   return {
@@ -41,7 +45,6 @@ const Page = () => {
 
 export default Page
 ```
-
 
 ## Features
 
@@ -67,7 +70,7 @@ export default Page
 - Nextjs
 - Eslint
 - Babel
-- Scss
+- Scss [Scss branch]
 - Prettier
 - Husky
 - Helmet
@@ -80,6 +83,7 @@ export default Page
 #### Todo :
 
 - Tailwind branch + Make default
+- Add a switch helper to toggle dark mode : https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
 - App.js more flex to accept dom or canvas as optional
 - Complex nested routes and layouts
 - Add draco && gltfjsx example

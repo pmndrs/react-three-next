@@ -6,8 +6,7 @@
   ],
   "private": true,
   "scripts": {
-    "lint": "npm run prettier && npm run eslint && npm run stylelint",
-    "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
+    "lint": "npm run prettier && npm run eslint",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
     "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
     "dev": "next dev",
@@ -27,43 +26,17 @@
       "eslint --fix"
     ]
   },
-  "stylelint": {
-    "extends": "stylelint-config-recommended",
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "if",
-            "else",
-            "mixin",
-            "each",
-            "include",
-            "function",
-            "return",
-            "warn",
-            "for"
-          ]
-        }
-      ],
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": [
-            "global"
-          ]
-        }
-      ]
-    }
-  },
   "dependencies": {
+    "autoprefixer": "^10.1.0",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "next": "^10.0.3",
     "nodemon": "^2.0.6",
+    "postcss": "^8.2.1",
     "react-helmet": "^6.1.0",
     "replace-in-file": "^6.1.0",
-    "stylelint": "^13.7.2"
+    "tailwindcss": "^2.0.2",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@babel/node": "^7.12.1",
@@ -73,13 +46,11 @@
     "@babel/runtime": "^7.12.1",
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/drei": "^2.2.10",
-    "@react-three/postprocessing": "^1.4.1",
-    "@zeit/next-sass": "^1.0.1",
+    "@react-three/postprocessing": "^1.5.0",
     "babel-eslint": "^10.1.0",
     "babel-node": "^0.0.1-security",
     "babel-plugin-glsl": "^1.0.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-react-app": "^9.1.2",
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.14.0",
@@ -115,7 +86,6 @@
     "react-dom": "^17.0.1",
     "react-spring": "^9.0.0-rc.3",
     "react-three-fiber": "^5.3.7",
-    "stylelint-config-sass-guidelines": "^7.1.0",
     "three": "^0.123.0"
   },
   "license": "MIT"
