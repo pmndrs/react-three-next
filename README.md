@@ -9,13 +9,13 @@
 ### Installation
 
 ```bash
-yarn create r3f-app next my-app <tailwind?|sass>
+yarn create r3f-app next my-app <tailwind?|sass?>
 ```
 
 or
 
 ```bash
-npx create-r3f-app next my-app <tailwind?|sass>
+npx create-r3f-app next my-app <tailwind?|sass?>
 ```
 
 ### Architecture
@@ -49,17 +49,18 @@ export default Page
 ## Features
 
 - Concurrent mode with React experimental
-- Code Splitting <-- TODO change to a deepFilter that automatically change
+- Dark mode management
 - Canvas content and DOM loaded by page
-- Dynamic meta data and header using Helmet <-- Make to a helper/module "full-features"
 - Customizable loading
 - Support glsl, images and svg imports
 - PWA Support
+- Code Splitting <-- TODO change to a deepFilter that automatically change
+- Dynamic meta data and header using Helmet <-- Make to a helper/module "full-features"
 
 ## Available Scripts
 
 - yarn dev
-- yarn lint (Sass and Scripts)
+- yarn lint (Scripts)
 - yarn build
 - yarn start
 
@@ -70,7 +71,6 @@ export default Page
 - Eslint
 - Babel
 - Tailwind
-- Scss [Scss branch]
 - Prettier
 - Husky
 - Helmet
@@ -87,6 +87,7 @@ export default Page
 - Complex nested routes and layouts
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
+
 - add another repo for modules -->
 - [module middle] Add custom middleware to access backend data + ENV files
 - [module auth] Manage auth on routes for login
