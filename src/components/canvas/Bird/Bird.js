@@ -17,11 +17,10 @@ const Bird = ({ speed, factor, url, ...props }) => {
     return () => animations.forEach((clip) => mixer.uncacheClip(clip))
   }, [animations, mixer])
 
-  // useEffect(() => void mixer.clipAction(gltf.animations[0], group.current).play(), [gltf.animations, mixer])
-
   useFrame((state, delta) => {
     if (group.current && nodes && animations) {
-      group.current.rotation.y += Math.sin((delta * factor) / 2) * Math.cos((delta * factor) / 2) * 1.5
+      group.current.rotation.y +=
+        Math.sin((delta * factor) / 2) * Math.cos((delta * factor) / 2) * 1.5
       mixer.update(delta * speed)
     }
   })

@@ -12,7 +12,7 @@ function SplitApp({ canvas, dom }) {
   return (
     <>
       <Helmet {...helmet} />
-      {dom && <div className='dom mx-auto'>{dom}</div>}
+      {dom && <div className='mx-auto dom'>{dom}</div>}
       <LCanvas>{canvas && <group>{canvas}</group>}</LCanvas>
       <Preload />
     </>
