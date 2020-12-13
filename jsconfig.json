@@ -1,3 +1,4 @@
+// @js-ignore
 {
   "compilerOptions": {
     "module": "commonjs",

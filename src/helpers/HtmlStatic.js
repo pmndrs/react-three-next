@@ -2,7 +2,14 @@
 import _extends from '@babel/runtime/helpers/esm/extends'
 import _objectWithoutPropertiesLoose from '@babel/runtime/helpers/esm/objectWithoutPropertiesLoose'
 
-import { useEffect, forwardRef, useState, useRef, useMemo, createElement } from 'react'
+import {
+  useEffect,
+  forwardRef,
+  useState,
+  useRef,
+  useMemo,
+  createElement,
+} from 'react'
 import { unmountComponentAtNode, render as ReactDomRender } from 'react-dom'
 
 const HtmlStatic = forwardRef((_ref, ref) => {
