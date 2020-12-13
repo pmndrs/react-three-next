@@ -1,5 +1,7 @@
 #### Todo :
 
+Create a module repo : https://github.com/RenaudRohlinger/r3f-next-helpers
+
 - [ ] [Add a switch helper to toggle dark mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
 - [ ] Add draco && gltfjsx example
 - [ ] Add Vector3().lerp() && lerpVectors() examples

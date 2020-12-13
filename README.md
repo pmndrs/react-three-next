@@ -74,7 +74,7 @@ export default Page
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
 - [drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
 
-#### [:hammer_and_wrench: Todo list](https://github.com/RenaudROHLINGER/r3f-next-starter/TODO.md)
+#### [:hammer_and_wrench: Todo list](https://github.com/RenaudRohlinger/r3f-next-starter/blob/main/TODO.md)
 
 ### Contributors :
 
