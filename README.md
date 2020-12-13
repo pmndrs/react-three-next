@@ -1,5 +1,7 @@
 # React Three Fiber + Next ES6 starter
 
+The main strength of this architecture is that it will automatically pick the R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
+
 ## Demo :
 
 [https://r3f-next-starter.vercel.app/](https://r3f-next-starter.vercel.app/)
@@ -26,11 +28,11 @@ npx create-r3f-app next my-app <tailwind?|sass?>
 - Customizable loading
 - Support glsl, images and svg imports
 - PWA Support
-- Dynamic meta data and header using Helmet <-- Make to a helper/module
+- Dynamic meta data and header using Helmet
 
 ### Architecture
 
-You just need to page that the component is a Threejs component. For that simply add the r3f prop and that's it!
+You just need to inform the nextjs page that the component is a Threejs component. For that simply add the r3f prop and that's it!
 
 ```
 const Page = () => {
@@ -40,6 +42,7 @@ const Page = () => {
       {/* Simply add the r3f prop to the parent component -> */}
       <Group r3f />
       <h2>Bonjour.</h2>
+      <MeshComponent r3f />
     </>
   )
 }
@@ -73,11 +76,8 @@ export default Page
 #### Todo :
 
 - Add a switch helper to toggle dark mode : https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
-- App.js more flex to accept dom or canvas as optional
-- Complex nested routes and layouts
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
-
 - add another repo for modules -->
 - [module middle] Add custom middleware to access backend data + ENV files
 - [module auth] Manage auth on routes for login
