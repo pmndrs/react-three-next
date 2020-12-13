@@ -20,9 +20,15 @@ This starter will automatically pick the marked R3F components and inject them i
 
 _Tailwind is the default_
 
-`bash yarn create r3f-app next my-app <tailwind?|sass?> `
+```sh
+bash yarn create r3f-app next my-app <tailwind?|sass?>
+```
+
 or
-`bash npx create-r3f-app next my-app <tailwind?|sass?> `
+
+```sh
+bash npx create-r3f-app next my-app <tailwind?|sass?>
+```
 
 ### :mount_fuji: Features
 
@@ -64,18 +70,18 @@ export default Page
 
 ### :mag_right: Stack
 
-- Es6
-- Nextjs
-- Eslint
-- Babel
-- Tailwind
-- Prettier
-- Husky
-- Helmet
 - [Threejs](https://github.com/mrdoob/three.js/): A lightweight, 3D library with a default WebGL renderer.
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
 - [drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
-- Post processing
-- React Devices Detect
 
-### [:hammer_and_wrench: Todo list](https://github.com/RenaudROHLINGER/r3f-next-starter/TODO.md)
+#### [:hammer_and_wrench: Todo list](https://github.com/RenaudROHLINGER/r3f-next-starter/TODO.md)
+
+###Contributors :
+All contributions are welcome !
+
+```jsx
+git clone https://github.com/RenaudRohlinger/r3f-next-starter && cd r3f-next-starter && yarn install
+// then push using the terminal to trigger Husky
+```
+
+Contributors will be automatically added using [allcontributors.org](https://allcontributors.org/)
