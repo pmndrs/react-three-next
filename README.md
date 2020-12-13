@@ -76,7 +76,8 @@ export default Page
 
 #### [:hammer_and_wrench: Todo list](https://github.com/RenaudROHLINGER/r3f-next-starter/TODO.md)
 
-###Contributors :
+### Contributors :
+
 All contributions are welcome !
 
 ```jsx
