@@ -21,13 +21,13 @@ This starter will automatically pick the marked R3F components and inject them i
 _Tailwind is the default_
 
 ```sh
-bash yarn create r3f-app next my-app <tailwind?|sass?>
+yarn create r3f-app next my-app <tailwind?|sass?>
 ```
 
 or
 
 ```sh
-bash npx create-r3f-app next my-app <tailwind?|sass?>
+npx create-r3f-app next my-app <tailwind?|sass?>
 ```
 
 ### :mount_fuji: Features
