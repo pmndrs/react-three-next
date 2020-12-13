@@ -1,10 +1,6 @@
 [![Lighthouse Global](https://ghcdn.rawgit.org/RenaudRohlinger/r3f-next-starter/main/public/img/scores/lighthouse.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse SEO](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_seo.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse Accessibility](https://ghcdn.rawgit.org/RenaudRohlinger/r3f-next-starter/main/public/img/scores/lighthouse_accessibility.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse Best Practices](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_best-practices.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse PWA](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_pwa.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse Performance](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_performance.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-![David](https://img.shields.io/david/RenaudRohlinger/r3f-next-starter)
+[![dependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter)
+[![devDependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/dev-status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter?type=dev)
 
 # React Three Fiber + Next ES6 starter
 
