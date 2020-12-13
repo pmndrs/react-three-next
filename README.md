@@ -1,7 +1,10 @@
 [![Lighthouse Global](https://ghcdn.rawgit.org/RenaudRohlinger/r3f-next-starter/main/public/img/scores/lighthouse.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
 [![dependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter)
 [![devDependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/dev-status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter?type=dev)
+![GitHub all releases](https://img.shields.io/github/downloads/renaudrohlinger/r3f-next-starter/total)
 ![npm](https://img.shields.io/npm/dw/create-r3f-app?color=%233792cb)
+
+_13/12/2020 First stable release :tada:_
 
 # :japanese_castle: Next & React three fiber starter
 
@@ -15,17 +18,11 @@ This starter will automatically pick the marked R3F components and inject them i
 
 #### Installation
 
-Tailwind is the default
+_Tailwind is the default_
 
-```bash
-yarn create r3f-app next my-app <tailwind?|sass?>
-```
-
+`bash yarn create r3f-app next my-app <tailwind?|sass?> `
 or
-
-```bash
-npx create-r3f-app next my-app <tailwind?|sass?>
-```
+`bash npx create-r3f-app next my-app <tailwind?|sass?> `
 
 ### :mount_fuji: Features
 
@@ -40,9 +37,9 @@ npx create-r3f-app next my-app <tailwind?|sass?>
 
 ### :bullettrain_side: Architecture
 
-You just need to inform the nextjs page that the component is a Threejs component. For that simply add the r3f prop and that's it!
+Inform the nextjs page that the component is a Threejs component. For that, simply add the **r3f** property to the parent component.
 
-```
+```jsx
 const Page = () => {
   return (
     <>
