@@ -81,7 +81,8 @@ export default Page
 All contributions are welcome !
 
 ```jsx
-git clone https://github.com/RenaudRohlinger/r3f-next-starter && cd r3f-next-starter && yarn install
+git clone https://github.com/RenaudRohlinger/r3f-next-starter
+&& cd r3f-next-starter && yarn install
 // then push using the terminal to trigger Husky
 ```
 
