@@ -1,8 +1,8 @@
-[![Lighthouse Accessibility](https://rawgit.com/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_accessibility.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse Best Practices](https://rawgit.com/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_best-practices.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse Performance](https://rawgit.com/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_performance.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse PWA](https://rawgit.com/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_pwa.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
-[![Lighthouse SEO](https://rawgit.com/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_seo.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
+[![Lighthouse Accessibility](https://ghcdn.rawgit.org/RenaudRohlinger/r3f-next-starter/main/public/img/scores/lighthouse_accessibility.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
+[![Lighthouse Best Practices](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_best-practices.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
+[![Lighthouse Performance](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_performance.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
+[![Lighthouse PWA](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_pwa.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
+[![Lighthouse SEO](https://ghcdn.rawgit.org/RenaudROHLINGER/r3f-next-starter/main/public/img/scores/lighthouse_seo.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
 ![David](https://img.shields.io/david/RenaudRohlinger/r3f-next-starter)
 
 # React Three Fiber + Next ES6 starter
