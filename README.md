@@ -68,7 +68,7 @@ export default Page
 - Prettier
 - Husky
 - Helmet
-- [Threejs](https://github.com/mrdoob/three.js/): A lightweight, 3D library with a default WebGL renderer. The library also provides Canvas 2D, SVG and CSS3D - renderers in the examples.
+- [Threejs](https://github.com/mrdoob/three.js/): A lightweight, 3D library with a default WebGL renderer.
 - [react-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
 - [drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
 - Post processing
@@ -76,14 +76,14 @@ export default Page
 
 #### Todo :
 
-- Add a switch helper to toggle dark mode : https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
+- [Add a switch helper to toggle dark mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
 - Add draco && gltfjsx example
 - Add Vector3().lerp() && lerpVectors() examples
 - add another repo for modules -->
 - [module middle] Add custom middleware to access backend data + ENV files
 - [module auth] Manage auth on routes for login
 - [module gui] Custom GUI in dev mod https://github.com/cocopon/tweakpane
-- [module scroll] enable dom events + share events between main dom and canvas + useScroll and useGesture by default
+- [module scroll] enable dom events + share events between main dom and canvas + useScroll
 
 - v2 - Prefetch assets
 - v2 - Update architecture based on sharing materials && geos
