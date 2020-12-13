@@ -62,7 +62,7 @@ function Preload() {
       style={{ opacity: opacity, transform: transform }}
       className='loader'
     >
-      <div className='pointer-events-none absolute w-full h-full mx-auto flex items-center justify-center flex-col z-20'>
+      <div className='absolute z-20 flex flex-col items-center justify-center w-full h-full mx-auto pointer-events-none'>
         <Progress />
         <span className='text-gray-800 dark:text-gray-50'>
           {Math.round(progress * 10) / 10}

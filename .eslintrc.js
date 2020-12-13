@@ -1,6 +1,6 @@
 // @js-ignore
 module.exports = {
-  extends: ['plugin:react/recommended', 'react-app', 'plugin:prettier/recommended'],
+  extends: ['plugin:react/recommended', 'react-app', 'plugin:prettier/recommended', 'plugin:tailwind/recommended'],
   rules: {
     'react/prop-types': 'off',
     // 'react/jsx-indent': [2, 'first', { checkAttributes: false }],

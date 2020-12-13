@@ -1,8 +1,8 @@
-// import favicon from './assets/images/favicon.png'
 import share from './assets/images/share.png'
 
-const title = 'R3F Next Starter'
-const description = 'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
+const title = 'Threejs Next Starter'
+const description =
+  'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
 
 export const helmet = {
   title,
@@ -37,13 +37,30 @@ export const helmet = {
     { name: 'theme-color', content: '#ffffff' },
   ],
   link: [
-    // { rel: 'icon', type:  'image/x-icon', href:  favicon },
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
-    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon-32x32.png' },
-    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/favicon-16x16.png' },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/icons/apple-touch-icon.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/icons/favicon-32x32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/icons/favicon-16x16.png',
+    },
     { rel: 'manifest', href: '/manifest.json' },
-    { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#5bbad5' },
+    {
+      rel: 'mask-icon',
+      href: '/icons/safari-pinned-tab.svg',
+      color: '#5bbad5',
+    },
     { rel: 'shortcut icon', href: '/favicon.ico' },
   ],
 }

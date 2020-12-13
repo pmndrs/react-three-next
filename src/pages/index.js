@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 
 const BoxesDom = () => {
   return (
-    <h1 className='absolute p-2 text-3xl z-10 w-full mx-auto text-center text-gray-900 dark:text-gray-100'>
+    <h1 className='absolute z-10 w-full p-2 mx-auto text-3xl text-center text-gray-900 dark:text-gray-100'>
       R3F Next Starter - Click on a box to navigate
     </h1>
   )
@@ -29,15 +29,7 @@ const BoxGroup = () => {
     </group>
   )
 }
-const BoxGroup2 = () => {
-  return (
-    <group position={[0, 0, -10]}>
-      <MyBox position={[5, 0, -5]} />
-    </group>
-  )
-}
 
-// canvas is required and dom is optional
 const Page = () => {
   useStore.setState({ loading: false })
   return (
