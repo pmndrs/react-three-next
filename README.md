@@ -29,6 +29,7 @@ npx create-r3f-app next my-app <tailwind?|sass?>
 - Support glsl, images and svg imports
 - PWA Support
 - Dynamic meta data and header using Helmet
+- Clean code using ESlint, Prettier and Husky
 
 ### Architecture
 
