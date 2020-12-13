@@ -1,18 +1,21 @@
 [![Lighthouse Global](https://ghcdn.rawgit.org/RenaudRohlinger/r3f-next-starter/main/public/img/scores/lighthouse.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
 [![dependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter)
 [![devDependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/dev-status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter?type=dev)
+![npm](https://img.shields.io/npm/dw/create-r3f-app?color=%233792cb)
 
-# React Three Fiber + Next ES6 starter
+# :japanese_castle: Next & React three fiber starter
 
-The main strength of this architecture is that it will automatically pick the R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
+This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
 
-## Demo :
+### :japan: Demo :
 
 [https://r3f-next-starter.vercel.app/](https://r3f-next-starter.vercel.app/)
 
-## How to use
+### How to use
 
-### Installation
+#### Installation
+
+Tailwind is the default
 
 ```bash
 yarn create r3f-app next my-app <tailwind?|sass?>
@@ -24,18 +27,18 @@ or
 npx create-r3f-app next my-app <tailwind?|sass?>
 ```
 
-## Features
+### :mount_fuji: Features
 
-- Concurrent mode with React experimental
-- Dark mode management
-- Automatically inject r3f component in the Canvas layout
-- Customizable loading
-- Support glsl, images and svg imports
-- PWA Support
-- Dynamic meta data and header using Helmet
-- Clean code using ESlint, Prettier and Husky
+- [x] Concurrent mode with React experimental
+- [x] Dark mode management
+- [x] Automatically inject r3f component in the Canvas layout
+- [x] Customizable loading
+- [x] Support glsl, images and svg imports
+- [x] PWA Support
+- [x] Dynamic meta data and header using Helmet
+- [x] Clean code using ESlint, Prettier and Husky
 
-### Architecture
+### :bullettrain_side: Architecture
 
 You just need to inform the nextjs page that the component is a Threejs component. For that simply add the r3f prop and that's it!
 
@@ -55,14 +58,14 @@ const Page = () => {
 export default Page
 ```
 
-## Available Scripts
+### :control_knobs: Available Scripts
 
 - yarn dev
 - yarn lint (Scripts)
 - yarn build
 - yarn start
 
-## Stack
+### :mag_right: Stack
 
 - Es6
 - Nextjs
@@ -78,25 +81,4 @@ export default Page
 - Post processing
 - React Devices Detect
 
-#### Todo :
-
-- [Add a switch helper to toggle dark mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
-- Add draco && gltfjsx example
-- Add Vector3().lerp() && lerpVectors() examples
-- add another repo for modules -->
-- [module middle] Add custom middleware to access backend data + ENV files
-- [module auth] Manage auth on routes for login
-- [module gui] Custom GUI in dev mod https://github.com/cocopon/tweakpane
-- [module scroll] enable dom events + share events between main dom and canvas + useScroll
-
-- v2 - Prefetch assets
-- v2 - Update architecture based on sharing materials && geos
-- v2 - Make bash scripts for git && deploy
-
-#### Deluxe Todo :
-
-- Camera custom tracker with 2 depth
-- Camera animation
-- Improve Blender python script with GUI
-- Blender + Camera.blend + Python scripts
-- Make bash script to automate blender
+### [:hammer_and_wrench: Todo list](https://github.com/RenaudROHLINGER/r3f-next-starter/TODO.md)
