@@ -1,6 +1,6 @@
 {
   "name": "r3f-next-starter",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "authors": [
     "Renaud ROHLINGER <hello@renaudrohlinger.com>"
   ],
@@ -82,7 +82,7 @@
     "raw-loader": "^4.0.2",
     "react": "0.0.0-experimental-4ead6b530",
     "react-device-detect": "^1.14.0",
-    "react-dom": "^17.0.1",
+    "react-dom": "0.0.0-experimental-4ead6b530",
     "react-helmet": "^6.1.0",
     "react-spring": "^9.0.0-rc.3",
     "react-three-fiber": "^5.3.10",
