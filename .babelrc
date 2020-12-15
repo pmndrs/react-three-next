@@ -3,7 +3,7 @@
     [
       "next/babel",
       {
-        "preset-env": { "targets": { "node": true } },
+        "preset-env": {},
         "transform-runtime": {},
         "styled-jsx": {},
         "class-properties": {}

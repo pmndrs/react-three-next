@@ -1,6 +1,6 @@
 {
   "name": "r3f-next-starter",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "authors": [
     "Renaud ROHLINGER <hello@renaudrohlinger.com>"
   ],
@@ -41,7 +41,7 @@
     "@babel/plugin-transform-react-jsx-compat": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
-    "@babel/runtime": "^7.12.1",
+    "@babel/runtime": "^7.12.5",
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/drei": "^2.2.10",
     "@react-three/postprocessing": "^1.5.0",
@@ -80,12 +80,12 @@
     "postprocessing": "^6.18.0",
     "prettier": "^2.2.1",
     "raw-loader": "^4.0.2",
-    "react": "^0.0.0-experimental-4ead6b530",
+    "react": "0.0.0-experimental-4ead6b530",
     "react-device-detect": "^1.14.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-spring": "^9.0.0-rc.3",
-    "react-three-fiber": "^5.3.7",
+    "react-three-fiber": "^5.3.10",
     "three": "^0.123.0",
     "use-dark-mode": "^2.3.1"
   },
