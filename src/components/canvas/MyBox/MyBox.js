@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { useFrame, extend } from 'react-three-fiber'
 import { a, useSpring } from '@react-spring/three'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useStore from '@/helpers/store'
 import { shaderMaterial } from '@react-three/drei'
 
@@ -20,10 +20,18 @@ const ColorShiftMaterial = shaderMaterial(
 extend({ ColorShiftMaterial })
 
 const MyBox = (props) => {
-  const mesh = useRef(false)
-  const materialRef = useRef(false)
+  const mesh = useRef()
+  const materialRef = useRef()
   const [hovered, setHover] = useState(false)
   const router = useStore((state) => state.router)
+
+  // temporary fix to prevent error -> keep track of our component's mounted state
+  const componentIsMounted = useRef(true)
+  useEffect(() => {
+    return () => {
+      componentIsMounted.current = false
+    }
+  }, []) // Using an empty dependency array ensures this on
 
   const { scale } = useSpring({ scale: hovered ? 7 : 5, from: { scale: 5 } })
 
@@ -45,7 +53,12 @@ const MyBox = (props) => {
         router.push(`/birds`)
       }}
       onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
+      onPointerOut={(e) => {
+        // temporary fix to prevent error -> keep track of our component's mounted state
+        if (componentIsMounted.current) {
+          setHover(false)
+        }
+      }}
       {...props}
     >
       <boxBufferGeometry args={[0.5, 0.5, 0.5]} />
