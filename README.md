@@ -71,8 +71,9 @@ export default Page
 ### :mag_right: Stack
 
 - [Threejs](https://github.com/mrdoob/three.js/): A lightweight, 3D library with a default WebGL renderer.
-- [react-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
-- [drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
+- [React-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
+- [Drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
+- [Tailwind](https://tailwindcss.com/docs): A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
 
 #### [:hammer_and_wrench: Todo list](https://github.com/RenaudRohlinger/r3f-next-starter/blob/main/TODO.md)
 
