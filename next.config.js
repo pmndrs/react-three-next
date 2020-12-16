@@ -11,7 +11,7 @@ const reactSvg = require('next-react-svg')
 const withTM = require('next-transpile-modules')([
   '@react-three/drei',
   'three',
-  'postprocessing',
+  '@react-three/postprocessing',
 ])
 const withPWA = require('next-pwa')
 
