@@ -1,3 +1,4 @@
+import * as React from 'react'
 import LCanvas from '@/components/canvas/_layout'
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
@@ -21,10 +22,9 @@ function SplitApp({ canvas, dom }) {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-  let comp = [...Component().props.children]
   let r3fArr = []
   let compArr = []
-  Children.forEach(comp, (child) => {
+  Children.forEach(Component().props.children, (child) => {
     if (child.props && child.props.r3f) {
       r3fArr.push(child)
     } else {
