@@ -3,9 +3,6 @@
 [![devDependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/dev-status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter?type=dev)
 ![GitHub all releases](https://img.shields.io/github/downloads/renaudrohlinger/r3f-next-starter/total)
 ![npm](https://img.shields.io/npm/dw/create-r3f-app?color=%233792cb)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _13/12/2020 First stable release :tada:_
 
@@ -81,6 +78,9 @@ export default Page
 #### [:hammer_and_wrench: Todo list](https://github.com/RenaudRohlinger/r3f-next-starter/blob/main/TODO.md)
 
 ### Contributors :
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 All contributions are welcome !
 
