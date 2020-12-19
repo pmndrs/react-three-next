@@ -1,4 +1,3 @@
-import * as React from 'react'
 import LCanvas from '@/components/canvas/_layout'
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
