@@ -4,7 +4,7 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/renaudrohlinger/r3f-next-starter/total)
 ![npm](https://img.shields.io/npm/dw/create-r3f-app?color=%233792cb)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 _13/12/2020 First stable release :tada:_
@@ -102,6 +102,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/jhsu"><img src="https://avatars1.githubusercontent.com/u/648?v=4" width="100px;" alt=""/><br /><sub><b>Joe Hsu</b></sub></a><br /><a href="https://github.com/RenaudRohlinger/r3f-next-starter/commits?author=jhsu" title="Code">💻</a></td>
+    <td align="center"><a href="http://codepen.io/alaricweb/"><img src="https://avatars2.githubusercontent.com/u/7174039?v=4" width="100px;" alt=""/><br /><sub><b>Alaric.Baraou</b></sub></a><br /><a href="https://github.com/RenaudRohlinger/r3f-next-starter/commits?author=AlaricBaraou" title="Code">💻</a></td>
   </tr>
 </table>
 
