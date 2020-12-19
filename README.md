@@ -1,4 +1,7 @@
 [![Lighthouse Global](https://ghcdn.rawgit.org/RenaudRohlinger/r3f-next-starter/main/public/img/scores/lighthouse.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![dependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter)
 [![devDependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/dev-status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter?type=dev)
 ![GitHub all releases](https://img.shields.io/github/downloads/renaudrohlinger/r3f-next-starter/total)
@@ -88,3 +91,22 @@ git clone https://github.com/RenaudRohlinger/r3f-next-starter
 ```
 
 Contributors will be automatically added using [allcontributors.org](https://allcontributors.org/)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/jhsu"><img src="https://avatars1.githubusercontent.com/u/648?v=4" width="100px;" alt=""/><br /><sub><b>Joe Hsu</b></sub></a><br /><a href="https://github.com/RenaudRohlinger/r3f-next-starter/commits?author=jhsu" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

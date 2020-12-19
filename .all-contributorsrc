@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "jhsu",
+      "name": "Joe Hsu",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/648?v=4",
+      "profile": "https://github.com/jhsu",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "r3f-next-starter",
+  "projectOwner": "RenaudRohlinger",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
