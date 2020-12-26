@@ -28,7 +28,6 @@ const Header = () => {
         <meta name='robots' content='index,follow' />
         <meta name='revisit-after' content='7 days' />
         <meta name='distribution' content='web' />
-        <meta name='robots' content='noodp' />
 
         <meta name='og:title' content={title} />
         <meta name='og:type' content='site' />
