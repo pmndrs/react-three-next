@@ -21,7 +21,7 @@ const LCanvas = ({ children }) => {
       }}
       gl={{
         powerPreference: 'high-performance',
-        antialias: false,
+        antialias: true,
         stencil: false,
         depth: false,
         alpha: false,

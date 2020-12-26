@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import * as THREE from 'three'
 import { useFrame } from 'react-three-fiber'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei/useGLTF'
 
 const Bird = ({ speed, factor, url, ...props }) => {
   const { nodes, materials, animations } = useGLTF(url)

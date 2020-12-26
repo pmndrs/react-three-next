@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useSpring, a } from 'react-spring'
-import { useProgress } from '@react-three/drei'
+// import { useSpring, a } from 'react-spring'
+import { useProgress } from '@react-three/drei/useProgress'
 import useStore from '@/helpers/store'
 
 function ProgressRing({ radius, stroke, progress }) {
@@ -51,15 +51,16 @@ function PreloadRing() {
 
 function Preload() {
   const show = useStore((state) => state.loading)
-  const { opacity, transform } = useSpring({
-    to: { opacity: show ? 1 : 0 },
-    from: { opacity: 0 },
-  })
+  // const { opacity, transform } = useSpring({
+  //   to: { opacity: show ? 1 : 0 },
+  //   from: { opacity: 0 },
+  // })
   const progress = useProgress((state) => state.progress)
 
   return (
-    <a.div
-      style={{ opacity: opacity, transform: transform }}
+    <div
+      // style={{ opacity: opacity, transform: transform }}
+      style={{ opacity: show ? 1 : 0 }}
       className='loader'
     >
       <div className='absolute z-20 flex flex-col items-center justify-center w-full h-full mx-auto pointer-events-none'>
@@ -68,7 +69,7 @@ function Preload() {
           {Math.round(progress * 10) / 10}
         </span>
       </div>
-    </a.div>
+    </div>
   )
 }
 

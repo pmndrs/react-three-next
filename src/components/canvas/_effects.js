@@ -1,6 +1,6 @@
-import { ContactShadows } from '@react-three/drei'
+// import { ContactShadows } from '@react-three/drei'
 import { useFrame, useThree } from 'react-three-fiber'
-import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
+// import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 import useDarkMode from 'use-dark-mode'
 import * as THREE from 'three'
 
@@ -22,7 +22,7 @@ const Effects = () => {
     <>
       <fog attach='fog' args={[darkMode ? 0x111827 : 0xf9fafb, 60, 70]} />
       {/* <directionalLight castShadow position={[2.5, 12, 12]} intensity={1} /> */}
-      <ContactShadows
+      {/* <ContactShadows
         rotation={[Math.PI / 2, 0, 0]}
         position={[0, -8, 0]}
         opacity={0.75}
@@ -35,7 +35,7 @@ const Effects = () => {
         <Noise opacity={0.02} />
         <Vignette eskil={false} offset={0.1} darkness={0.4} />
       </EffectComposer>
-      <Rig />
+      <Rig /> */}
     </>
   )
 }
