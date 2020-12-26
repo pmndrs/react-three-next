@@ -1,12 +1,13 @@
 import { Suspense } from 'react'
 import BackButton from '@/components/dom/back/back'
 import useStore from '@/helpers/store'
-// import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 // import Bird from '@/components/canvas/Bird/Bird'
-// import dynamic from 'next/dynamic'
-// const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), {
-//   ssr: false,
-// })
+
+import dynamic from 'next/dynamic'
+const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), {
+  ssr: false,
+})
 
 const Birds = () => {
   return new Array(5).fill().map((_, i) => {
@@ -23,15 +24,14 @@ const Birds = () => {
         : 1 + Math.random() - 0.5
 
     return (
-      // <Bird
-      //   key={i}
-      //   position={[x, y, z]}
-      //   rotation={[0, x > 0 ? Math.PI : 0, 0]}
-      //   speed={speed}
-      //   factor={factor}
-      //   url={`/glb/${bird}.glb`}
-      // />
-      <></>
+      <Bird
+        key={i}
+        position={[x, y, z]}
+        rotation={[0, x > 0 ? Math.PI : 0, 0]}
+        speed={speed}
+        factor={factor}
+        url={`/glb/${bird}.glb`}
+      />
     )
   })
 }
@@ -51,7 +51,9 @@ const Canvas = () => {
 const Dom = () => {
   return (
     <div>
-      {/* <Helmet title={'Oiseaux'} /> */}
+      <Head>
+        <title>Oiseaux</title>
+      </Head>
       <BackButton />
       <h1>BIRDS DOM</h1>
     </div>

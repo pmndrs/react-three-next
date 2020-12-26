@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import * as THREE from 'three'
-import { useFrame } from 'react-three-fiber'
+import { useFrame, useLoader } from 'react-three-fiber'
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useGLTF } from '@react-three/drei/useGLTF'
 
 const Bird = ({ speed, factor, url, ...props }) => {
@@ -12,8 +13,6 @@ const Bird = ({ speed, factor, url, ...props }) => {
 
   useEffect(() => {
     if (animations.length > 0 && Object.keys(animations[0]).length > 0) {
-      console.log(animations)
-
       actions.current = {
         animation_0: mixer.clipAction(animations[0], group.current).play(),
       }

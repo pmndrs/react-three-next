@@ -1,24 +1,23 @@
 import * as THREE from 'three'
 import { useFrame, extend } from 'react-three-fiber'
-// import { a, useSpring } from '@react-spring/three'
+import { a, useSpring } from '@react-spring/three'
 import { useEffect, useRef, useState } from 'react'
 import useStore from '@/helpers/store'
-// import { shaderMaterial } from '@react-three/drei/shaderMaterial'
-// import { shaderMaterial } from '@react-three/drei/shaderMaterial'
+import { shaderMaterial } from '@react-three/drei/shaderMaterial'
 
 import fragment from './glsl/MyBox.frag'
 import vertex from './glsl/MyBox.vert'
 
-// const ColorShiftMaterial = shaderMaterial(
-//   {
-//     time: 0,
-//     color: new THREE.Color(0.05, 0.0, 0.025),
-//   },
-//   vertex,
-//   fragment
-// )
+const ColorShiftMaterial = shaderMaterial(
+  {
+    time: 0,
+    color: new THREE.Color(0.05, 0.0, 0.025),
+  },
+  vertex,
+  fragment
+)
 
-// extend({ ColorShiftMaterial })
+extend({ ColorShiftMaterial })
 
 const MyBox = (props) => {
   const mesh = useRef()
@@ -34,23 +33,22 @@ const MyBox = (props) => {
     }
   }, []) // Using an empty dependency array ensures this on
 
-  // const { scale } = useSpring({ scale: hovered ? 7 : 5, from: { scale: 5 } })
+  const { scale } = useSpring({ scale: hovered ? 7 : 5, from: { scale: 5 } })
 
   useFrame((state, delta) => {
     if (mesh.current) {
       mesh.current.rotation.x = mesh.current.rotation.y += 0.01
     }
-    // if (materialRef.current) {
-    //   materialRef.current.uniforms.time.value +=
-    //     Math.sin(delta / 2) * Math.cos(delta / 2)
-    // }
+    if (materialRef.current) {
+      materialRef.current.uniforms.time.value +=
+        Math.sin(delta / 2) * Math.cos(delta / 2)
+    }
   })
 
   return (
-    <mesh
+    <a.mesh
       ref={mesh}
-      // scale={scale.to((s) => [s, s, s])}
-      scale={[5, 5, 5]}
+      scale={scale.to((s) => [s, s, s])}
       onClick={() => {
         router.push(`/birds`)
       }}
@@ -64,9 +62,8 @@ const MyBox = (props) => {
       {...props}
     >
       <boxBufferGeometry args={[0.5, 0.5, 0.5]} />
-      {/* <meshBasicMaterial ref={materialRef} color={0xffffff} /> */}
-      {/* <colorShiftMaterial ref={materialRef} attach='material' time={3} /> */}
-    </mesh>
+      <colorShiftMaterial ref={materialRef} attach='material' time={3} />
+    </a.mesh>
   )
 }
 

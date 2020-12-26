@@ -1,6 +1,11 @@
 import useStore from '@/helpers/store'
-import MyBox from '@/components/canvas/MyBox/MyBox'
-// import { Helmet } from 'react-helmet'
+// import MyBox from '@/components/canvas/MyBox/MyBox'
+import Head from 'next/head'
+
+import dynamic from 'next/dynamic'
+const MyBox = dynamic(() => import('@/components/canvas/MyBox/MyBox'), {
+  ssr: false,
+})
 
 const BoxesDom = () => {
   return (
@@ -13,7 +18,9 @@ const BoxesDom = () => {
 const Dom = () => {
   return (
     <>
-      {/* <Helmet title={'Welcome'} /> */}
+      <Head>
+        <title>Welcome</title>
+      </Head>
       <BoxesDom />
     </>
   )

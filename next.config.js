@@ -7,7 +7,6 @@ const images = require('next-images')
 const videos = require('next-videos')
 const fonts = require('next-fonts')
 const reactSvg = require('next-react-svg')
-const webpack = require('webpack')
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -32,32 +31,34 @@ const nextConfig = {
   webpack(config) {
     config.plugins = config.plugins || []
 
-    config.resolve.alias['three'] = path.resolve(
-      __dirname,
-      '.',
-      'node_modules',
-      'three'
-    )
+    // config.resolve.alias['three'] = path.resolve(
+    //   __dirname,
+    //   '.',
+    //   'node_modules',
+    //   'three'
+    // )
 
-    config.resolve.alias['@react-three/drei'] = path.resolve(
-      __dirname,
-      '.',
-      'node_modules',
-      '@react-three/drei'
-    )
+    // config.resolve.alias['@react-three/drei'] = path.resolve(
+    //   __dirname,
+    //   '.',
+    //   'node_modules',
+    //   '@react-three/drei'
+    // )
 
-    config.plugins.push(
-      new DuplicatePackageCheckerPlugin({
-        verbose: true,
-        strict: true,
-      })
-    )
-    config.plugins.push(
-      new webpack.NormalModuleReplacementPlugin(
-        /three.module.js/,
-        path.resolve('src/utils/three.js')
-      )
-    )
+    // config.plugins.push(
+    //   new DuplicatePackageCheckerPlugin({
+    //     verbose: false,
+    //     strict: true,
+    //   })
+    // )
+
+    // if you want to do a custom build to reduce the size of threejs
+    // config.plugins.push(
+    //   new webpack.NormalModuleReplacementPlugin(
+    //     /three.module.js/,
+    //     path.resolve('src/utils/three_minimal.js')
+    //   )
+    // )
 
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
