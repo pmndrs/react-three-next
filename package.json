@@ -32,6 +32,7 @@
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "next": "^10.0.3",
+    "next-offline": "^5.0.3",
     "nodemon": "^2.0.6",
     "postcss": "^8.2.1",
     "replace-in-file": "^6.1.0"
@@ -87,7 +88,7 @@
     "react-spring": "^9.0.0-rc.3",
     "react-three-fiber": "^5.3.10",
     "tailwindcss": "^2.0.2",
-    "three": "^0.124.0",
+    "three": "0.123.0",
     "use-dark-mode": "^2.3.1"
   },
   "license": "MIT"

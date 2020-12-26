@@ -3,7 +3,7 @@ import { useFrame, extend } from 'react-three-fiber'
 import { a, useSpring } from '@react-spring/three'
 import { useEffect, useRef, useState } from 'react'
 import useStore from '@/helpers/store'
-import { shaderMaterial } from '@react-three/drei/shaderMaterial'
+import { shaderMaterial } from '@react-three/drei'
 
 import fragment from './glsl/MyBox.frag'
 import vertex from './glsl/MyBox.vert'

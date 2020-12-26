@@ -1,4 +1,4 @@
-import { ContactShadows } from '@react-three/drei/ContactShadows'
+import { ContactShadows } from '@react-three/drei'
 import { useFrame, useThree } from 'react-three-fiber'
 import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 import useDarkMode from 'use-dark-mode'

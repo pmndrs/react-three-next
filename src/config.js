@@ -11,7 +11,7 @@ const Header = () => {
     <>
       <Head>
         {/* Recommended Meta Tags */}
-        <meta charset='utf-8' />
+        <meta charSet='utf-8' />
         <meta name='language' content='english' />
         <meta httpEquiv='content-type' content='text/html' />
         <meta name='author' content='Renaud ROHLINGER' />
@@ -63,7 +63,7 @@ const Header = () => {
 
         {/* Meta Tags for HTML pages on Mobile */}
         {/* <meta name="format-detection" content="telephone=yes"/>
-      <meta name="HandheldFriendly" content="true"/>  */}
+        <meta name="HandheldFriendly" content="true"/>  */}
         <meta
           name='viewport'
           content='width=device-width, minimum-scale=1, initial-scale=1.0'

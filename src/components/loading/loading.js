@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSpring, a } from 'react-spring'
-import { useProgress } from '@react-three/drei/useProgress'
+import { useProgress } from '@react-three/drei'
 import useStore from '@/helpers/store'
 
 function ProgressRing({ radius, stroke, progress }) {

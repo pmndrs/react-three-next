@@ -11,6 +11,10 @@ const reactSvg = require('next-react-svg')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
+const withOffline = require('next-offline')
+
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin')
 
 const withTM = require('next-transpile-modules')(
@@ -22,7 +26,6 @@ const withTM = require('next-transpile-modules')(
   ],
   { debug: false, resolveSymlinks: true }
 )
-const withPWA = require('next-pwa')
 
 const prod = process.env.NODE_ENV === 'production'
 
@@ -75,7 +78,40 @@ module.exports = plugins(
     [reactSvg, { include: path.resolve(__dirname, 'src/assets/svg') }],
     fonts,
     videos,
-    [withPWA, { pwa: { disable: prod ? false : true, dest: 'public' } }],
+    // [
+    //   withPWA,
+    //   { pwa: { runtimeCaching, disable: prod ? false : true, dest: 'public' } },
+    // ],
+    [
+      withOffline,
+      {
+        workboxOpts: {
+          swDest: process.env.NEXT_EXPORT
+            ? 'service-worker.js'
+            : 'static/service-worker.js',
+          runtimeCaching: [
+            {
+              urlPattern: /^https?.*/,
+              handler: 'NetworkFirst',
+              options: {
+                cacheName: 'offlineCache',
+                expiration: {
+                  maxEntries: 200,
+                },
+              },
+            },
+          ],
+        },
+        async rewrites() {
+          return [
+            {
+              source: '/service-worker.js',
+              destination: '/_next/static/service-worker.js',
+            },
+          ]
+        },
+      },
+    ],
     withBundleAnalyzer,
     withTM,
   ],
