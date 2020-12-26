@@ -1,8 +1,8 @@
 import { Suspense } from 'react'
 import { Canvas, useFrame, useThree } from 'react-three-fiber'
 import * as THREE from 'three'
-import { ContactShadows } from '@react-three/drei'
-import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
+// import { ContactShadows } from '@react-three/drei'
+// import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 import useDarkMode from 'use-dark-mode'
 
 const Rig = () => {
@@ -27,7 +27,7 @@ const CanvasTemplateAdds = () => {
         intensity={0.5}
       />
       {/* <directionalLight castShadow position={[2.5, 12, 12]} intensity={1} /> */}
-      <ContactShadows
+      {/* <ContactShadows
         rotation={[Math.PI / 2, 0, 0]}
         position={[0, -8, 0]}
         opacity={0.75}
@@ -35,11 +35,11 @@ const CanvasTemplateAdds = () => {
         height={140}
         blur={1}
         far={9}
-      />
-      <EffectComposer>
+      /> */}
+      {/* <EffectComposer>
         <Noise opacity={0.02} />
         <Vignette eskil={false} offset={0.1} darkness={0.4} />
-      </EffectComposer>
+      </EffectComposer> */}
       <Rig />
     </>
   )

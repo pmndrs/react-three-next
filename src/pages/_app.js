@@ -3,15 +3,15 @@ import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
 import { useEffect, Children } from 'react'
 import Preload from '@/components/loading/loading'
-import { Helmet } from 'react-helmet'
-import { helmet } from '../config'
+// import { Helmet } from 'react-helmet'
+// import { helmet } from '../config'
 
 import '../assets/styles/globals.css'
 
 function SplitApp({ canvas, dom }) {
   return (
     <>
-      <Helmet {...helmet} />
+      {/* <Helmet {...helmet} /> */}
       {dom && <div className='mx-auto dom'>{dom}</div>}
       <LCanvas>{canvas && <group>{canvas}</group>}</LCanvas>
       <Preload />

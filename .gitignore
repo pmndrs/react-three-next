@@ -35,3 +35,5 @@ yarn-error.log*
 
 # prefer yarn than npm
 package-lock.json
+
+report.*.json

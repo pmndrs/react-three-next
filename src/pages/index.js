@@ -1,6 +1,6 @@
 import useStore from '@/helpers/store'
 import MyBox from '@/components/canvas/MyBox/MyBox'
-import { Helmet } from 'react-helmet'
+// import { Helmet } from 'react-helmet'
 
 const BoxesDom = () => {
   return (
@@ -13,7 +13,7 @@ const BoxesDom = () => {
 const Dom = () => {
   return (
     <>
-      <Helmet title={'Welcome'} />
+      {/* <Helmet title={'Welcome'} /> */}
       <BoxesDom />
     </>
   )
