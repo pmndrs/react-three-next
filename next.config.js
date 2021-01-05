@@ -34,11 +34,11 @@ const nextConfig = {
   webpack(config) {
     config.plugins = config.plugins || []
     if (prod) {
-      // config.plugins.unshift(threeMinifier)
-      // config.resolve.plugins.unshift(threeMinifier.resolver)
+      config.plugins.unshift(threeMinifier)
+      config.resolve.plugins.unshift(threeMinifier.resolver)
       if (config.optimization.splitChunks.cacheGroups) {
         config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|three|scheduler|prop-types|use-subscription)[\\/]/
-        config.optimization.splitChunks.maxSize = 800000
+        config.optimization.splitChunks.maxSize = 200000
       }
     }
 
