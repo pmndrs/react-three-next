@@ -24,7 +24,7 @@ const withTM = require('next-transpile-modules')(
     '@react-three/drei',
     // 'postprocessing',
   ],
-  { debug: false, resolveSymlinks: false }
+  { debug: false, resolveSymlinks: true }
 )
 
 const prod = process.env.NODE_ENV === 'production'
@@ -33,15 +33,14 @@ const nextConfig = {
   // target: 'serverless',
   webpack(config) {
     config.plugins = config.plugins || []
-    // if (prod) {
-    if (config.optimization.splitChunks.cacheGroups) {
-      config.plugins.unshift(threeMinifier)
-      config.resolve.plugins.unshift(threeMinifier.resolver)
-      config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|three|scheduler|prop-types|use-subscription)[\\/]/
-      config.optimization.splitChunks.maxSize = 300000
+    if (prod) {
+      // config.plugins.unshift(threeMinifier)
+      // config.resolve.plugins.unshift(threeMinifier.resolver)
+      if (config.optimization.splitChunks.cacheGroups) {
+        config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|three|scheduler|prop-types|use-subscription)[\\/]/
+        config.optimization.splitChunks.maxSize = 800000
+      }
     }
-
-    // }
 
     // config.resolve.alias['three'] = path.resolve(
     //   __dirname,
