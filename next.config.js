@@ -7,24 +7,24 @@ const images = require('next-images')
 const videos = require('next-videos')
 const fonts = require('next-fonts')
 const reactSvg = require('next-react-svg')
-
+const webpack = require('webpack')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
-const withOffline = require('next-offline')
 
-const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin')
+const ThreeMinifierPlugin = require('@yushijinhun/three-minifier-webpack')
+const threeMinifier = new ThreeMinifierPlugin()
+
+const withOffline = require('next-offline')
 
 const withTM = require('next-transpile-modules')(
   [
     'three',
     '@react-three/postprocessing',
     '@react-three/drei',
-    'postprocessing',
+    // 'postprocessing',
   ],
-  { debug: false, resolveSymlinks: true }
+  { debug: false, resolveSymlinks: false }
 )
 
 const prod = process.env.NODE_ENV === 'production'
@@ -33,6 +33,17 @@ const nextConfig = {
   // target: 'serverless',
   webpack(config) {
     config.plugins = config.plugins || []
+    config.plugins.unshift(threeMinifier)
+    config.resolve.plugins.unshift(threeMinifier.resolver)
+    // if (prod) {
+    if (config.optimization.splitChunks.cacheGroups) {
+      console.log(config.optimization.splitChunks.cacheGroups)
+
+      config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|three|scheduler|prop-types|use-subscription)[\\/]/
+      config.optimization.splitChunks.maxSize = 60000
+    }
+
+    // }
 
     // config.resolve.alias['three'] = path.resolve(
     //   __dirname,
@@ -48,18 +59,11 @@ const nextConfig = {
     //   '@react-three/drei'
     // )
 
-    // config.plugins.push(
-    //   new DuplicatePackageCheckerPlugin({
-    //     verbose: false,
-    //     strict: true,
-    //   })
-    // )
-
     // if you want to do a custom build to reduce the size of threejs
     // config.plugins.push(
     //   new webpack.NormalModuleReplacementPlugin(
     //     /three.module.js/,
-    //     path.resolve('src/utils/three_minimal.js')
+    //     path.resolve('src/utils/three_gltf.js')
     //   )
     // )
 

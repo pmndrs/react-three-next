@@ -27,15 +27,20 @@
       "eslint --fix"
     ]
   },
+  "resolutions": {
+    "webpack": "4.44.1"
+  },
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "cross-env": "^7.0.2",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
     "next": "^10.0.3",
     "next-offline": "^5.0.3",
     "nodemon": "^2.0.6",
     "postcss": "^8.2.1",
-    "replace-in-file": "^6.1.0"
+    "replace-in-file": "^6.1.0",
+    "webpack": "4.44.2"
   },
   "devDependencies": {
     "@babel/node": "^7.12.1",
@@ -47,6 +52,7 @@
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/drei": "^2.2.12",
     "@react-three/postprocessing": "^1.5.0",
+    "@yushijinhun/three-minifier-webpack": "^0.2.0",
     "babel-eslint": "^10.1.0",
     "babel-node": "^0.0.1-security",
     "babel-plugin-glsl": "^1.0.0",
