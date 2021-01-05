@@ -33,14 +33,12 @@ const nextConfig = {
   // target: 'serverless',
   webpack(config) {
     config.plugins = config.plugins || []
-    config.plugins.unshift(threeMinifier)
-    config.resolve.plugins.unshift(threeMinifier.resolver)
     // if (prod) {
     if (config.optimization.splitChunks.cacheGroups) {
-      console.log(config.optimization.splitChunks.cacheGroups)
-
+      config.plugins.unshift(threeMinifier)
+      config.resolve.plugins.unshift(threeMinifier.resolver)
       config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|three|scheduler|prop-types|use-subscription)[\\/]/
-      config.optimization.splitChunks.maxSize = 60000
+      config.optimization.splitChunks.maxSize = 300000
     }
 
     // }
