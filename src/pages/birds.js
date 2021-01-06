@@ -2,12 +2,19 @@ import { Suspense } from 'react'
 import BackButton from '@/components/dom/back/back'
 import useStore from '@/helpers/store'
 import Head from 'next/head'
-// import Bird from '@/components/canvas/Bird/Bird'
-
 import dynamic from 'next/dynamic'
-const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), {
-  ssr: false,
-})
+// const Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), {
+//   ssr: false,
+// })
+
+let Bird = null
+if (process.env.NODE_ENV === 'production') {
+  Bird = dynamic(() => import('@/components/canvas/Bird/Bird'), {
+    ssr: false,
+  })
+} else {
+  Bird = require('@/components/canvas/Bird/Bird').default
+}
 
 const Birds = () => {
   return new Array(5).fill().map((_, i) => {

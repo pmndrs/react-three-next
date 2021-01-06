@@ -7,24 +7,19 @@ const images = require('next-images')
 const videos = require('next-videos')
 const fonts = require('next-fonts')
 const reactSvg = require('next-react-svg')
-
+const webpack = require('webpack')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
+
+const ThreeMinifierPlugin = require('@yushijinhun/three-minifier-webpack')
+const threeMinifier = new ThreeMinifierPlugin()
+
 const withOffline = require('next-offline')
 
-const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin')
-
 const withTM = require('next-transpile-modules')(
-  [
-    'three',
-    '@react-three/postprocessing',
-    '@react-three/drei',
-    'postprocessing',
-  ],
-  { debug: false, resolveSymlinks: true }
+  ['three', '@react-three/drei', '@react-three/postprocessing'],
+  { debug: false, resolveSymlinks: false }
 )
 
 const prod = process.env.NODE_ENV === 'production'
@@ -33,35 +28,30 @@ const nextConfig = {
   // target: 'serverless',
   webpack(config) {
     config.plugins = config.plugins || []
-
-    // config.resolve.alias['three'] = path.resolve(
-    //   __dirname,
-    //   '.',
-    //   'node_modules',
-    //   'three'
-    // )
-
-    // config.resolve.alias['@react-three/drei'] = path.resolve(
-    //   __dirname,
-    //   '.',
-    //   'node_modules',
-    //   '@react-three/drei'
-    // )
-
-    // config.plugins.push(
-    //   new DuplicatePackageCheckerPlugin({
-    //     verbose: false,
-    //     strict: true,
-    //   })
-    // )
+    config.resolve.alias['three'] = path.resolve(
+      __dirname,
+      '.',
+      'node_modules',
+      'three'
+    )
 
     // if you want to do a custom build to reduce the size of threejs
-    // config.plugins.push(
+    // config.plugins.unshift(
     //   new webpack.NormalModuleReplacementPlugin(
     //     /three.module.js/,
     //     path.resolve('src/utils/three_minimal.js')
     //   )
     // )
+
+    if (prod) {
+      // reduce the size of threejs and try tree-shaking
+      config.plugins.unshift(threeMinifier)
+      config.resolve.plugins.unshift(threeMinifier.resolver)
+      if (config.optimization.splitChunks.cacheGroups) {
+        // config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](scheduler|prop-types|use-subscription)[\\/]/
+        config.optimization.splitChunks.maxSize = 200000
+      }
+    }
 
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
@@ -74,14 +64,11 @@ const nextConfig = {
 
 module.exports = plugins(
   [
+    withTM(nextConfig),
     [images, { exclude: path.resolve(__dirname, 'src/assets/svg') }],
     [reactSvg, { include: path.resolve(__dirname, 'src/assets/svg') }],
     fonts,
     videos,
-    // [
-    //   withPWA,
-    //   { pwa: { runtimeCaching, disable: prod ? false : true, dest: 'public' } },
-    // ],
     [
       withOffline,
       {
@@ -113,7 +100,6 @@ module.exports = plugins(
       },
     ],
     withBundleAnalyzer,
-    withTM,
   ],
   nextConfig
 )
