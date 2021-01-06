@@ -2,11 +2,12 @@
 import { useFrame, useThree } from 'react-three-fiber'
 // import { EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 import useDarkMode from 'use-dark-mode'
-import * as THREE from 'three'
+// import * as THREE from 'three'
+import { Vector3 } from 'three/src/math/Vector3'
 
 const Rig = () => {
   const { camera, mouse } = useThree()
-  const vec = new THREE.Vector3()
+  const vec = new Vector3()
   return useFrame(() =>
     camera.position.lerp(
       vec.set(mouse.x * 2, mouse.y * 1, camera.position.z),

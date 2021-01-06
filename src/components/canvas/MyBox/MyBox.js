@@ -1,4 +1,4 @@
-import * as THREE from 'three'
+import { Color } from 'three/src/math/Color'
 import { useFrame, extend } from 'react-three-fiber'
 // import { a, useSpring } from '@react-spring/three'
 import { useEffect, useRef, useState } from 'react'
@@ -11,7 +11,7 @@ import vertex from './glsl/MyBox.vert'
 const ColorShiftMaterial = shaderMaterial(
   {
     time: 0,
-    color: new THREE.Color(0.05, 0.0, 0.025),
+    color: new Color(0.05, 0.0, 0.025),
   },
   vertex,
   fragment

@@ -1,12 +1,13 @@
 import { useRef, useState, useEffect } from 'react'
-import * as THREE from 'three'
+// import * as THREE from 'three'
+import { AnimationMixer } from 'three/src/animation/AnimationMixer'
 import { useFrame } from 'react-three-fiber'
 import { useGLTF } from '@react-three/drei/useGLTF'
 
 const Bird = ({ speed, factor, url, ...props }) => {
   const { nodes, materials, animations } = useGLTF(url)
   const group = useRef()
-  const [mixer] = useState(() => new THREE.AnimationMixer())
+  const [mixer] = useState(() => new AnimationMixer())
 
   const actions = useRef()
 

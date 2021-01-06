@@ -1,4 +1,4 @@
-import LCanvas from '@/components/canvas/_layout'
+// import LCanvas from '@/components/canvas/_layout'
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
 import { useEffect, Children } from 'react'
@@ -7,6 +7,10 @@ import Preload from '@/components/loading/loading'
 import Header from '../config'
 
 import '../assets/styles/globals.css'
+import dynamic from 'next/dynamic'
+const LCanvas = dynamic(() => import('@/components/canvas/_layout'), {
+  ssr: false,
+})
 
 function SplitApp({ canvas, dom }) {
   return (

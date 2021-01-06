@@ -1,6 +1,8 @@
 import { Suspense } from 'react'
 import { Canvas } from 'react-three-fiber'
-import * as THREE from 'three'
+// import * as THREE from 'three'
+import { Color } from 'three/src/math/Color'
+
 import useDarkMode from 'use-dark-mode'
 import Effects from '@/components/canvas/_effects'
 import { Perf } from 'r3f-perf'
@@ -25,13 +27,13 @@ const LCanvas = ({ children }) => {
         antialias: true,
         stencil: false,
         depth: false,
-        alpha: false,
+        alpha: true,
       }}
       camera={{ position: [0, 0, 0], near: 5, far: 100 }}
       pixelRatio={1}
-      onCreated={({ gl, scene }) => {
-        gl.setClearColor(new THREE.Color(darkMode ? 0x111827 : 0xf9fafb))
-      }}
+      // onCreated={({ gl, scene }) => {
+      //   gl.setClearColor(new Color(darkMode ? 0x111827 : 0xf9fafb))
+      // }}
     >
       <Suspense fallback={null}>
         <Effects />

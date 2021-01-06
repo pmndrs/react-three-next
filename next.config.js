@@ -7,7 +7,7 @@ const images = require('next-images')
 const videos = require('next-videos')
 const fonts = require('next-fonts')
 const reactSvg = require('next-react-svg')
-// const webpack = require('webpack')
+const webpack = require('webpack')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -20,11 +20,11 @@ const withOffline = require('next-offline')
 const withTM = require('next-transpile-modules')(
   [
     'three',
-    '@react-three/postprocessing',
     '@react-three/drei',
+    // '@react-three/postprocessing',
     // 'postprocessing',
   ],
-  { debug: false, resolveSymlinks: true }
+  { debug: true, resolveSymlinks: false }
 )
 
 const prod = process.env.NODE_ENV === 'production'
@@ -33,36 +33,29 @@ const nextConfig = {
   // target: 'serverless',
   webpack(config) {
     config.plugins = config.plugins || []
+    config.resolve.alias['three'] = path.resolve(
+      __dirname,
+      '.',
+      'node_modules',
+      'three'
+    )
+
+    // if you want to do a custom build to reduce the size of threejs
+    // config.plugins.unshift(
+    //   new webpack.NormalModuleReplacementPlugin(
+    //     /three.module.js/,
+    //     path.resolve('src/utils/three_minimal.js')
+    //   )
+    // )
+
     if (prod) {
       config.plugins.unshift(threeMinifier)
       config.resolve.plugins.unshift(threeMinifier.resolver)
       if (config.optimization.splitChunks.cacheGroups) {
         config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|react-reconcilier|react-three-fiber|scheduler|prop-types|use-subscription)[\\/]/
-        config.optimization.splitChunks.maxSize = 200000
+        // config.optimization.splitChunks.maxSize = 200000
       }
     }
-
-    // config.resolve.alias['three'] = path.resolve(
-    //   __dirname,
-    //   '.',
-    //   'node_modules',
-    //   'three'
-    // )
-
-    // config.resolve.alias['@react-three/drei'] = path.resolve(
-    //   __dirname,
-    //   '.',
-    //   'node_modules',
-    //   '@react-three/drei'
-    // )
-
-    // if you want to do a custom build to reduce the size of threejs
-    // config.plugins.push(
-    //   new webpack.NormalModuleReplacementPlugin(
-    //     /three.module.js/,
-    //     path.resolve('src/utils/three_gltf.js')
-    //   )
-    // )
 
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
@@ -75,14 +68,11 @@ const nextConfig = {
 
 module.exports = plugins(
   [
+    withTM(nextConfig),
     [images, { exclude: path.resolve(__dirname, 'src/assets/svg') }],
     [reactSvg, { include: path.resolve(__dirname, 'src/assets/svg') }],
     fonts,
     videos,
-    // [
-    //   withPWA,
-    //   { pwa: { runtimeCaching, disable: prod ? false : true, dest: 'public' } },
-    // ],
     [
       withOffline,
       {
@@ -114,7 +104,6 @@ module.exports = plugins(
       },
     ],
     withBundleAnalyzer,
-    withTM,
   ],
   nextConfig
 )
