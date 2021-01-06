@@ -24,7 +24,7 @@ const withTM = require('next-transpile-modules')(
     // '@react-three/postprocessing',
     // 'postprocessing',
   ],
-  { debug: true, resolveSymlinks: false }
+  { debug: false, resolveSymlinks: false }
 )
 
 const prod = process.env.NODE_ENV === 'production'
@@ -52,8 +52,8 @@ const nextConfig = {
       config.plugins.unshift(threeMinifier)
       config.resolve.plugins.unshift(threeMinifier.resolver)
       if (config.optimization.splitChunks.cacheGroups) {
-        config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|react-reconcilier|react-three-fiber|scheduler|prop-types|use-subscription)[\\/]/
-        // config.optimization.splitChunks.maxSize = 200000
+        config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|react-reconcilier|scheduler|prop-types|use-subscription)[\\/]/
+        config.optimization.splitChunks.maxSize = 200000
       }
     }
 

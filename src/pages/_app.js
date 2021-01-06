@@ -2,13 +2,16 @@
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
 import { useEffect, Children } from 'react'
-import Preload from '@/components/loading/loading'
+// import Preload from '@/components/loading/loading'
 // import { Helmet } from 'react-helmet'
 import Header from '../config'
 
 import '../assets/styles/globals.css'
 import dynamic from 'next/dynamic'
 const LCanvas = dynamic(() => import('@/components/canvas/_layout'), {
+  ssr: false,
+})
+const Preload = dynamic(() => import('@/components/loading/loading'), {
   ssr: false,
 })
 
