@@ -18,12 +18,7 @@ const threeMinifier = new ThreeMinifierPlugin()
 const withOffline = require('next-offline')
 
 const withTM = require('next-transpile-modules')(
-  [
-    'three',
-    '@react-three/drei',
-    // '@react-three/postprocessing',
-    // 'postprocessing',
-  ],
+  ['three', '@react-three/drei', '@react-three/postprocessing'],
   { debug: false, resolveSymlinks: false }
 )
 
@@ -49,10 +44,11 @@ const nextConfig = {
     // )
 
     if (prod) {
+      // reduce the size of threejs and try tree-shaking
       config.plugins.unshift(threeMinifier)
       config.resolve.plugins.unshift(threeMinifier.resolver)
       if (config.optimization.splitChunks.cacheGroups) {
-        config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](scheduler|prop-types|use-subscription)[\\/]/
+        // config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](scheduler|prop-types|use-subscription)[\\/]/
         config.optimization.splitChunks.maxSize = 200000
       }
     }

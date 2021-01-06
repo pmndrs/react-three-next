@@ -1,24 +1,23 @@
-// import LCanvas from '@/components/canvas/_layout'
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
 import { useEffect, Children } from 'react'
-
-// import Preload from '@/components/loading/loading'
+import Preload from '@/components/loading/loading'
 import Header from '../config'
-
 import '../assets/styles/globals.css'
 import dynamic from 'next/dynamic'
-const LCanvas = dynamic(() => import('@/components/canvas/_layout'), {
-  ssr: false,
-})
-const Preload = dynamic(() => import('@/components/loading/loading'), {
-  ssr: false,
-})
+
+let LCanvas = null
+if (process.env.NODE_ENV === 'production') {
+  LCanvas = dynamic(() => import('@/components/canvas/_layout'), {
+    ssr: false,
+  })
+} else {
+  LCanvas = require('@/components/canvas/_layout').default
+}
 
 function SplitApp({ canvas, dom }) {
   return (
     <>
-      {/* <Helmet {...helmet} /> */}
       <Header />
       {dom && <div className='mx-auto dom'>{dom}</div>}
       <LCanvas>{canvas && <group>{canvas}</group>}</LCanvas>

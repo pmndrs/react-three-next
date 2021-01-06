@@ -1,15 +1,9 @@
 import { Suspense } from 'react'
 import { Canvas } from 'react-three-fiber'
-// import * as THREE from 'three'
-import { Color } from 'three/src/math/Color'
-
+import { Color } from 'three'
 // import useDarkMode from 'use-dark-mode'
 import Effects from '@/components/canvas/_effects'
 import { Perf } from 'r3f-perf'
-// import dynamic from 'next/dynamic'
-// const Effects = dynamic(() => import('@/components/canvas/_effects'), {
-//   ssr: false,
-// })
 
 const LCanvas = ({ children }) => {
   // const darkMode = useDarkMode()

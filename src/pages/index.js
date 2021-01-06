@@ -1,11 +1,16 @@
 import useStore from '@/helpers/store'
-// import MyBox from '@/components/canvas/MyBox/MyBox'
 import Head from 'next/head'
 
 import dynamic from 'next/dynamic'
-const MyBox = dynamic(() => import('@/components/canvas/MyBox/MyBox'), {
-  ssr: false,
-})
+
+let MyBox = null
+if (process.env.NODE_ENV === 'production') {
+  MyBox = dynamic(() => import('@/components/canvas/MyBox/MyBox'), {
+    ssr: false,
+  })
+} else {
+  MyBox = require('@/components/canvas/MyBox/MyBox').default
+}
 
 const BoxesDom = () => {
   return (

@@ -7348,7 +7348,7 @@ postcss@^8.1.6, postcss@^8.2.1:
     nanoid "^3.1.20"
     source-map "^0.6.1"
 
-postprocessing@^6.17.1:
+postprocessing@^6.17.1, postprocessing@^6.19.0:
   version "6.19.0"
   resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.19.0.tgz#08db63973c3039f14cd26654466efb5037a8f40e"
   integrity sha512-xZXziSkEm9CQg59up4f+cXMd10EMT+KSCXQOMpKps6TDjLfK4/oSdDAWJ8ljwpLMeGPaHpfdCPlDzZqO8ijFJQ==

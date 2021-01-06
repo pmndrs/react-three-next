@@ -87,6 +87,7 @@
     "next-react-svg": "^1.1.2",
     "next-transpile-modules": "^6.0.0",
     "next-videos": "^1.4.0",
+    "postprocessing": "^6.19.0",
     "prettier": "^2.2.1",
     "r3f-perf": "^0.75.1",
     "raw-loader": "^4.0.2",
