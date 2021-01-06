@@ -12,7 +12,7 @@ This starter will automatically pick the marked R3F components and inject them i
 
 #### Installation
 
-_Tailwind is the default_
+_Tailwind is the default and only stable_
 
 ```sh
 yarn create r3f-app next my-app <tailwind?>
@@ -57,6 +57,7 @@ export default Page
 ### :control_knobs: Available Scripts
 
 - yarn dev
+- yarn analyze
 - yarn lint (Scripts)
 - yarn build
 - yarn start
@@ -77,4 +78,6 @@ git clone https://github.com/pmndrs/react-three-next
 # then push using the terminal to trigger Husky
 ```
 
-More tool and r3f tips on my twitter [@onirenaud](https://twitter.com/onirenaud)
+## Maintainers :
+
+- [@onirenaud](https://twitter.com/onirenaud) More tools and r3f tips on my twitter
