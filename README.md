@@ -103,6 +103,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-#### [:hammer_and_wrench: Todo list](https://github.com/RenaudRohlinger/r3f-next-starter/blob/main/TODO.md)
-
 More tool and r3f tips on my twitter [@onirenaud](https://twitter.com/onirenaud)
