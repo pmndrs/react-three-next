@@ -3,6 +3,7 @@ import { Canvas } from 'react-three-fiber'
 import * as THREE from 'three'
 import useDarkMode from 'use-dark-mode'
 import Effects from '@/components/canvas/_effects'
+import { Perf } from 'r3f-perf'
 // import dynamic from 'next/dynamic'
 // const Effects = dynamic(() => import('@/components/canvas/_effects'), {
 //   ssr: false,
@@ -35,6 +36,7 @@ const LCanvas = ({ children }) => {
       <Suspense fallback={null}>
         <Effects />
       </Suspense>
+      <Perf openByDefault trackGPU={true} />
       {children}
     </Canvas>
   )

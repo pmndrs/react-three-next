@@ -1,10 +1,7 @@
 [![Lighthouse Global](https://ghcdn.rawgit.org/RenaudRohlinger/r3f-next-starter/main/public/img/scores/lighthouse.svg)](https://github.com/RenaudROHLINGER/r3f-next-starter)
 [![dependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter)
 [![devDependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/dev-status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter?type=dev)
-![GitHub all releases](https://img.shields.io/github/downloads/renaudrohlinger/r3f-next-starter/total)
 ![npm](https://img.shields.io/npm/dw/create-r3f-app?color=%233792cb)
-
-_13/12/2020 First stable release :tada:_
 
 # :japanese_castle: Next & React three fiber starter
 
@@ -33,13 +30,13 @@ npx create-r3f-app next my-app <tailwind?|sass?>
 ### :mount_fuji: Features
 
 - [x] Concurrent mode with React experimental
-- [x] Dark mode management
 - [x] Automatically inject r3f component in the Canvas layout
 - [x] Customizable loading
 - [x] Support glsl, images and svg imports
 - [x] PWA Support
 - [x] Dynamic meta data and header using Helmet
 - [x] Clean code using ESlint, Prettier and Husky
+- [x] Dark mode management
 
 ### :bullettrain_side: Architecture
 
@@ -74,18 +71,9 @@ export default Page
 - [React-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
 - [Drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
 - [Tailwind](https://tailwindcss.com/docs): A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
+- [R3F-Perf](https://github.com/RenaudRohlinger/r3f-perf): Tool to easily monitor react threejs performances.
 
-#### [:hammer_and_wrench: Todo list](https://github.com/RenaudRohlinger/r3f-next-starter/blob/main/TODO.md)
-
-### Contributors :
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-All contributions are welcome !
+### How to contribute :
 
 ```bash
 git clone https://github.com/RenaudRohlinger/r3f-next-starter
@@ -115,3 +103,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+#### [:hammer_and_wrench: Todo list](https://github.com/RenaudRohlinger/r3f-next-starter/blob/main/TODO.md)
+
+More tool and r3f tips on my twitter [@onirenaud](https://twitter.com/onirenaud)

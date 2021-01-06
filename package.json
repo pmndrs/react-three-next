@@ -86,6 +86,7 @@
     "next-transpile-modules": "^6.0.0",
     "next-videos": "^1.4.0",
     "prettier": "^2.2.1",
+    "r3f-perf": "^0.75.1",
     "raw-loader": "^4.0.2",
     "react": "0.0.0-experimental-4ead6b530",
     "react-device-detect": "^1.14.0",
