@@ -7353,6 +7353,11 @@ postprocessing@^6.17.1:
   resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.19.0.tgz#08db63973c3039f14cd26654466efb5037a8f40e"
   integrity sha512-xZXziSkEm9CQg59up4f+cXMd10EMT+KSCXQOMpKps6TDjLfK4/oSdDAWJ8ljwpLMeGPaHpfdCPlDzZqO8ijFJQ==
 
+preact@^10.5.9:
+  version "10.5.9"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.9.tgz#8caba9288b4db1d593be2317467f8735e43cda0b"
+  integrity sha512-X4m+4VMVINl/JFQKALOCwa3p8vhMAhBvle0hJ/W44w/WWfNb2TA7RNicDV3K2dNVs57f61GviEnVLiwN+fxiIg==
+
 prebuild-install@^5.3.5:
   version "5.3.6"
   resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-5.3.6.tgz#7c225568d864c71d89d07f8796042733a3f54291"

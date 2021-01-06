@@ -39,6 +39,7 @@
     "next-offline": "^5.0.3",
     "nodemon": "^2.0.6",
     "postcss": "^8.2.1",
+    "preact": "^10.5.9",
     "react-three-fiber": "^5.3.11",
     "replace-in-file": "^6.1.0",
     "webpack": "4.44.2"

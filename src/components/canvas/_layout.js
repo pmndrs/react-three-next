@@ -3,7 +3,7 @@ import { Canvas } from 'react-three-fiber'
 // import * as THREE from 'three'
 import { Color } from 'three/src/math/Color'
 
-import useDarkMode from 'use-dark-mode'
+// import useDarkMode from 'use-dark-mode'
 import Effects from '@/components/canvas/_effects'
 import { Perf } from 'r3f-perf'
 // import dynamic from 'next/dynamic'
@@ -12,7 +12,7 @@ import { Perf } from 'r3f-perf'
 // })
 
 const LCanvas = ({ children }) => {
-  const darkMode = useDarkMode()
+  // const darkMode = useDarkMode()
 
   return (
     <Canvas

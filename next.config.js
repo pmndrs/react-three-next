@@ -52,7 +52,7 @@ const nextConfig = {
       config.plugins.unshift(threeMinifier)
       config.resolve.plugins.unshift(threeMinifier.resolver)
       if (config.optimization.splitChunks.cacheGroups) {
-        config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|react-reconcilier|scheduler|prop-types|use-subscription)[\\/]/
+        config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](scheduler|prop-types|use-subscription)[\\/]/
         config.optimization.splitChunks.maxSize = 200000
       }
     }
