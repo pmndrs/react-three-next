@@ -19,9 +19,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "engines": {
-    "node": ">=12.16.2"
-  },
   "lint-staged": {
     "*.{js,jsx,json,md}": [
       "prettier --write"
