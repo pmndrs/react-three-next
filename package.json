@@ -6,13 +6,13 @@
   ],
   "private": true,
   "scripts": {
-    "lint": "npm run prettier && npm run eslint",
+    "lint": "yarn prettier && yarn eslint",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
     "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
-    "dev": "next dev",
-    "build": "node postinstall.js && next build",
+    "dev": "yarn next dev",
+    "build": "node postinstall.js && yarn next build",
     "analyze": "ANALYZE=true next build",
-    "start": "next start"
+    "start": "yarn next start"
   },
   "husky": {
     "hooks": {
