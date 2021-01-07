@@ -70,6 +70,10 @@ export default Page
 - [`tailwind`](https://tailwindcss.com/docs) &ndash; A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
 - [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
 
+#### Why using a custom server in dev ?
+
+Because next-transpile-module is pretty heavy while we are working in development, we use a custom server to supply node with the `--max-old-space-size=4096` parameter which extend the basic limit of RAM (512mb) available to our server before it can crash. Otherwise, on heavy website we spend our time restarting the local server.
+
 ### How to contribute :
 
 ```bash

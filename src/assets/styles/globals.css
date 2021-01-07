@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    background-image: linear-gradient(-225deg, #111 0%, #444 100%);
+  * {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body,
+  #__next {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
   /* body {
     position: fixed;

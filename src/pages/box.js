@@ -1,29 +1,29 @@
+import BackButton from '@/components/dom/back'
 import useStore from '@/helpers/store'
 import Head from 'next/head'
-import { Badge } from '@pmndrs/branding'
-import Go from '@/components/dom/go'
 import dynamic from 'next/dynamic'
+import { Badge } from '@pmndrs/branding'
 
-let Sphere = null
+let Box = null
 if (process.env.NODE_ENV === 'production') {
-  Sphere = dynamic(() => import('@/components/canvas/Sphere'), {
+  Box = dynamic(() => import('@/components/canvas/Box'), {
     ssr: false,
   })
 } else {
-  Sphere = require('@/components/canvas/Sphere').default
+  Box = require('@/components/canvas/Box').default
 }
 
 const Dom = () => {
   return (
-    <>
+    <div>
       <Head>
-        <title>Sphere</title>
+        <title>Box</title>
       </Head>
-      <Go />
+      <BackButton />
       <div className='absolute bottom-2 right-2 z-index-30'>
         <Badge />
       </div>
-    </>
+    </div>
   )
 }
 
@@ -31,7 +31,7 @@ const Page = () => {
   useStore.setState({ loading: false })
   return (
     <>
-      <Sphere r3f />
+      <Box r3f />
       <Dom />
     </>
   )

@@ -5,21 +5,22 @@ import Preload from '@/components/loading/loading'
 import Header from '../config'
 import '../assets/styles/globals.css'
 import dynamic from 'next/dynamic'
+import Dom from '@/components/dom/_dom'
 
 let LCanvas = null
 if (process.env.NODE_ENV === 'production') {
-  LCanvas = dynamic(() => import('@/components/canvas/_layout'), {
+  LCanvas = dynamic(() => import('@/components/canvas/_canvas'), {
     ssr: false,
   })
 } else {
-  LCanvas = require('@/components/canvas/_layout').default
+  LCanvas = require('@/components/canvas/_canvas').default
 }
 
 function SplitApp({ canvas, dom }) {
   return (
     <>
       <Header />
-      {dom && <div className='mx-auto dom'>{dom}</div>}
+      {dom && <Dom dom={dom} />}
       <LCanvas>{canvas && <group>{canvas}</group>}</LCanvas>
       <Preload />
     </>
