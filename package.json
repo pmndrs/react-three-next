@@ -19,6 +19,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "engines": {
+    "node": ">=12.16.2"
+  },
   "lint-staged": {
     "*.{js,jsx,json,md}": [
       "prettier --write"
@@ -28,16 +31,15 @@
     ]
   },
   "resolutions": {
-    "webpack": "4.44.1"
+    "webpack": "4.44.2"
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "next": "^10.0.3",
     "next-offline": "^5.0.3",
-    "nodemon": "^2.0.6",
     "react-three-fiber": "^5.3.11",
     "replace-in-file": "^6.1.0",
-    "webpack": "4.44.1"
+    "webpack": "4.44.2"
   },
   "devDependencies": {
     "@babel/node": "^7.12.1",
