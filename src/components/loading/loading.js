@@ -60,7 +60,7 @@ function Preload() {
   return (
     <div
       style={{ opacity: show ? 1 : 0 }}
-      className='absolute z-20 flex flex-col items-center justify-center w-full h-full mx-auto pointer-events-none'
+      className='absolute z-40 flex flex-col items-center justify-center w-full h-full mx-auto pointer-events-none'
     >
       <Progress />
       <span className='text-gray-800 dark:text-gray-50'>

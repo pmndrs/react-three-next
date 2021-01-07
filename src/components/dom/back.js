@@ -3,9 +3,9 @@ import Link from 'next/link'
 const BackButton = () => {
   return (
     <Link href='/' as={`/`}>
-      <span className='absolute z-20 p-2 m-2 focus:outline-none focus:ring text-black-900'>
+      <button className='absolute z-20 p-2 m-2 text-white focus:outline-none focus:ring'>
         Back
-      </span>
+      </button>
     </Link>
   )
 }

@@ -5,6 +5,7 @@ const title = 'Threejs Next Starter'
 const url = 'http://r3f-next-starter.vercel.app/'
 const description =
   'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
+const author = 'Author'
 
 const Header = () => {
   return (
@@ -14,9 +15,9 @@ const Header = () => {
         <meta charSet='utf-8' />
         <meta name='language' content='english' />
         <meta httpEquiv='content-type' content='text/html' />
-        <meta name='author' content='Renaud ROHLINGER' />
-        <meta name='designer' content='Renaud ROHLINGER' />
-        <meta name='publisher' content='Renaud ROHLINGER' />
+        <meta name='author' content={author} />
+        <meta name='designer' content={author} />
+        <meta name='publisher' content={author} />
 
         {/* Search Engine Optimization Meta Tags */}
         <title>{title}</title>
@@ -26,7 +27,6 @@ const Header = () => {
           content='Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist'
         />
         <meta name='robots' content='index,follow' />
-        <meta name='revisit-after' content='7 days' />
         <meta name='distribution' content='web' />
 
         <meta name='og:title' content={title} />

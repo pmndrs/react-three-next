@@ -11,7 +11,7 @@ extend({ RoundedBoxBufferGeometry })
 const BoxComponent = () => {
   const router = useStore((state) => state.router)
   const { color } = useSpring({
-    color: router.route !== '/box' ? 'black' : '#d0d0d0',
+    color: router.route !== '/box' ? 'black' : '#272727',
   })
   return (
     <Suspense fallback={null}>

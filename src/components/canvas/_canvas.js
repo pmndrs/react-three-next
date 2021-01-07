@@ -7,7 +7,7 @@ import { a, useSpring } from '@react-spring/three'
 const Bg = () => {
   const router = useStore((state) => state.router)
   const { bg } = useSpring({
-    bg: router && router.route !== '/box' ? 0 : 0xf0 / 255,
+    bg: router && router.route !== '/box' ? 0 : 0x17 / 255,
   })
 
   return <a.color attach='background' r={bg} g={bg} b={bg} />
