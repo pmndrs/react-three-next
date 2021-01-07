@@ -1,4 +1,4 @@
-![David](https://img.shields.io/david/pmndrs/react-three-next?color=%23000000) ![David](https://img.shields.io/david/dev/pmndrs/react-three-next?color=%23000000) [![Downloads](https://img.shields.io/npm/dt/create-r3f-app.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/create-r3f-app) [![Lighthouse Global](https://ghcdn.rawgit.org/pmndrs/react-three-next/main/public/img/scores/lighthouse.svg)](https://github.com/pmndrs/react-three-next) [![Discord Shield](https://img.shields.io/discord/740090768164651008?style=flat&colorA=000000&colorB=000000&label=discord&logo=discord&logoColor=ffffff)](https://discord.gg/ZZjjNvJ)
+![David](https://img.shields.io/david/pmndrs/react-three-next?color=%23000000) ![David](https://img.shields.io/david/dev/pmndrs/react-three-next?color=%23000000) [![Downloads](https://img.shields.io/npm/dt/create-r3f-app.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/create-r3f-app) [![Discord Shield](https://img.shields.io/discord/740090768164651008?style=flat&colorA=000000&colorB=000000&label=discord&logo=discord&logoColor=ffffff)](https://discord.gg/ZZjjNvJ) [![Lighthouse Global](https://ghcdn.rawgit.org/pmndrs/react-three-next/main/public/img/scores/lighthouse.svg)](https://github.com/pmndrs/react-three-next)
 
 # :japanese_castle: React-Three-Next starter
 
@@ -6,7 +6,7 @@ Initial load of 99This starter will automatically pick the marked R3F components
 
 ### 🔲 Demo :
 
-[https://r3f-next-starter.vercel.app/](https://r3f-next-starter.vercel.app/)
+[https://react-three-next.vercel.app/](https://react-three-next.vercel.app/)
 
 ### How to use
 
@@ -78,10 +78,10 @@ Because next-transpile-module is pretty heavy while we are working in developmen
 
 ```bash
 git clone https://github.com/pmndrs/react-three-next
-&& cd r3f-next-starter && yarn install
+&& cd react-three-next && yarn install
 # then push using the terminal to trigger Husky
 ```
 
 ## Maintainers :
 
-- [@onirenaud](https://twitter.com/onirenaud) More tools and r3f tips on my twitter
+- [@onirenaud](https://twitter.com/onirenaud) More tools and r3f tips on twitter
