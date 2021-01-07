@@ -19,7 +19,7 @@ const withOffline = require('next-offline')
 
 const withTM = require('next-transpile-modules')(
   ['three', '@react-three/drei', '@react-three/postprocessing'],
-  { debug: false, resolveSymlinks: false }
+  { debug: false, resolveSymlinks: true } // symlink-caused loops which cause memory to get bloated exponentially.
 )
 
 const prod = process.env.NODE_ENV === 'production'

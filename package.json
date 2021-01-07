@@ -9,7 +9,7 @@
     "lint": "npm run prettier && npm run eslint",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
     "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
-    "dev": "node server/dev.js --max-old-space-size=4096",
+    "dev": "next dev",
     "build": "node postinstall.js && next build",
     "analyze": "ANALYZE=true next build",
     "start": "next start"
@@ -32,17 +32,12 @@
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
-    "cross-env": "^7.0.2",
-    "crypto": "^1.0.1",
-    "express": "^4.17.1",
     "next": "^10.0.3",
     "next-offline": "^5.0.3",
     "nodemon": "^2.0.6",
-    "postcss": "^8.2.1",
-    "preact": "^10.5.9",
     "react-three-fiber": "^5.3.11",
     "replace-in-file": "^6.1.0",
-    "webpack": "4.44.2"
+    "webpack": "4.44.1"
   },
   "devDependencies": {
     "@babel/node": "^7.12.1",
@@ -90,6 +85,7 @@
     "postprocessing": "^6.19.0",
     "prettier": "^2.2.1",
     "r3f-perf": "^0.75.1",
+    "postcss": "^8.2.1",
     "raw-loader": "^4.0.2",
     "react": "0.0.0-experimental-4ead6b530",
     "react-device-detect": "^1.14.0",
