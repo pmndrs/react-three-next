@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import useStore from '@/helpers/store'
 import { useEffect, Children } from 'react'
-import Preload from '@/components/loading/loading'
+// import Preload from '@/components/loading/loading'
 import Header from '../config'
 import '../assets/styles/globals.css'
 import dynamic from 'next/dynamic'
@@ -22,7 +22,7 @@ function SplitApp({ canvas, dom }) {
       <Header />
       {dom && <Dom dom={dom} />}
       <LCanvas>{canvas && <group>{canvas}</group>}</LCanvas>
-      <Preload />
+      {/* <Preload /> */}
     </>
   )
 }
