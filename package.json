@@ -9,10 +9,10 @@
     "lint": "npm run prettier && npm run eslint",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
     "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
-    "dev": "node server/index.js --max-old-space-size=4096",
+    "dev": "node server/dev.js --max-old-space-size=4096",
     "build": "node postinstall.js && next build",
     "analyze": "ANALYZE=true next build",
-    "start": "cross-env NODE_ENV=production node server/index.js"
+    "start": "next start"
   },
   "husky": {
     "hooks": {

@@ -68,7 +68,7 @@ const Header = () => {
           content='width=device-width, minimum-scale=1, initial-scale=1.0'
         />
         <meta name='theme-color' content='#000' />
-        <link rel='shortcut icon' href='/favicon.ico' />
+        <link rel='shortcut icon' href='/icons/favicon.ico' />
         {/* 
       Facebook Open Graph meta tags
         documentation: https://developers.facebook.com/docs/sharing/opengraph */}
