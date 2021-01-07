@@ -2,11 +2,11 @@
 
 # :japanese_castle: React-Three-Next starter
 
-Initial load of 99This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
+
+Lighthouse total minimum score of 93 with First Load JS of 78Kb. This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
 
 ### 🔲 Demo :
-
-[https://react-three-next.vercel.app/](https://react-three-next.vercel.app/)
+[![image](https://user-images.githubusercontent.com/15867665/103862440-76368100-5102-11eb-864d-7ca50fb3c58b.png)](https://react-three-next.vercel.app/)
 
 ### How to use
 
