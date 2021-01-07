@@ -82,6 +82,6 @@ git clone https://github.com/pmndrs/react-three-next
 # then push using the terminal to trigger Husky
 ```
 
-## Maintainers :
+### Maintainers :
 
-- [@onirenaud](https://twitter.com/onirenaud) More tools and r3f tips on twitter
+- [`twitter 🐈‍⬛ @onirenaud`](https://twitter.com/onirenaud)
