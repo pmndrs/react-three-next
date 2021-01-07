@@ -1,10 +1,10 @@
-[![dependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter) [![devDependencies Status](https://david-dm.org/renaudrohlinger/r3f-next-starter/dev-status.svg)](https://david-dm.org/renaudrohlinger/r3f-next-starter?type=dev) ![npm](https://img.shields.io/npm/dw/create-r3f-app?color=%233792cb) [![Lighthouse Global](https://ghcdn.rawgit.org/pmndrs/react-three-next/main/public/img/scores/lighthouse.svg)](https://github.com/pmndrs/react-three-next)
+![David](https://img.shields.io/david/pmndrs/react-three-next?color=%23000000) ![David](https://img.shields.io/david/dev/pmndrs/react-three-next?color=%23000000) [![Downloads](https://img.shields.io/npm/dt/create-r3f-app.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/create-r3f-app) [![Lighthouse Global](https://ghcdn.rawgit.org/pmndrs/react-three-next/main/public/img/scores/lighthouse.svg)](https://github.com/pmndrs/react-three-next) [![Discord Shield](https://img.shields.io/discord/740090768164651008?style=flat&colorA=000000&colorB=000000&label=discord&logo=discord&logoColor=ffffff)](https://discord.gg/ZZjjNvJ)
 
-# :japanese_castle: Next & React three fiber starter
+# :japanese_castle: React-Three-Next starter
 
-This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
+Initial load of 99This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
 
-### :japan: Demo :
+### 🔲 Demo :
 
 [https://r3f-next-starter.vercel.app/](https://r3f-next-starter.vercel.app/)
 
@@ -62,13 +62,17 @@ export default Page
 - yarn build
 - yarn start
 
-### :mag_right: Stack
+### ⬛ Stack
 
-- [Threejs](https://github.com/mrdoob/three.js/): A lightweight, 3D library with a default WebGL renderer.
-- [React-three-fiber](https://github.com/pmndrs/react-three-fiber): A React renderer for Threejs on the web and react-native.
-- [Drei](https://github.com/pmndrs/drei): A growing collection of useful helpers and abstractions for react-three-fiber.
-- [Tailwind](https://tailwindcss.com/docs): A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
-- [R3F-Perf](https://github.com/RenaudRohlinger/r3f-perf): Tool to easily monitor react threejs performances.
+- [`threejs`](https://github.com/mrdoob/three.js/) &ndash; A lightweight, 3D library with a default WebGL renderer.
+- [`react-three-fiber`](https://github.com/pmndrs/react-three-fiber) &ndash; A React renderer for Threejs on the web and react-native.
+- [`@react-three/drei`](https://github.com/react-spring/drei) &ndash; useful helpers for react-three-fiber
+- [`tailwind`](https://tailwindcss.com/docs) &ndash; A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
+- [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
+
+#### Why using a custom server in dev ?
+
+Because next-transpile-module is pretty heavy while we are working in development, we use a custom server to supply node with the `--max-old-space-size=4096` parameter which extend the basic limit of RAM (512mb) available to our server before it can crash. Otherwise, on heavy website we spend our time restarting the local server.
 
 ### How to contribute :
 
