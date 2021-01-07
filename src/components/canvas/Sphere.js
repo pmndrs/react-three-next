@@ -9,7 +9,7 @@ const SphereComponent = () => {
   const router = useStore((state) => state.router)
 
   const { color } = useSpring({
-    color: router.route === '/box' ? 'white' : 'black',
+    color: router.route === '/box' ? '#272727' : 'black',
   })
   return (
     <Suspense fallback={null}>
