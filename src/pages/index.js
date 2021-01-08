@@ -23,7 +23,6 @@ const Dom = () => {
 }
 
 const Page = () => {
-  useStore.setState({ loading: false })
   return (
     <>
       <Sphere r3f />
