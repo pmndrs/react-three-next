@@ -22,14 +22,12 @@ const withTM = require('next-transpile-modules')(
   { debug: false, resolveSymlinks: false } // symlink-caused loops which cause memory to get bloated exponentially.
 )
 
-const prod = process.env.NODE_ENV === 'production'
-
 const nextConfig = {
   i18n: {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   },
-  webpack(config) {
+  webpack(config, { dev }) {
     config.plugins = config.plugins || []
     config.resolve.alias['three'] = path.resolve(
       __dirname,
@@ -51,7 +49,7 @@ const nextConfig = {
       ignored: ['**/.git/**', '**/.next/**', '**node_modules/**'],
     }
 
-    if (prod) {
+    if (!dev) {
       // reduce the size of threejs and try tree-shaking
       config.plugins.unshift(threeMinifier)
       config.resolve.plugins.unshift(threeMinifier.resolver)
