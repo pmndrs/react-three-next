@@ -38,7 +38,7 @@ const nextConfig = {
     // config.plugins.unshift(
     //   new webpack.NormalModuleReplacementPlugin(
     //     /three.module.js/,
-    //     path.resolve('src/utils/three_minimal.js')
+    //     path.resolve('src/three_builds/three_minimal.js')
     //   )
     // )
 
