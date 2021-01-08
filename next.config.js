@@ -14,7 +14,11 @@ const threeMinifier = new ThreeMinifierPlugin()
 const withOffline = require('next-offline')
 
 const withTM = require('next-transpile-modules')(
-  ['three', '@react-three/drei', '@react-three/postprocessing'],
+  [
+    'three',
+    '@react-three/drei',
+    // '@react-three/postprocessing'
+  ],
   { debug: false, resolveSymlinks: false } // symlink-caused loops which cause memory to get bloated exponentially.
 )
 
@@ -41,6 +45,11 @@ const nextConfig = {
     //     path.resolve('src/three_builds/three_minimal.js')
     //   )
     // )
+
+    // force to ignore transpiled module to compile faster
+    config.watchOptions = {
+      ignored: ['**/.git/**', '**/.next/**', '**node_modules/**'],
+    }
 
     if (prod) {
       // reduce the size of threejs and try tree-shaking
