@@ -6165,14 +6165,6 @@ next-fonts@^1.4.0:
     file-loader "^6.0.0"
     url-loader "^4.0.0"
 
-next-images@^1.6.0:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/next-images/-/next-images-1.6.2.tgz#e5535ba468c3c857025e7fa07a27c773326223ad"
-  integrity sha512-tmINk0NzJ/D7Kk16x9gOgTd9wlcVG4IfyEcQqt/SY31miwuv5pzUhT7fakO2fYPrXimHOEPBaacCz1G6jADcbQ==
-  dependencies:
-    file-loader "^6.0.0"
-    url-loader "^4.0.0"
-
 next-offline@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/next-offline/-/next-offline-5.0.3.tgz#99dfa8af54b34287618e8894494dbe3a719d0913"
@@ -6181,23 +6173,6 @@ next-offline@^5.0.3:
     copy-webpack-plugin "~5.1.2"
     fs-extra "~8.1.0"
     workbox-webpack-plugin "^5.0.0"
-
-next-pwa@^5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/next-pwa/-/next-pwa-5.0.2.tgz#d39dea490258dfba2f96516f2cb9fa043bcbb364"
-  integrity sha512-BuXsEfQgSxDUmxZDoMKxhuDezepxB3PBNGGIyLYDPQPGFY/S7CHFjFanf57DQLW9mye1wzeP59EpJv/G3waeTA==
-  dependencies:
-    clean-webpack-plugin "^3.0.0"
-    globby "^11.0.1"
-    workbox-webpack-plugin "^6.0.2"
-    workbox-window "^6.0.2"
-
-next-react-svg@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/next-react-svg/-/next-react-svg-1.1.2.tgz#e39e75a0259f85194552e67d75bdfb5b777cf158"
-  integrity sha512-DrMZaE2XYV5Qa6TBkKVP/7ddqJxDd+TRXnDeGzYyRCwFsfm3G9Lodyb3jiIZ1OijJQT7/J+rNFv19oOKOkei6Q==
-  dependencies:
-    svg-react-loader "0.4.6"
 
 next-tick@~1.0.0:
   version "1.0.0"
@@ -6211,13 +6186,6 @@ next-transpile-modules@^6.0.0:
   dependencies:
     enhanced-resolve "^5.3.2"
     pkg-dir "^5.0.0"
-
-next-videos@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/next-videos/-/next-videos-1.4.0.tgz#6de1fabc5b6bb1d61bd856a82d1eb381c0b1f7ad"
-  integrity sha512-upTiDKjUx8CclPRU9c6Q0GY3H8aT+bHl7jdbILK3j75K1TRJOKdSxP7GyVefRWd9kgC9gLtAvCh4OrpFBuFWzg==
-  dependencies:
-    file-loader "^4.2.0"
 
 next@^10.0.3:
   version "10.0.4"

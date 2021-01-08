@@ -3,7 +3,7 @@ import useStore from '@/helpers/store'
 import { useEffect, Children } from 'react'
 // import Preload from '@/components/loading/loading'
 import Header from '../config'
-import '../assets/styles/globals.css'
+import '@/styles/index.css'
 import dynamic from 'next/dynamic'
 import Dom from '@/components/dom/_dom'
 
@@ -29,10 +29,6 @@ function SplitApp({ canvas, dom }) {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-  const lang = router.pathname.startsWith('/jp') ? 'jp' : 'en'
-  useEffect(() => {
-    document.documentElement.lang = lang
-  }, [lang])
 
   let r3fArr = []
   let compArr = []

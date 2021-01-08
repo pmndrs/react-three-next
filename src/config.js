@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import share from './assets/images/share.png'
 
 const title = 'Threejs Next Starter'
 const url = 'http://r3f-next-starter.vercel.app/'
@@ -28,11 +27,13 @@ const Header = () => {
         />
         <meta name='robots' content='index,follow' />
         <meta name='distribution' content='web' />
-
+        {/* 
+      Facebook Open Graph meta tags
+        documentation: https://developers.facebook.com/docs/sharing/opengraph */}
         <meta name='og:title' content={title} />
         <meta name='og:type' content='site' />
         <meta name='og:url' content={url} />
-        <meta name='og:image' content={share} />
+        <meta name='og:image' content={'/icons/share.png'} />
         <meta name='og:site_name' content={title} />
         <meta name='og:description' content={description} />
 
@@ -69,14 +70,7 @@ const Header = () => {
         />
         <meta name='theme-color' content='#000' />
         <link rel='shortcut icon' href='/icons/favicon.ico' />
-        {/* 
-      Facebook Open Graph meta tags
-        documentation: https://developers.facebook.com/docs/sharing/opengraph */}
-        <meta property='og:title' content={title} />
-        <meta property='og:url' content={url} />
-        <meta property='og:image' content={share} />
-        <meta property='og:site_name' content={title} />
-        <meta property='og:description' content={description} />
+
         {/* 
       Twitter Summary card
         documentation: https://dev.twitter.com/cards/getting-started

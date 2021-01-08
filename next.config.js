@@ -3,10 +3,6 @@
 /* eslint-disable no-undef */
 const path = require('path')
 const plugins = require('next-compose-plugins')
-const images = require('next-images')
-const videos = require('next-videos')
-const fonts = require('next-fonts')
-const reactSvg = require('next-react-svg')
 const webpack = require('webpack')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -25,7 +21,10 @@ const withTM = require('next-transpile-modules')(
 const prod = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
-  // target: 'serverless',
+  i18n: {
+    locales: ['en-US'],
+    defaultLocale: 'en-US',
+  },
   webpack(config) {
     config.plugins = config.plugins || []
     config.resolve.alias['three'] = path.resolve(
@@ -65,10 +64,6 @@ const nextConfig = {
 module.exports = plugins(
   [
     withTM(nextConfig),
-    [images, { exclude: path.resolve(__dirname, 'src/assets/svg') }],
-    [reactSvg, { include: path.resolve(__dirname, 'src/assets/svg') }],
-    fonts,
-    videos,
     [
       withOffline,
       {

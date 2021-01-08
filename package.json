@@ -32,11 +32,10 @@
   },
   "dependencies": {
     "next": "^10.0.3",
-    "next-offline": "^5.0.3",
-    "replace-in-file": "^6.1.0",
-    "webpack": "4.44.2"
+    "replace-in-file": "^6.1.0"
   },
   "devDependencies": {
+    "webpack": "4.44.2",
     "@babel/node": "^7.12.1",
     "@babel/plugin-transform-react-jsx-compat": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
@@ -77,10 +76,9 @@
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.4.0",
     "next-images": "^1.6.0",
-    "next-pwa": "^5.0.0",
     "next-react-svg": "^1.1.2",
     "next-transpile-modules": "^6.0.0",
-    "next-videos": "^1.4.0",
+    "next-offline": "^5.0.3",
     "postcss": "^8.2.1",
     "postprocessing": "^6.19.0",
     "autoprefixer": "^10.2.0",
@@ -88,9 +86,7 @@
     "r3f-perf": "^0.75.1",
     "raw-loader": "^4.0.2",
     "react": "0.0.0-experimental-4ead6b530",
-    "react-device-detect": "^1.14.0",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
     "react-spring": "^9.0.0-rc.3",
     "react-three-fiber": "^5.3.11",
     "tailwindcss": "^2.0.2",
