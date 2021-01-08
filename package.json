@@ -10,7 +10,7 @@
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
     "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
     "dev": "node server/dev.js --max-old-space-size=4096",
-    "build": "node postinstall.js && yarn next build",
+    "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "yarn next start"
   },
