@@ -15,23 +15,22 @@ First Load JS of 78Kb. This starter will automatically pick the marked R3F compo
 _Tailwind is the default and only stable_
 
 ```sh
-yarn create r3f-app next my-app <tailwind?>
+yarn create r3f-app next my-app
 ```
 
 or
 
 ```sh
-npx create-r3f-app next my-app <tailwind?>
+npx create-r3f-app next my-app
 ```
 
 ### :mount_fuji: Features
 
-- [x] Concurrent mode with React experimental
-- [x] Automatically inject r3f component in the Canvas layout
-- [x] Customizable loading
-- [x] Support glsl, images and svg imports
+- [x] Automatically inject r3f component in the Canvas
+- [x] Support glsl imports
 - [x] PWA Support
-- [x] Dynamic meta data and header using Helmet
+- [x] Layout for Canvas and DOM
+- [x] Template for the meta data and header
 - [x] Clean code using ESlint, Prettier and Husky
 
 ### :bullettrain_side: Architecture
@@ -44,8 +43,6 @@ const Page = () => {
     <>
       <h1>Hello !</h1>
       {/* Simply add the r3f prop to the parent component -> */}
-      <Group r3f />
-      <h2>Bonjour.</h2>
       <MeshComponent r3f />
     </>
   )
@@ -56,11 +53,11 @@ export default Page
 
 ### :control_knobs: Available Scripts
 
-- yarn dev
-- yarn analyze
-- yarn lint (Scripts)
-- yarn build
-- yarn start
+- `yarn dev` - Use custom server to prevent crash in local
+- `yarn analyze` - Generate bundle-analyzer
+- `yarn lint` - Audit code quality
+- `yarn build` - Inject node postinstall.js to prevent vercel to crash when deploy
+- `yarn start` - Next start
 
 ### ⬛ Stack
 

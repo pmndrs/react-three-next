@@ -9,7 +9,6 @@ const Bg = () => {
   const { bg } = useSpring({
     bg: router && router.route !== '/box' ? 0 : 0x17 / 255,
   })
-
   return <a.color attach='background' r={bg} g={bg} b={bg} />
 }
 const LCanvas = ({ children }) => {

@@ -3,16 +3,16 @@ import useStore from '@/helpers/store'
 import { useEffect, Children } from 'react'
 import Header from '../config'
 import dynamic from 'next/dynamic'
-import Dom from '@/components/dom/_dom'
+import Dom from '@/components/layout/_dom'
 import '@/styles/index.css'
 
 let LCanvas = null
 if (process.env.NODE_ENV === 'production') {
-  LCanvas = dynamic(() => import('@/components/canvas/_canvas'), {
+  LCanvas = dynamic(() => import('@/components/layout/_canvas'), {
     ssr: false,
   })
 } else {
-  LCanvas = require('@/components/canvas/_canvas').default
+  LCanvas = require('@/components/layout/_canvas').default
 }
 
 function SplitApp({ canvas, dom }) {
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
   })
 
   useEffect(() => {
-    useStore.setState({ router: router })
+    useStore.setState({ router })
   }, [router])
 
   return r3fArr.length > 0 ? (

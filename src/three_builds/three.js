@@ -1,4 +1,4 @@
-import { REVISION } from 'three/src/constants.js'
+// import { REVISION } from 'three/src/constants.js'
 
 export { WebGLMultisampleRenderTarget } from 'three/src/renderers/WebGLMultisampleRenderTarget.js'
 export { WebGLCubeRenderTarget } from 'three/src/renderers/WebGLCubeRenderTarget.js'

@@ -1,9 +1,16 @@
 // @js-ignore
 module.exports = {
-  extends: ['plugin:react/recommended', 'react-app', 'plugin:prettier/recommended', 'plugin:tailwind/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'react-app',
+    'prettier/react',
+    'plugin:tailwind/recommended',
+    'plugin:react-hooks/recommended',
+  ],
   rules: {
     'react/prop-types': 'off',
-    // 'react/jsx-indent': [2, 'first', { checkAttributes: false }],
     'react/jsx-indent-props': [2, 'first'],
     'import/prefer-default-export': 'off',
     'import/no-cycle': 'off',

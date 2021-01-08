@@ -6,8 +6,7 @@ import useStore from '@/helpers/store'
 const M = a(MeshDistortMaterial)
 
 const SphereComponent = () => {
-  const router = useStore((state) => state.router)
-
+  const router = useStore((s) => s.router)
   const { color } = useSpring({
     color: router.route === '/box' ? '#272727' : 'black',
   })
