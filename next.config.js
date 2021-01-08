@@ -1,9 +1,5 @@
-// @js-ignore
-
-/* eslint-disable no-undef */
 const path = require('path')
 const plugins = require('next-compose-plugins')
-const webpack = require('webpack')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
