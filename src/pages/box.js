@@ -4,14 +4,9 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { Badge } from '@pmndrs/branding'
 
-let Box = null
-if (process.env.NODE_ENV === 'production') {
-  Box = dynamic(() => import('@/components/canvas/Box'), {
-    ssr: false,
-  })
-} else {
-  Box = require('@/components/canvas/Box').default
-}
+const Box = dynamic(() => import('@/components/canvas/Box'), {
+  ssr: false,
+})
 
 const Dom = () => {
   return (

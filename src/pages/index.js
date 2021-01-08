@@ -4,14 +4,9 @@ import { Badge } from '@pmndrs/branding'
 import Go from '@/components/dom/go'
 import dynamic from 'next/dynamic'
 
-let Sphere = null
-if (process.env.NODE_ENV === 'production') {
-  Sphere = dynamic(() => import('@/components/canvas/Sphere'), {
-    ssr: false,
-  })
-} else {
-  Sphere = require('@/components/canvas/Sphere').default
-}
+const Sphere = dynamic(() => import('@/components/canvas/Sphere'), {
+  ssr: false,
+})
 
 const Dom = () => {
   return (
