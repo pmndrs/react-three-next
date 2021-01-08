@@ -1,9 +1,5 @@
-// @js-ignore
-
-/* eslint-disable no-undef */
 const path = require('path')
 const plugins = require('next-compose-plugins')
-const webpack = require('webpack')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -22,14 +18,12 @@ const withTM = require('next-transpile-modules')(
   { debug: false, resolveSymlinks: false } // symlink-caused loops which cause memory to get bloated exponentially.
 )
 
-const prod = process.env.NODE_ENV === 'production'
-
 const nextConfig = {
   i18n: {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   },
-  webpack(config) {
+  webpack(config, { dev }) {
     config.plugins = config.plugins || []
     config.resolve.alias['three'] = path.resolve(
       __dirname,
@@ -51,7 +45,7 @@ const nextConfig = {
       ignored: ['**/.git/**', '**/.next/**', '**node_modules/**'],
     }
 
-    if (prod) {
+    if (!dev) {
       // reduce the size of threejs and try tree-shaking
       config.plugins.unshift(threeMinifier)
       config.resolve.plugins.unshift(threeMinifier.resolver)
@@ -61,11 +55,14 @@ const nextConfig = {
       }
     }
 
-    config.module.rules.push({
-      test: /\.(glsl|vs|fs|vert|frag)$/,
-      exclude: /node_modules/,
-      use: ['raw-loader', 'glslify-loader'],
-    })
+    config.module.rules.push(
+      { test: /react-spring/, sideEffects: true },
+      {
+        test: /\.(glsl|vs|fs|vert|frag)$/,
+        exclude: /node_modules/,
+        use: ['raw-loader', 'glslify-loader'],
+      }
+    )
     return config
   },
 }
