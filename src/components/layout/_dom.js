@@ -19,7 +19,10 @@ const Dom = ({ dom }) => {
     >
       <Header />
       {dom}
-      <div className='absolute bottom-2 right-2 z-index-30'>
+      <h1 className='absolute w-full text-xs tracking-wider text-center text-white text-gray-100 md:mt-56 mt-28 top-1/2 sm:subpixel-antialiased md:antialiased'>
+        REACT THREE NEXT STARTER
+      </h1>
+      <div className='absolute bottom-4 right-4 z-index-30'>
         <Badge />
       </div>
     </div>

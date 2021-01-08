@@ -1,8 +1,8 @@
-build
-dist
-coverage
-.next
-node_modules
+build/*
+dist/*
+public/*
+.next/*
+node_modules/*
 .log
 package.json
 .eslintrc.js
