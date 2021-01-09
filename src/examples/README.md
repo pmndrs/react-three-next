@@ -1,8 +1,8 @@
 ### Examples
 
-You can remove this folder. It's used to provide different possibilities of build or configuration.
+This folder is here to provide different possibilities of build or configuration.
 
-Webpack configurations that can be injected in next.config.js
+#### Custom webpack configurations for next.config.js
 
 ```jsx
 const path = require('path')
@@ -28,4 +28,12 @@ const path = require('path')
     }
     return config
   }
+```
+
+#### Use shaders :
+
+If you want to try shaders you can important the TestShader component from the example.
+
+```jsx
+<TestShader r3f />
 ```
