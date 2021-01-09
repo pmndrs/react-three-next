@@ -11,6 +11,6 @@
     ]
   ],
   "plugins": [
-    "babel-plugin-glsl"
+    "glsl"
   ]
 }

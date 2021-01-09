@@ -1,7 +1,6 @@
 import { Canvas } from 'react-three-fiber'
 import { Perf } from 'r3f-perf'
 import useStore from '@/helpers/store'
-import { OrbitControls } from '@react-three/drei'
 import { a, useSpring } from '@react-spring/three'
 
 const Bg = () => {
@@ -24,7 +23,6 @@ const LCanvas = ({ children }) => {
     >
       <Bg />
       <Perf openByDefault trackGPU={true} />
-      <OrbitControls />
       {children}
     </Canvas>
   )

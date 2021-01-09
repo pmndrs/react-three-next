@@ -1,10 +1,10 @@
 {
   "name": "r3f-next-starter",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "authors": [
-    "Renaud ROHLINGER <hello@renaudrohlinger.com>"
+    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
   ],
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "yarn prettier && yarn eslint",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
@@ -60,6 +60,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-tailwind": "^0.2.0",
     "express": "^4.17.1",
+    "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.5.0",
