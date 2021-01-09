@@ -56,7 +56,7 @@ export default Page
 - `yarn dev` - Use custom server to prevent crash in local
 - `yarn analyze` - Generate bundle-analyzer
 - `yarn lint` - Audit code quality
-- `yarn build` - Inject node postinstall.js to prevent vercel to crash when deploy
+- `yarn build` - Next build
 - `yarn start` - Next start
 
 ### ⬛ Stack

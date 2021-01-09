@@ -1,11 +1,7 @@
-const path = require('path')
 const plugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-
-const ThreeMinifierPlugin = require('@yushijinhun/three-minifier-webpack')
-const threeMinifier = new ThreeMinifierPlugin()
 
 const withOffline = require('next-offline')
 
@@ -23,40 +19,14 @@ const nextConfig = {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   },
-  webpack(config, { dev }) {
-    config.plugins = config.plugins || []
-    config.resolve.alias['three'] = path.resolve(
-      __dirname,
-      '.',
-      'node_modules',
-      'three'
-    )
-
-    // if you want to do a custom build to reduce the size of threejs
-    // config.plugins.unshift(
-    //   new webpack.NormalModuleReplacementPlugin(
-    //     /three.module.js/,
-    //     path.resolve('src/three_builds/three_minimal.js')
-    //   )
-    // )
-
+  webpack(config) {
     // force to ignore transpiled module to compile faster
     config.watchOptions = {
       ignored: ['**/.git/**', '**/.next/**', '**node_modules/**'],
     }
 
-    if (!dev) {
-      // reduce the size of threejs and try tree-shaking
-      config.plugins.unshift(threeMinifier)
-      config.resolve.plugins.unshift(threeMinifier.resolver)
-      if (config.optimization.splitChunks.cacheGroups) {
-        // config.optimization.splitChunks.cacheGroups.framework.test = /(?<!node_modules.*)[\\/]node_modules[\\/](scheduler|prop-types|use-subscription)[\\/]/
-        config.optimization.splitChunks.maxSize = 200000
-      }
-    }
-
     config.module.rules.push(
-      { test: /react-spring/, sideEffects: true },
+      { test: /react-spring/, sideEffects: true }, // prevent vercel to crash when deploy
       {
         test: /\.(glsl|vs|fs|vert|frag)$/,
         exclude: /node_modules/,
