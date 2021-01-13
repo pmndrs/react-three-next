@@ -53,11 +53,12 @@ export default Page
 
 ### :control_knobs: Available Scripts
 
-- `yarn dev` - Use custom server to prevent crash in local
+- `yarn dev` - Next dev
 - `yarn analyze` - Generate bundle-analyzer
 - `yarn lint` - Audit code quality
 - `yarn build` - Next build
 - `yarn start` - Next start
+- `yarn export` - Export to static HTML
 
 ### ⬛ Stack
 
@@ -67,9 +68,10 @@ export default Page
 - [`tailwind`](https://tailwindcss.com/docs) &ndash; A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
 - [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
 
-#### Why using a custom server in dev ?
+### next-transpile-modules 
+We override the module by transpiling only the three/examples/jsm to build faster and also to prevent JavaScript heap out of memory errors.
+If you have any issue related to transpilation you might need to tweak or remove the "match" condition in next.config.js
 
-Because next-transpile-module is pretty heavy while we are working in development, we use a custom server to supply node with the `--max-old-space-size=4096` parameter which extend the basic limit of RAM (512mb) available to our server before it can crash. Otherwise, on heavy website we spend our time restarting the local server.
 
 ### How to contribute :
 
