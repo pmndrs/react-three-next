@@ -4,7 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 // custom transpile module
-const debug = true
+const debug = false
 let start = null
 let i = 0
 
