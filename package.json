@@ -9,8 +9,9 @@
     "lint": "yarn prettier && yarn eslint",
     "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
     "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
-    "dev": "node server/dev.js --max-old-space-size=4096",
+    "dev": "next dev",
     "build": "next build",
+    "export": "EXPORT=true next export",
     "analyze": "ANALYZE=true next build",
     "start": "next start"
   },
@@ -26,9 +27,6 @@
     "*.{js,jsx}": [
       "eslint --fix"
     ]
-  },
-  "resolutions": {
-    "webpack": "^5.13.0"
   },
   "dependencies": {
     "@pmndrs/branding": "^0.0.4",
