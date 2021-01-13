@@ -3,28 +3,24 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
+const match = (path) => {
+  if (!path.includes('three/examples/jsm')) return false
+  console.info(`transpiled: ${path}`)
+  return true
+}
+
 const withOffline = require('next-offline')
-
 const withTM = require('next-transpile-modules')(
-  [
-    'three',
-    '@react-three/drei',
-    // '@react-three/postprocessing'
-  ],
-  { debug: false, resolveSymlinks: false } // symlink-caused loops which cause memory to get bloated exponentially.
+  ['three', '@react-three/drei', '@react-three/postprocessing'],
+  { debug: false, unstable_webpack5: true, match } // symlink-caused loops which cause memory to get bloated exponentially.
 )
-
+console.log(withTM)
 const nextConfig = {
   i18n: {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   },
   webpack(config) {
-    // force to ignore transpiled module to compile faster
-    config.watchOptions = {
-      ignored: ['**/.git/**', '**/.next/**', '**node_modules/**'],
-    }
-
     config.module.rules.push(
       { test: /react-spring/, sideEffects: true }, // prevent vercel to crash when deploy
       {

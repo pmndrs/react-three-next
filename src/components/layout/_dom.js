@@ -13,10 +13,7 @@ const Header = () => {
 const Dom = ({ dom }) => {
   const events = useStore((s) => s.events)
   return (
-    <div
-      className='absolute top-0 bottom-0 left-0 right-0 z-20 dom'
-      {...events}
-    >
+    <div className='absolute top-0 left-0 right-0 z-20 dom' {...events}>
       <Header />
       {dom}
       <h1 className='absolute w-full text-xs tracking-wider text-center text-white text-gray-100 md:mt-56 mt-28 top-1/2 sm:subpixel-antialiased md:antialiased'>
