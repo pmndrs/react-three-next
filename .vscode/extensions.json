@@ -7,7 +7,6 @@
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "firefox-devtools.vscode-firefox-debug",
-    "msjsdiag.debugger-for-chrome",
-    "stylelint.vscode-stylelint"
+    "msjsdiag.debugger-for-chrome"
   ]
 }
