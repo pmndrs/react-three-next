@@ -69,8 +69,6 @@ export default Page
 - [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
 - [`@three-material-editor`](https://github.com/RenaudRohlinger/@three-material-editor) &ndash; Tool to easily edit the shaders of your threejs materials.
 
-_To remove automatically the editor from the production remove the part `/dist/react.cjs.development` in /layout/\_canvas.js_
-
 ### next-transpile-modules
 
 We override the module by transpiling only the three/examples/jsm to build faster and also to prevent JavaScript heap out of memory errors.
