@@ -67,11 +67,14 @@ export default Page
 - [`@react-three/drei`](https://github.com/react-spring/drei) &ndash; useful helpers for react-three-fiber
 - [`tailwind`](https://tailwindcss.com/docs) &ndash; A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
 - [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
+- [`@three-material-editor`](https://github.com/RenaudRohlinger/@three-material-editor) &ndash; Tool to easily edit the shaders of your threejs materials.
 
-### next-transpile-modules 
+_To remove automatically the editor from the production remove the variable environment `TME_PROD=SHOW` in .env.production_
+
+### next-transpile-modules
+
 We override the module by transpiling only the three/examples/jsm to build faster and also to prevent JavaScript heap out of memory errors.
 If you have any issue related to transpilation you might need to tweak or remove the "match" condition in next.config.js
-
 
 ### How to contribute :
 

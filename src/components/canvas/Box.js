@@ -1,12 +1,12 @@
 import { Suspense } from 'react'
 import { Environment, MeshDistortMaterial } from '@react-three/drei'
 import { a, useSpring } from '@react-spring/three'
-import { RoundedBoxBufferGeometry } from 'three/examples/jsm/geometries/RoundedBoxBufferGeometry'
+import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry'
 import { extend } from 'react-three-fiber'
 import useStore from '@/helpers/store'
 
 const M = a(MeshDistortMaterial)
-extend({ RoundedBoxBufferGeometry })
+extend({ RoundedBoxGeometry })
 
 const BoxComponent = () => {
   const router = useStore((s) => s.router)
@@ -22,7 +22,7 @@ const BoxComponent = () => {
           router.push(`/`)
         }}
       >
-        <roundedBoxBufferGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
+        <roundedBoxGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
         <M factor={3} color={color} />
       </mesh>
       <Environment preset={'studio'} />
