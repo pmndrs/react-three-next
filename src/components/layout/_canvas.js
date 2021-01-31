@@ -4,7 +4,7 @@ import useStore from '@/helpers/store'
 import { OrbitControls } from '@react-three/drei'
 import { a, useSpring } from '@react-spring/three'
 import { EffectComposer, Vignette } from '@react-three/postprocessing'
-import { MaterialEditor } from '@three-material-editor/react'
+import { MaterialEditor } from '@three-material-editor/react/dist/react.cjs.development'
 
 const Bg = () => {
   const router = useStore((state) => state.router)
@@ -25,7 +25,7 @@ const LCanvas = ({ children }) => {
       }}
     >
       <Bg />
-      <Perf openByDefault trackGPU={true} position={'bottom-right'} />
+      <Perf openByDefault trackGPU={true} position={'bottom-r'} />
       <OrbitControls />
       <MaterialEditor />
       <EffectComposer>
