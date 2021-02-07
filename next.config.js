@@ -28,22 +28,29 @@ const match = (path) => {
 const withOffline = require('next-offline')
 const withTM = require('next-transpile-modules')(
   ['three', '@react-three/drei'], // '@react-three/postprocessing'
-  { debug: debug, unstable_webpack5: false, match } // symlink-caused loops which cause memory to get bloated exponentially.
+  { debug: debug, __unstable_matcher: match } // symlink-caused loops which cause memory to get bloated exponentially.
 )
 
-const nextConfig = {
-  webpack(config) {
-    config.module.rules.push(
-      { test: /react-spring/, sideEffects: true }, // prevent vercel to crash when deploy
-      {
-        test: /\.(glsl|vs|fs|vert|frag)$/,
-        exclude: /node_modules/,
-        use: ['raw-loader', 'glslify-loader'],
+// the config break if we use next export
+const nextConfig =
+  process.env.EXPORT !== 'true'
+    ? {
+        future: {
+          webpack5: true,
+        },
+        webpack(config) {
+          config.module.rules.push(
+            { test: /react-spring/, sideEffects: true }, // prevent vercel to crash when deploy
+            {
+              test: /\.(glsl|vs|fs|vert|frag)$/,
+              exclude: /node_modules/,
+              use: ['raw-loader', 'glslify-loader'],
+            }
+          )
+          return config
+        },
       }
-    )
-    return config
-  },
-}
+    : {}
 
 // manage i18n
 if (process.env.EXPORT !== 'true') {
