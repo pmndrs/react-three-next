@@ -32,6 +32,7 @@ npx create-r3f-app next my-app
 - [x] Layout for Canvas and DOM
 - [x] Template for the meta data and header
 - [x] Clean code using ESlint, Prettier and Husky
+- [x] VSCode debug profiles for the server, Chrome, and Firefox
 
 ### :bullettrain_side: Architecture
 

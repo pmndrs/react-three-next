@@ -37,3 +37,6 @@ yarn-error.log*
 package-lock.json
 
 report.*.json
+
+# .vscode Debugging
+.vscode/*-debug-profile
