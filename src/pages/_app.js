@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
   }, [router])
 
   return r3fArr.length > 0 ? (
-    <SplitApp canvas={r3fArr} dom={compArr} />
+    <SplitApp canvas={r3fArr} dom={compArr} {...pageProps} />
   ) : (
     <Component {...pageProps} />
   )
