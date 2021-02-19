@@ -47,7 +47,7 @@
     "webpack": "^5.22.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
+    "@babel/core": "^7.12.17",
     "@next/bundle-analyzer": "^10.0.7",
     "autoprefixer": "^10.2.4",
     "babel-eslint": "^10.0.0",
