@@ -44,7 +44,7 @@
     "react-three-fiber": "^5.3.18",
     "tailwindcss": "^2.0.3",
     "three": "^0.125.2",
-    "webpack": "^5.22.0"
+    "webpack": "^5.23.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
