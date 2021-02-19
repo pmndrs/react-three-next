@@ -5443,14 +5443,14 @@ querystring@^0.2.0:
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.1.tgz#40d77615bb09d16902a85c3e38aa8b5ed761c2dd"
   integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
 
-r3f-perf@^0.79.0:
-  version "0.79.0"
-  resolved "https://registry.yarnpkg.com/r3f-perf/-/r3f-perf-0.79.0.tgz#5224f46a418868041d99a9bfaf45fdba8f05c3f2"
-  integrity sha512-c561ONKW09XOGDgK/QyH4nAghJOAyTctRvcdF1BtwcZV8hJrxOpmCsEqOUOAAYZRYJyNxAFZVZjqhGg5AlmLvQ==
+r3f-perf@^0.82.0:
+  version "0.82.0"
+  resolved "https://registry.yarnpkg.com/r3f-perf/-/r3f-perf-0.82.0.tgz#38ef1a21c50cda3069825a39ee0d849e64976959"
+  integrity sha512-q1t/GnuV1lBjcRtRJc//Ol5FgD/zmfeZKT6bMof6FXwavcebBCJcoKSTX1aBah+mRvDurhd8kaZUmHW9XBt64Q==
   dependencies:
     "@react-icons/all-files" "^4.1.0"
     lerp "^1.0.3"
-    zustand "^3.2.0"
+    zustand "^3.3.2"
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5, randombytes@^2.1.0:
   version "2.1.0"
@@ -7296,7 +7296,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zustand@^3.0.3, zustand@^3.2.0:
+zustand@^3.0.3, zustand@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.3.2.tgz#0ea066d65ca9c398f48dd82773b8612510e61fc8"
   integrity sha512-S1CuYmsgQiypCEvKJ6wjkQdMxAOPP+XY0fXLuPYY8BRZF+FvgyuqyEODJTvTasIYx8BMQXIcuMOCoKSwRdLKPw==

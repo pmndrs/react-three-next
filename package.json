@@ -37,7 +37,7 @@
     "lerp": "^1.0.3",
     "next": "^10.0.7",
     "postprocessing": "^6.20.3",
-    "r3f-perf": "^0.79.0",
+    "r3f-perf": "^0.82.0",
     "react": "17.0.1",
     "react-dom": "^17.0.1",
     "react-spring": "^9.0.0-rc.3",
