@@ -32,7 +32,7 @@
   "dependencies": {
     "@pmndrs/branding": "^0.0.7",
     "@react-spring/three": "^9.0.0-rc.3",
-    "@react-three/drei": "^3.8.5",
+    "@react-three/drei": "^3.8.6",
     "@react-three/postprocessing": "^1.5.1",
     "lerp": "^1.0.3",
     "next": "^10.0.7",
