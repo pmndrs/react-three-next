@@ -6,8 +6,8 @@ const Sphere = dynamic(() => import('@/components/canvas/Sphere'), {
   ssr: false,
 })
 
-const Page = () => {
-  useStore.setState({ title: 'Sphere' })
+const Page = ({ title }) => {
+  useStore.setState({ title })
   return (
     <>
       <Sphere r3f />
@@ -17,3 +17,11 @@ const Page = () => {
 }
 
 export default Page
+
+export async function getStaticProps() {
+  return {
+    props: {
+      title: 'Sphere',
+    },
+  }
+}
