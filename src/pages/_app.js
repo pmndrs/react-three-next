@@ -7,13 +7,13 @@ import Dom from '@/components/layout/_dom'
 import '@/styles/index.css'
 
 let LCanvas = null
-if (process.env.NODE_ENV === 'production') {
-  LCanvas = dynamic(() => import('@/components/layout/_canvas'), {
-    ssr: false,
-  })
-} else {
-  LCanvas = require('@/components/layout/_canvas').default
-}
+// if (process.env.NODE_ENV === 'production') {
+LCanvas = dynamic(() => import('@/components/layout/_canvas'), {
+  ssr: false,
+})
+// } else {
+//   LCanvas = require('@/components/layout/_canvas').default
+// }
 
 function SplitApp({ canvas, dom }) {
   return (
