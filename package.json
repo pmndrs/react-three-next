@@ -1,6 +1,6 @@
 {
-  "name": "r3f-next-starter",
-  "version": "1.6.0",
+  "name": "react-three-next",
+  "version": "1.7.0",
   "authors": [
     "Renaud ROHLINGER <https://twitter.com/onirenaud>"
   ],
@@ -32,18 +32,19 @@
   "dependencies": {
     "@pmndrs/branding": "^0.0.7",
     "@react-spring/three": "^9.0.0-rc.3",
-    "@react-three/drei": "^3.8.6",
+    "@react-three/drei": "^4.0.0-beta.3",
     "@react-three/postprocessing": "^1.5.1",
     "lerp": "^1.0.3",
-    "next": "^10.0.7",
+    "next": "^10.0.8",
     "postprocessing": "^6.20.3",
-    "r3f-perf": "^0.82.0",
-    "react": "17.0.1",
+    "r3f-perf": "^0.83.1",
+    "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-spring": "^9.0.0-rc.3",
     "react-three-fiber": "^5.3.18",
     "tailwindcss": "^2.0.3",
-    "three": "^0.125.2",
+    "three": "^0.126.1",
+    "three-stdlib": "1.0.0-beta.2",
     "webpack": "^5.23.0"
   },
   "devDependencies": {
@@ -69,7 +70,6 @@
     "lint-staged": "^10.5.4",
     "next-compose-plugins": "^2.2.1",
     "next-offline": "^5.0.3",
-    "next-transpile-modules": "https://github.com/martpie/next-transpile-modules",
     "postcss": "^8.2.6",
     "prettier": "^2.2.1",
     "raw-loader": "^4.0.2"

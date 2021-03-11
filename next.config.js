@@ -3,33 +3,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-// custom transpile module
-const debug = false
-let start = null
-let i = 0
-
-const match = (path) => {
-  if (!path.includes('three/examples/jsm')) return false
-  if (debug) {
-    // should be around 3/4 seconds the first time and then 200ms after using Webpack 5 built-in loader cache
-    let end = start ? new Date() - start : 0
-    console.log(
-      `\x1b[37m`,
-      `🚄 ${end}ms - The transpilation ${path} in process`
-    )
-    if (i === 1) {
-      start = new Date()
-    }
-    i++
-  }
-  return true
-}
-
 const withOffline = require('next-offline')
-const withTM = require('next-transpile-modules')(
-  ['three', '@react-three/drei'], // '@react-three/postprocessing'
-  { debug: debug, __unstable_matcher: match } // symlink-caused loops which cause memory to get bloated exponentially.
-)
+const webpack = require('webpack')
+const path = require('path')
 
 // the config break if we use next export
 const nextConfig =
@@ -39,6 +15,16 @@ const nextConfig =
           webpack5: true,
         },
         webpack(config) {
+          config.plugins = config.plugins || []
+
+          // if you want to do a custom build to reduce the size of threejs <-- this require webpack and path
+          config.plugins.unshift(
+            new webpack.NormalModuleReplacementPlugin(
+              /three.module.js/,
+              path.resolve('src/examples/three_builds/three_minimal.js')
+            )
+          )
+
           config.module.rules.push(
             { test: /react-spring/, sideEffects: true }, // prevent vercel to crash when deploy
             {
@@ -62,7 +48,6 @@ if (process.env.EXPORT !== 'true') {
 
 module.exports = plugins(
   [
-    withTM(nextConfig),
     [
       withOffline,
       {
