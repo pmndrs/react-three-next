@@ -1,11 +1,9 @@
 import { Canvas } from 'react-three-fiber'
-// import { Perf } from 'r3f-perf'
+import { Perf } from 'r3f-perf'
 import useStore from '@/helpers/store'
 import { OrbitControls, Preload } from '@react-three/drei'
 import { a, useSpring } from '@react-spring/three'
-// import { EffectComposer, Vignette } from '@react-three/postprocessing'
-// enable shader editor
-// import { MaterialEditor, useEditorComposer } from '@three-material-editor/react'
+import { EffectComposer, Vignette } from '@react-three/postprocessing'
 
 const Bg = () => {
   const router = useStore((state) => state.router)
@@ -27,13 +25,11 @@ const LCanvas = ({ children }) => {
     >
       <Preload all />
       <Bg />
-      {/* <Perf openByDefault trackGPU={true} position={'bottom-right'} /> */}
+      <Perf openByDefault trackGPU={true} position={'bottom-right'} />
       <OrbitControls />
-      {/* <MaterialEditor /> */}
-      {/* <EffectComposer ref={useEditorComposer()}> */}
-      {/* <EffectComposer>
+      <EffectComposer>
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
-      </EffectComposer> */}
+      </EffectComposer>
       {children}
     </Canvas>
   )
