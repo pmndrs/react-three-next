@@ -44,7 +44,7 @@
     "react-three-fiber": "^5.3.18",
     "tailwindcss": "^2.0.3",
     "three": "^0.126.1",
-    "three-stdlib": "1.0.0-beta.2",
+    "three-stdlib": "^1.0.0",
     "webpack": "^5.23.0"
   },
   "devDependencies": {
