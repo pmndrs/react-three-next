@@ -70,11 +70,6 @@ export default Page
 - [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
 - [`@three-material-editor`](https://github.com/RenaudRohlinger/three-material-editor) &ndash; Tool to easily edit the shaders of your threejs materials.
 
-### next-transpile-modules
-
-We override the module by transpiling only the three/examples/jsm to build faster and also to prevent JavaScript heap out of memory errors.
-If you have any issue related to transpilation you might need to tweak or remove the "match" condition in next.config.js
-
 ### How to contribute :
 
 ```bash
