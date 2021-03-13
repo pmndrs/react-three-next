@@ -13,14 +13,19 @@ const SphereComponent = () => {
   return (
     <Suspense fallback={null}>
       <ambientLight intensity={0.5} />
-      <Sphere
-        args={[1, 32, 32]}
-        onClick={() => {
+      <A11y
+        role="link"
+        href="/box"
+        actionCall={()=>{
           router.push(`/box`)
         }}
       >
-        <M factor={2} color={color} />
-      </Sphere>
+        <Sphere
+          args={[1, 32, 32]}
+        >
+          <M factor={2} color={color} />
+        </Sphere>
+      </A11y>
       <Environment preset={'studio'} />
     </Suspense>
   )

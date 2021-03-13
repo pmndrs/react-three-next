@@ -16,15 +16,20 @@ const BoxComponent = () => {
   return (
     <Suspense fallback={null}>
       <ambientLight intensity={0.5} />
-      <mesh
-        rotation={[45, 45, 45]}
-        onClick={() => {
+      <A11y
+        role="link"
+        href="/"
+        actionCall={()=>{
           router.push(`/`)
         }}
       >
-        <roundedBoxGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
-        <M factor={3} color={color} />
-      </mesh>
+        <mesh
+          rotation={[45, 45, 45]}
+        >
+          <roundedBoxGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
+          <M factor={3} color={color} />
+        </mesh>
+      </A11y>
       <Environment preset={'studio'} />
     </Suspense>
   )
