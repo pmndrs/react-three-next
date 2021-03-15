@@ -20,7 +20,7 @@ const RoundedDarkBox = () => {
     rotation={[45, 45, 45]}
   >
     <roundedBoxGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
-  <M distort={a11yPrefersState.prefersReducedMotion ? 0 : 0.4} color={color} />
+    <M distort={a11yPrefersState.prefersReducedMotion ? 0 : 0.4} color={color} />
   </mesh>
   )
 }
