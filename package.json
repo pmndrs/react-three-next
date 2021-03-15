@@ -12,7 +12,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
-    "analyze": "ANALYZE=true next build",
+    "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "postinstall": "husky install"
   },
@@ -32,8 +32,8 @@
   "dependencies": {
     "@pmndrs/branding": "^0.0.7",
     "@react-spring/three": "^9.0.0-rc.3",
-    "@react-three/a11y": "^1.0.0",
-    "@react-three/drei": "^4.0.0-beta.3",
+    "@react-three/a11y": "1.0.1",
+    "@react-three/drei": "^4.0.0-beta.4",
     "@react-three/postprocessing": "^1.5.1",
     "lerp": "^1.0.3",
     "next": "^10.0.8",
@@ -54,6 +54,7 @@
     "autoprefixer": "^10.2.4",
     "babel-eslint": "^10.0.0",
     "babel-plugin-glsl": "^1.0.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-config-react-app": "^6.0.0",

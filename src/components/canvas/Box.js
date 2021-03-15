@@ -4,6 +4,7 @@ import { a, useSpring } from '@react-spring/three'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry'
 import { extend } from 'react-three-fiber'
 import useStore from '@/helpers/store'
+import { A11y } from "@react-three/a11y"
 
 const M = a(MeshDistortMaterial)
 extend({ RoundedBoxGeometry })

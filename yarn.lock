@@ -1087,18 +1087,18 @@
     "@react-spring/core" "9.0.0-rc.3"
     "@react-spring/shared" "9.0.0-rc.3"
 
-"@react-three/a11y@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@react-three/a11y/-/a11y-1.0.0.tgz#deb5f2452f5fcbc51a818546da97e4cbd5d1ea5c"
-  integrity sha512-xcsqb+bG1QTtb38/efkLo9oacx5XZ8RQnIfqrzKne7vIlIMTLwZU0RO6MxomzBL6GM1Y/SJhBK9kTouiSu6WTw==
+"@react-three/a11y@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@react-three/a11y/-/a11y-1.0.1.tgz#5271d4ace3d3958251c0325fb97f40009e1beb22"
+  integrity sha512-/cS5aRl2oM0E3zy7lfA2ld8w2Hzk3TbbCMJjRXGCQ0VIz0Wf4n/2c2jYxYABC60nfvHyvjmbLxu4Y9M8WGezjg==
   dependencies:
-    "@react-three/drei" "4.0.0-beta.3"
+    utility-types "^3.10.0"
     zustand "^3.2.0"
 
-"@react-three/drei@4.0.0-beta.3", "@react-three/drei@^4.0.0-beta.3":
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-4.0.0-beta.3.tgz#cdfc2b070d3c7ffa6887a55ecdc74ec064dd8682"
-  integrity sha512-itYdOz4g6ahH+z6SC7zELKskiNlFMoYsKuJZg3+3wc5pkBQXsJuDgQ9FvW0kKSIsSm8+2yvOa4QAKzqxzQ/C5A==
+"@react-three/drei@^4.0.0-beta.4":
+  version "4.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-4.0.0-beta.4.tgz#a27f577de289ebf3d1c121808bdb04a8ae90afa3"
+  integrity sha512-NzW86lxqPv/vXE++tat4ZfupDptbHK72onn9YrkJiE3F/2l/uWNpid+OFHVockzKnzf50wDYi31Zcu9ZUigXew==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@react-spring/web" "^9.0.0-rc.3"
@@ -2343,6 +2343,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
 cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
@@ -2354,7 +2361,7 @@ cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^7.0.0, cross-spawn@^7.0.2:
+cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
