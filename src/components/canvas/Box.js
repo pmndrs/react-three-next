@@ -4,16 +4,29 @@ import { a, useSpring } from '@react-spring/three'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry'
 import { extend } from 'react-three-fiber'
 import useStore from '@/helpers/store'
-import { A11y } from "@react-three/a11y"
+import { A11y, useA11y, useUserPreferences } from "@react-three/a11y"
 
 const M = a(MeshDistortMaterial)
 extend({ RoundedBoxGeometry })
 
+const RoundedDarkBox = () => {
+  const { a11yPrefersState } = useUserPreferences()
+  const a11y = useA11y()
+  const { color } = useSpring({
+    color: a11y.focus || a11y.hover ? '#494949' : '#272727',
+  })
+  return (
+    <mesh
+    rotation={[45, 45, 45]}
+  >
+    <roundedBoxGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
+  <M distort={a11yPrefersState.prefersReducedMotion ? 0 : 0.4} color={color} />
+  </mesh>
+  )
+}
+
 const BoxComponent = () => {
   const router = useStore((s) => s.router)
-  const { color } = useSpring({
-    color: router.route !== '/box' ? 'black' : '#272727',
-  })
   return (
     <Suspense fallback={null}>
       <ambientLight intensity={0.5} />
@@ -24,12 +37,7 @@ const BoxComponent = () => {
           router.push(`/`)
         }}
       >
-        <mesh
-          rotation={[45, 45, 45]}
-        >
-          <roundedBoxGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
-          <M factor={3} color={color} />
-        </mesh>
+        <RoundedDarkBox />
       </A11y>
       <Environment preset={'studio'} />
     </Suspense>
