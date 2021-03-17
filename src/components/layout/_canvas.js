@@ -5,6 +5,7 @@ import { OrbitControls, Preload, useContextBridge } from '@react-three/drei'
 import { A11yUserPreferencesContext } from '@react-three/a11y'
 import { a, useSpring } from '@react-spring/three'
 import { EffectComposer, Vignette } from '@react-three/postprocessing'
+import { A11yUserPreferences } from '@react-three/a11y'
 
 const Bg = () => {
   const router = useStore((state) => state.router)
@@ -16,26 +17,28 @@ const Bg = () => {
 const LCanvas = ({ children }) => {
   const A11yContextBridge = useContextBridge(A11yUserPreferencesContext)
   return (
-    <Canvas
-      style={{
-        position: 'absolute',
-        top: 0,
-      }}
-      onCreated={({ events }) => {
-        useStore.setState({ events })
-      }}
-    >
-      <A11yContextBridge>
-        <Preload all />
-        <Bg />
-        <Perf openByDefault trackGPU={true} position={'bottom-right'} />
-        <OrbitControls />
-        <EffectComposer>
-          <Vignette eskil={false} offset={0.1} darkness={1.1} />
-        </EffectComposer>
-        {children}
-      </A11yContextBridge>
-    </Canvas>
+    <A11yUserPreferences>
+      <Canvas
+        style={{
+          position: 'absolute',
+          top: 0,
+        }}
+        onCreated={({ events }) => {
+          useStore.setState({ events })
+        }}
+      >
+        <A11yContextBridge>
+          <Preload all />
+          <Bg />
+          <Perf openByDefault trackGPU={true} position={'bottom-right'} />
+          <OrbitControls />
+          <EffectComposer>
+            <Vignette eskil={false} offset={0.1} darkness={1.1} />
+          </EffectComposer>
+          {children}
+        </A11yContextBridge>
+      </Canvas>
+    </A11yUserPreferences>
   )
 }
 

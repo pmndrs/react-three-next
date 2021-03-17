@@ -4,7 +4,6 @@ import { useEffect, Children } from 'react'
 import Header from '../config'
 import dynamic from 'next/dynamic'
 import Dom from '@/components/layout/_dom'
-import { A11yUserPreferences } from '@react-three/a11y'
 
 import '@/styles/index.css'
 
@@ -44,14 +43,10 @@ function MyApp({ Component, pageProps }) {
     useStore.setState({ router })
   }, [router])
 
-  return (
-    <A11yUserPreferences>
-      {r3fArr.length > 0 ? (
-        <SplitApp canvas={r3fArr} dom={compArr} />
-      ) : (
-        <Component {...pageProps} />
-      )}
-    </A11yUserPreferences>
+  return r3fArr.length > 0 ? (
+    <SplitApp canvas={r3fArr} dom={compArr} />
+  ) : (
+    <Component {...pageProps} />
   )
 }
 
