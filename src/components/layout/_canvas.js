@@ -2,7 +2,7 @@ import { Canvas } from 'react-three-fiber'
 import { Perf } from 'r3f-perf'
 import useStore from '@/helpers/store'
 import { OrbitControls, Preload, useContextBridge } from '@react-three/drei'
-import { A11yUserPreferencesContext } from "@react-three/a11y"
+import { A11yUserPreferencesContext } from '@react-three/a11y'
 import { a, useSpring } from '@react-spring/three'
 import { EffectComposer, Vignette } from '@react-three/postprocessing'
 
@@ -14,7 +14,7 @@ const Bg = () => {
   return <a.color attach='background' r={bg} g={bg} b={bg} />
 }
 const LCanvas = ({ children }) => {
-  const ContextBridge = useContextBridge(A11yUserPreferencesContext)
+  const A11yContextBridge = useContextBridge(A11yUserPreferencesContext)
   return (
     <Canvas
       style={{
@@ -25,7 +25,7 @@ const LCanvas = ({ children }) => {
         useStore.setState({ events })
       }}
     >
-      <ContextBridge>
+      <A11yContextBridge>
         <Preload all />
         <Bg />
         <Perf openByDefault trackGPU={true} position={'bottom-right'} />
@@ -34,7 +34,7 @@ const LCanvas = ({ children }) => {
           <Vignette eskil={false} offset={0.1} darkness={1.1} />
         </EffectComposer>
         {children}
-      </ContextBridge>
+      </A11yContextBridge>
     </Canvas>
   )
 }
