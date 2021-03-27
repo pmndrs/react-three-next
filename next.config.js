@@ -6,21 +6,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const withOffline = require('next-offline')
 const path = require('path')
 
-const { ESBuildMinifyPlugin } = require('esbuild-loader')
-
-function esbuildMinify(config, options) {
-  const terserIndex = config.optimization.minimizer.findIndex(
-    (minimizer) => minimizer.constructor.name === 'TerserPlugin'
-  )
-  if (terserIndex > -1) {
-    config.optimization.minimizer.splice(
-      terserIndex,
-      1,
-      new ESBuildMinifyPlugin(options)
-    )
-  }
-}
-
 function esbuildLoader(config, options) {
   const jsLoader = config.module.rules.find(
     (rule) => rule.test && rule.test.test('.js')
@@ -28,10 +13,14 @@ function esbuildLoader(config, options) {
   if (jsLoader && jsLoader.use) {
     if (jsLoader.use.length > 0) {
       jsLoader.use.forEach((e) => {
+        console.log(e)
+
         e.loader = 'esbuild-loader'
         e.options = options
       })
     } else {
+      console.log(jsLoader)
+
       jsLoader.use.loader = 'esbuild-loader'
       jsLoader.use.options = options
     }
@@ -57,12 +46,11 @@ const nextConfig =
           )
           // use esbuild in dev for faster HMR
           if (dev) {
-            esbuildMinify(config)
             esbuildLoader(config, {
               loader: 'jsx',
               target: 'es2017',
             })
-            config.optimization.minimizer.shift()
+            // config.optimization.minimizer.shift()
           }
 
           config.module.rules.push(
