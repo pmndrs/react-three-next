@@ -1,6 +1,6 @@
 {
   "name": "react-three-next",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "authors": [
     "Renaud ROHLINGER <https://twitter.com/onirenaud>"
   ],
@@ -33,20 +33,20 @@
     "@pmndrs/branding": "^0.0.7",
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-three/a11y": "1.0.1",
-    "@react-three/drei": "^4.0.0-beta.4",
+    "@react-three/drei": "4.0.0-beta.5",
     "@react-three/postprocessing": "^1.5.1",
+    "esbuild-loader": "^2.10.0",
     "lerp": "^1.0.3",
-    "next": "^10.0.8",
+    "next": "^10.0.9",
     "postprocessing": "^6.20.3",
-    "r3f-perf": "^0.83.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "r3f-perf": "^1.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-spring": "^9.0.0-rc.3",
-    "react-three-fiber": "^5.3.18",
-    "tailwindcss": "^2.0.3",
+    "react-three-fiber": "^5.3.22",
+    "tailwindcss": "^2.0.4",
     "three": "^0.126.1",
-    "three-stdlib": "^1.0.0",
-    "webpack": "^5.23.0"
+    "three-stdlib": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
@@ -74,7 +74,8 @@
     "next-offline": "^5.0.3",
     "postcss": "^8.2.6",
     "prettier": "^2.2.1",
-    "raw-loader": "^4.0.2"
+    "raw-loader": "^4.0.2",
+    "webpack": "^5.28.0"
   },
   "license": "MIT"
 }

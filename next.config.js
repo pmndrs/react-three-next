@@ -4,19 +4,50 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 const withOffline = require('next-offline')
-const webpack = require('webpack')
 const path = require('path')
+
+const { ESBuildMinifyPlugin } = require('esbuild-loader')
+
+function esbuildMinify(config, options) {
+  const terserIndex = config.optimization.minimizer.findIndex(
+    (minimizer) => minimizer.constructor.name === 'TerserPlugin'
+  )
+  if (terserIndex > -1) {
+    config.optimization.minimizer.splice(
+      terserIndex,
+      1,
+      new ESBuildMinifyPlugin(options)
+    )
+  }
+}
+
+function esbuildLoader(config, options) {
+  const jsLoader = config.module.rules.find(
+    (rule) => rule.test && rule.test.test('.js')
+  )
+  if (jsLoader && jsLoader.use) {
+    if (jsLoader.use.length > 0) {
+      jsLoader.use.forEach((e) => {
+        e.loader = 'esbuild-loader'
+        e.options = options
+      })
+    } else {
+      jsLoader.use.loader = 'esbuild-loader'
+      jsLoader.use.options = options
+    }
+  }
+}
 
 // the config break if we use next export
 const nextConfig =
   process.env.EXPORT !== 'true'
     ? {
-        future: {
-          webpack5: true,
-        },
-        webpack(config) {
-          config.plugins = config.plugins || []
-
+        webpack(config, { webpack, dev }) {
+          config.plugins.push(
+            new webpack.ProvidePlugin({
+              React: 'react',
+            })
+          )
           // if you want to do a custom build to reduce the size of threejs <-- this require webpack and path
           config.plugins.unshift(
             new webpack.NormalModuleReplacementPlugin(
@@ -24,6 +55,15 @@ const nextConfig =
               path.resolve('src/examples/three_builds/three_minimal.js')
             )
           )
+          // use esbuild in dev for faster HMR
+          if (dev) {
+            esbuildMinify(config)
+            esbuildLoader(config, {
+              loader: 'jsx',
+              target: 'es2017',
+            })
+            config.optimization.minimizer.shift()
+          }
 
           config.module.rules.push(
             { test: /react-spring/, sideEffects: true }, // prevent vercel to crash when deploy
@@ -33,6 +73,7 @@ const nextConfig =
               use: ['raw-loader', 'glslify-loader'],
             }
           )
+
           return config
         },
       }
