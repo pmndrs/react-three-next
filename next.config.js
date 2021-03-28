@@ -13,14 +13,10 @@ function esbuildLoader(config, options) {
   if (jsLoader && jsLoader.use) {
     if (jsLoader.use.length > 0) {
       jsLoader.use.forEach((e) => {
-        console.log(e)
-
         e.loader = 'esbuild-loader'
         e.options = options
       })
     } else {
-      console.log(jsLoader)
-
       jsLoader.use.loader = 'esbuild-loader'
       jsLoader.use.options = options
     }
