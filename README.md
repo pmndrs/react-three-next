@@ -70,7 +70,6 @@ export default Page
 - [`@react-three/a11y`](https://github.com/pmndrs/react-three-a11y/) &ndash; Accessibility tools for React Three Fiber
 - [`tailwind`](https://tailwindcss.com/docs) &ndash; A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
 - [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
-- [`@three-material-editor`](https://github.com/RenaudRohlinger/three-material-editor) &ndash; Tool to easily edit the shaders of your threejs materials.
 
 ### How to contribute :
 
