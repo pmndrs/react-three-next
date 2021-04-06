@@ -1,4 +1,4 @@
-import { Canvas } from 'react-three-fiber'
+import { Canvas } from '@react-three/fiber'
 import { Perf } from 'r3f-perf'
 import useStore from '@/helpers/store'
 import { OrbitControls, Preload } from '@react-three/drei'
@@ -20,18 +20,18 @@ const LCanvas = ({ children }) => {
         position: 'absolute',
         top: 0,
       }}
-      onCreated={({ events }) => {
-        useStore.setState({ events })
-      }}
+      // onCreated={({ events }) => {
+      //   useStore.setState({ events })
+      // }}
     >
       <A11yUserPreferences>
         <Preload all />
         <Bg />
         <Perf openByDefault trackGPU={true} position={'bottom-right'} />
         <OrbitControls />
-        <EffectComposer>
+        {/* <EffectComposer>
           <Vignette eskil={false} offset={0.1} darkness={1.1} />
-        </EffectComposer>
+        </EffectComposer> */}
         {children}
       </A11yUserPreferences>
     </Canvas>
