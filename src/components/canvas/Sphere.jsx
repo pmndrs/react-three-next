@@ -28,7 +28,6 @@ const SphereComponent = () => {
 
   return (
     <Suspense fallback={null}>
-      {/* <DarkSphere /> */}
       <A11y
         role='link'
         href='/box'

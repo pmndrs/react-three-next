@@ -18,12 +18,7 @@ const RoundedDarkBox = () => {
   const router = useStore((s) => s.router)
 
   return (
-    <mesh
-      rotation={[45, 45, 45]}
-      onClick={() => {
-        router.push(`/`)
-      }}
-    >
+    <mesh rotation={[45, 45, 45]}>
       <roundedBoxGeometry args={[1.5, 1.5, 1.5, 10, 0.1]} />
       <M
         distort={a11yPrefersState.prefersReducedMotion ? 0 : 0.4}
@@ -37,8 +32,6 @@ const BoxComponent = () => {
   const router = useStore((s) => s.router)
   return (
     <Suspense fallback={null}>
-      <RoundedDarkBox />
-      {/* 
       <A11y
         role='link'
         href='/'
@@ -46,7 +39,8 @@ const BoxComponent = () => {
           router.push(`/`)
         }}
       >
-      </A11y> */}
+        <RoundedDarkBox />
+      </A11y>
       <Environment preset={'studio'} />
     </Suspense>
   )
