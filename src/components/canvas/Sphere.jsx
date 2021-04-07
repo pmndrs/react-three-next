@@ -12,6 +12,7 @@ const DarkSphere = () => {
   const { color } = useSpring({
     color: a11y.focus || a11y.hover ? '#272727' : 'black',
   })
+
   return (
     <Sphere args={[1, 32, 32]}>
       <M
@@ -24,6 +25,7 @@ const DarkSphere = () => {
 
 const SphereComponent = () => {
   const router = useStore((s) => s.router)
+
   return (
     <Suspense fallback={null}>
       <A11y
