@@ -3,7 +3,6 @@ import { Perf } from 'r3f-perf'
 import useStore from '@/helpers/store'
 import { OrbitControls, Preload } from '@react-three/drei'
 import { a, useSpring } from '@react-spring/three'
-import { EffectComposer, Vignette } from '@react-three/postprocessing'
 import { A11yUserPreferences } from '@react-three/a11y'
 
 const Bg = () => {
@@ -20,18 +19,15 @@ const LCanvas = ({ children }) => {
         position: 'absolute',
         top: 0,
       }}
-      // onCreated={({ events }) => {
-      //   useStore.setState({ events })
-      // }}
+      onCreated={({ events }) => {
+        useStore.setState({ events })
+      }}
     >
       <A11yUserPreferences>
         <Preload all />
         <Bg />
         <Perf openByDefault trackGPU={true} position={'bottom-right'} />
         <OrbitControls />
-        {/* <EffectComposer>
-          <Vignette eskil={false} offset={0.1} darkness={1.1} />
-        </EffectComposer> */}
         {children}
       </A11yUserPreferences>
     </Canvas>

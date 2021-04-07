@@ -1247,10 +1247,10 @@
     utility-types "^3.10.0"
     zustand "^3.0.3"
 
-"@react-three/fiber@^6.0.8":
-  version "6.0.8"
-  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-6.0.8.tgz#09e65c1f7a09395a9f2705734c5a61389ecb1820"
-  integrity sha512-squFicN1nal2uN4YuntYQQsg9yjwJIiY4Xv08crlkwR7wA8idX3dWCXYnExFc9zLZPQTCJ8wCHzLHus4f8lMCg==
+"@react-three/fiber@^6.0.9":
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-6.0.9.tgz#12fc8315039b2d626bef666a3a22067038eaa174"
+  integrity sha512-n1Fw15teQmJPpF+r6G2/i4amVW5LEHaIFIoO3JXlMGuTfJ0TeXxFYvXj/KULdakINXKLRfrK6zJ6vRWLtODElw==
   dependencies:
     "@babel/runtime" "^7.13.10"
     react-merge-refs "^1.1.0"
@@ -1262,14 +1262,6 @@
     use-asset "^1.0.4"
     utility-types "^3.10.0"
     zustand "^3.3.3"
-
-"@react-three/postprocessing@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@react-three/postprocessing/-/postprocessing-2.0.2.tgz#8a6c7fb216fe0d1893615f950787cc084fda786c"
-  integrity sha512-uQ3opHOnGwilN42Km3xDOG1wDFllDuSasvXFq41TC+xNjvIef/g570NPGNkiuIIuAYYHxCmMU5k989OoyIOB/g==
-  dependencies:
-    postprocessing "^6.21.2"
-    react-merge-refs "^1.1.0"
 
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
@@ -5627,11 +5619,6 @@ postprocessing@^6.20.3:
   version "6.20.3"
   resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.20.3.tgz#17cc47bf3a4a4fd0c3e918a2e71292a0958f3349"
   integrity sha512-Fm68mijfc/DBm0kGiXg3ws8zLgfwdH2XmiS4b/j2JXOsK7Flaq4VylycGgJcf2y6Q/y+zM+ZgtNvJAAcjmgYzA==
-
-postprocessing@^6.21.2:
-  version "6.21.2"
-  resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.21.2.tgz#ef270f8aee4278c65f331baed7ac6cc6a56603ac"
-  integrity sha512-MPDt+yHjuKjJIYesdDl0qEvwvh8mQ9KYG14Dw+XGRsy3qbTLxxA+0ZTT6I24e6ln7QdPirD5LS1P02s9NvSRSQ==
 
 potpack@^1.0.1:
   version "1.0.1"

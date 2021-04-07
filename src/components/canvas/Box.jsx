@@ -15,7 +15,6 @@ const RoundedDarkBox = () => {
   const { color } = useSpring({
     color: a11y.focus || a11y.hover ? '#494949' : '#272727',
   })
-  const router = useStore((s) => s.router)
 
   return (
     <mesh rotation={[45, 45, 45]}>
