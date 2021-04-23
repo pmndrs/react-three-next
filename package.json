@@ -12,9 +12,9 @@
     "dev": "next dev",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
-    "analyze": "cross-env ANALYZE=true next build",
+    "analyze": "ANALYZE=true next build",
     "start": "next start",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -47,14 +47,11 @@
     "three-stdlib": "^1.2.2"
   },
   "devDependencies": {
-    "file-loader": "^6.2.0",
-    "url-loader": "^4.1.1",
     "@babel/core": "^7.12.17",
     "@next/bundle-analyzer": "^10.0.7",
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.0.0",
     "babel-plugin-glsl": "^1.0.0",
-    "cross-env": "^7.0.3",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-react-app": "^6.0.0",
@@ -66,15 +63,17 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-tailwind": "^0.2.1",
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
-    "husky": "^5.0.9",
+    "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "next-compose-plugins": "^2.2.1",
     "next-offline": "^5.0.3",
     "postcss": "^8.2.9",
     "prettier": "^2.2.1",
     "raw-loader": "^4.0.2",
+    "url-loader": "^4.1.1",
     "webpack": "^5.28.0"
   },
   "license": "MIT"
