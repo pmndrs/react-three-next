@@ -31,7 +31,7 @@ npx create-r3f-app next my-app
 - [x] PWA Support
 - [x] Layout for Canvas and DOM
 - [x] Template for the meta data and header
-- [x] Clean code using ESlint, Prettier and Husky
+- [x] Clean code using ESlint and Prettier
 - [x] Use esbuild in development for faster HMR
 - [x] VSCode debug profiles for the server, Chrome, and Firefox
 
@@ -65,11 +65,11 @@ export default Page
 ### ⬛ Stack
 
 - [`threejs`](https://github.com/mrdoob/three.js/) &ndash; A lightweight, 3D library with a default WebGL renderer.
-- [`react-three-fiber`](https://github.com/pmndrs/react-three-fiber) &ndash; A React renderer for Threejs on the web and react-native.
+- [`@react-three/fiber`](https://github.com/pmndrs/react-three-fiber) &ndash; A React renderer for Threejs on the web and react-native.
 - [`@react-three/drei`](https://github.com/pmndrs/drei) &ndash; useful helpers for react-three-fiber
 - [`@react-three/a11y`](https://github.com/pmndrs/react-three-a11y/) &ndash; Accessibility tools for React Three Fiber
 - [`tailwind`](https://tailwindcss.com/docs) &ndash; A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 directly in your markup.
-- [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
+- [`r3f-perf` - Optional](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
 
 ### How to contribute :
 

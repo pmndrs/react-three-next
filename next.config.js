@@ -34,12 +34,12 @@ const nextConfig =
             })
           )
           // if you want to do a custom build to reduce the size of threejs <-- this require webpack and path
-          config.plugins.unshift(
-            new webpack.NormalModuleReplacementPlugin(
-              /three.module.js/,
-              path.resolve('src/examples/three_builds/three_minimal.js')
-            )
-          )
+          // config.plugins.unshift(
+          //   new webpack.NormalModuleReplacementPlugin(
+          //     /three.module.js/,
+          //     path.resolve('src/examples/three_builds/three_minimal.js')
+          //   )
+          // )
           // use esbuild in dev for faster HMR
           if (dev) {
             esbuildLoader(config, {
