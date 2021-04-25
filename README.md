@@ -76,7 +76,6 @@ export default Page
 ```bash
 git clone https://github.com/pmndrs/react-three-next
 && cd react-three-next && yarn install
-# then push using the terminal to trigger Husky
 ```
 
 ### Maintainers :
