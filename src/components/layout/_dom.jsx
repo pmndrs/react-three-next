@@ -15,7 +15,7 @@ const Dom = ({ dom }) => {
   useStore.setState({ dom: ref })
   return (
     <div
-      className='absolute top-0 left-0 w-screen h-screen overflow-hidden dom z-10'
+      className='absolute top-0 left-0 z-10 w-screen h-screen overflow-hidden dom'
       ref={ref}
     >
       <Header />

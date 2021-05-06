@@ -22,6 +22,7 @@ const BoxComponent = ({ route }) => {
       role='link'
       href={route}
       actionCall={() => {
+        setActive(true)
         router.push(route)
       }}
     >
