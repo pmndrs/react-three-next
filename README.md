@@ -53,6 +53,17 @@ const Page = () => {
 export default Page
 ```
 
+### :passport_control: Typescript
+
+If you want to use typescript:
+
+```
+  create a tsconfig.json file
+  start the dev server, next will fill the tsconfig.json and tell you to install typescript
+  yarn add --dev typescript @types/react
+  copy the path aliases from jsconfig.json to tsconfig.json
+```
+
 ### :control_knobs: Available Scripts
 
 - `yarn dev` - Next dev
