@@ -5,9 +5,9 @@ import useStore from '@/helpers/store'
 
 const LCanvas = ({ children }) => {
   const dom = useStore((state) => state.dom)
-
   return (
     <Canvas
+      mode='concurrent'
       style={{
         position: 'absolute',
         top: 0,

@@ -16,12 +16,11 @@ if (process.env.NODE_ENV === 'production') {
   LCanvas = require('@/components/layout/_canvas').default
 }
 
-function SplitApp({ canvas, noCanvas, dom }) {
+function Layout({ dom }) {
   return (
     <>
       <Header />
-      {dom && <Dom dom={dom} />}
-      {!noCanvas && <LCanvas>{canvas}</LCanvas>}
+      {dom && <Dom>{dom}</Dom>}
     </>
   )
 }
@@ -29,14 +28,10 @@ function SplitApp({ canvas, noCanvas, dom }) {
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
-  let noCanvas = false
-
   let r3fArr = []
   let compArr = []
+
   Children.forEach(Component(pageProps).props.children, (child) => {
-    if (child.props && child.props.noCanvas) {
-      noCanvas = true
-    }
     if (child.props && child.props.r3f) {
       r3fArr.push(child)
     } else {
@@ -48,10 +43,11 @@ function MyApp({ Component, pageProps }) {
     useStore.setState({ router })
   }, [router])
 
-  return r3fArr.length > 0 || noCanvas ? (
-    <SplitApp canvas={r3fArr} dom={compArr} />
-  ) : (
-    <Component {...pageProps} />
+  return (
+    <>
+      {compArr && <Layout dom={compArr} />}
+      {r3fArr && <LCanvas>{r3fArr}</LCanvas>}
+    </>
   )
 }
 

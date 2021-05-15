@@ -53,20 +53,6 @@ const Page = () => {
 export default Page
 ```
 
-```jsx
-const Page = () => {
-  return (
-    // even if there is only 1 element add an empty parent to the page component ->
-    <>
-      {/* If your page doesn't have any 3D and you don't want to render the canvas to improve performances -> */}
-      <div noCanvas>Hello !</div>
-    </>
-  )
-}
-
-export default Page
-```
-
 ### :control_knobs: Available Scripts
 
 - `yarn dev` - Next dev

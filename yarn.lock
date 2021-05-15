@@ -1110,10 +1110,10 @@
     utility-types "^3.10.0"
     zustand "^3.0.3"
 
-"@react-three/fiber@^6.0.16":
-  version "6.0.16"
-  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-6.0.16.tgz#178995782aa5fe5f87b79314ff8ebc3fc8b25a4d"
-  integrity sha512-oKMYNJOd5t+V4o18aRMhaRhcDQ1NeeCDy52yJvXpu7zrsR04YZtXD4RacW0FDH0KnwkOLDst95LCCphm3Thk/A==
+"@react-three/fiber@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-6.1.2.tgz#31d6c6ae6d5d9995e8da562aca4b9a9a27f29565"
+  integrity sha512-Bz4fIbiaVdIExRi6Xir1sS4X3flPgwpfZR0sq6GdKwNcTyHIVEK9A8i+cb17chM1EoH2ZqcXfF7UPzC+sWMPxg==
   dependencies:
     "@babel/runtime" "^7.13.10"
     react-merge-refs "^1.1.0"
@@ -1124,7 +1124,7 @@
     scheduler "^0.20.2"
     use-asset "^1.0.4"
     utility-types "^3.10.0"
-    zustand "^3.3.3"
+    zustand "^3.5.1"
 
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
@@ -5685,10 +5685,10 @@ react-use-measure@^2.0.4:
   dependencies:
     debounce "^1.2.0"
 
-react@^17.0.2:
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
-  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+react@^0.0.0-experimental-1a2d79250:
+  version "0.0.0-experimental-1a2d79250"
+  resolved "https://registry.yarnpkg.com/react/-/react-0.0.0-experimental-1a2d79250.tgz#205950b4e251cb2c9cf2ede26e86feccfdffd843"
+  integrity sha512-VGYxYv4eRFwjFAm1ASngrGLmh/ED9qj12u8B6EBxaklzcDTavSIOraPs91PNkWZa89txhPeq9YTXng5ITdJO1A==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -6701,10 +6701,10 @@ three-stdlib@^2.0.1:
     potpack "^1.0.1"
     zstddec "^0.0.2"
 
-three-stdlib@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.0.2.tgz#33d93b5b674d92480318fc92e1bfadee273a04c9"
-  integrity sha512-DZfjjewh8LsHkSySuki2UsEAYj3J80+FWN7PX5M9d/wsAgcLf6gdUfbNoJrfkaXGkUaKbz1lgl4lsCkbDdgYdA==
+three-stdlib@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.0.3.tgz#265068413a5239ca0d4d0a712ef047b9bd598dfb"
+  integrity sha512-jJ4dYvbqDyd0PfSSNzmHc1VwJPjOdWctmiqcZEn0i4tEu19myTpPSV5wNLo0cIHpoGdISvdwHyETPFlwW+CMPA==
   dependencies:
     "@babel/runtime" "^7.13.17"
     "@webgpu/glslang" "^0.0.15"
@@ -7437,7 +7437,12 @@ zstddec@^0.0.2:
   resolved "https://registry.yarnpkg.com/zstddec/-/zstddec-0.0.2.tgz#57e2f28dd1ff56b750e07d158a43f0611ad9eeb4"
   integrity sha512-DCo0oxvcvOTGP/f5FA6tz2Z6wF+FIcEApSTu0zV5sQgn9hoT5lZ9YRAKUraxt9oP7l4e8TnNdi8IZTCX6WCkwA==
 
-zustand@^3.0.3, zustand@^3.2.0, zustand@^3.3.3:
+zustand@^3.0.3, zustand@^3.2.0:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.3.3.tgz#88b930a873d0f13e406f96958c1409645ea8b370"
   integrity sha512-KTN/O76rVc9muDoprsCDe/LQjbuq+GHYt5JdYahuXaGZ+8Gyk44SepzTFeQTF5J+b8+/Q+o90BaSEQ3WImKPog==
+
+zustand@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.5.1.tgz#28970280e830924b185ce064061231957398c1d0"
+  integrity sha512-7J56Ve814z4zap71iaKFD+t65LFI//jEq/Vf55BTSVqJZCm+w9rov8OMBg+YSwIPQk54bfoIWHTrOWuAbpEDMw==
