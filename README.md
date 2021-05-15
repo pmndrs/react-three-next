@@ -35,6 +35,14 @@ npx create-r3f-app next my-app
 - [x] Use esbuild in development for faster HMR
 - [x] VSCode debug profiles for the server, Chrome, and Firefox
 
+### :passport_control: Typescript
+
+If you want to use typescript:
+- create a tsconfig.json file
+- start the dev server, next will fill the tsconfig.json and tell you to install typescript
+- yarn add --dev typescript @types/react
+- copy the path aliases from jsconfig.json to tsconfig.json
+
 ### :bullettrain_side: Architecture
 
 Inform the nextjs page that the component is a Threejs component. For that, simply add the **r3f** property to the parent component.
@@ -51,17 +59,6 @@ const Page = () => {
 }
 
 export default Page
-```
-
-### :passport_control: Typescript
-
-If you want to use typescript:
-
-```
-  create a tsconfig.json file
-  start the dev server, next will fill the tsconfig.json and tell you to install typescript
-  yarn add --dev typescript @types/react
-  copy the path aliases from jsconfig.json to tsconfig.json
 ```
 
 ### :control_knobs: Available Scripts
