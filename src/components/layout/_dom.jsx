@@ -1,15 +1,6 @@
 import useStore from '@/helpers/store'
-import Head from 'next/head'
 import { useRef } from 'react'
 
-const HeaderRouteTitle = () => {
-  const title = useStore((s) => s.title)
-  return (
-    <Head>
-      <title>{title}</title>
-    </Head>
-  )
-}
 const Dom = ({ children }) => {
   const ref = useRef(null)
   useStore.setState({ dom: ref })
@@ -18,7 +9,6 @@ const Dom = ({ children }) => {
       className='absolute top-0 left-0 z-10 w-screen h-screen overflow-hidden dom'
       ref={ref}
     >
-      <HeaderRouteTitle />
       {children}
     </div>
   )

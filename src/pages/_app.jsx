@@ -17,31 +17,20 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 function Layout({ dom }) {
-  return (
-    <>
-      <Header />
-      {dom && <Dom>{dom}</Dom>}
-    </>
-  )
+  return <>{dom && <Dom>{dom}</Dom>}</>
 }
 
-function MyApp({ Component, pageProps }) {
-  const router = useRouter()
-
+const ForwardPropsToR3fComponent = ({ comp, pageProps }) => {
   let r3fArr = []
   let compArr = []
 
-  Children.forEach(Component(pageProps).props.children, (child) => {
+  Children.forEach(comp(pageProps).props.children, (child) => {
     if (child.props && child.props.r3f) {
       r3fArr.push(child)
     } else {
       compArr.push(child)
     }
   })
-
-  useEffect(() => {
-    useStore.setState({ router })
-  }, [router])
 
   return (
     <>
@@ -51,4 +40,17 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+function App({ Component, pageProps = {} }) {
+  const router = useRouter()
+  useEffect(() => {
+    useStore.setState({ router })
+  }, [router])
+  return (
+    <>
+      <Header title={pageProps.title} />
+      <ForwardPropsToR3fComponent comp={Component} pageProps={pageProps} />
+    </>
+  )
+}
+
+export default App

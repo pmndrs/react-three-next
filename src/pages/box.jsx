@@ -1,5 +1,4 @@
 import Instructions from '@/components/dom/instructions'
-import useStore from '@/helpers/store'
 import dynamic from 'next/dynamic'
 
 const Box = dynamic(() => import('@/components/canvas/Box'), {
@@ -7,7 +6,6 @@ const Box = dynamic(() => import('@/components/canvas/Box'), {
 })
 
 const Page = () => {
-  useStore.setState({ title: 'Box' })
   return (
     <>
       <Box r3f route='/' />
@@ -17,3 +15,11 @@ const Page = () => {
 }
 
 export default Page
+
+export async function getStaticProps() {
+  return {
+    props: {
+      title: 'Box',
+    },
+  }
+}
