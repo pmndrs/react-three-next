@@ -2,7 +2,7 @@
 
 # :japanese_castle: React-Three-Next starter
 
-First Load JS of 78Kb. This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
+First Load JS of 76Kb. This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
 
 ### ⚫ Demo :
 
@@ -35,6 +35,14 @@ npx create-r3f-app next my-app
 - [x] Use esbuild in development for faster HMR
 - [x] VSCode debug profiles for the server, Chrome, and Firefox
 
+### :passport_control: Typescript
+
+If you want to use typescript:
+- create a tsconfig.json file
+- start the dev server, next will fill the tsconfig.json and tell you to install typescript
+- yarn add --dev typescript @types/react
+- copy the path aliases from jsconfig.json to tsconfig.json
+
 ### :bullettrain_side: Architecture
 
 Inform the nextjs page that the component is a Threejs component. For that, simply add the **r3f** property to the parent component.
@@ -43,7 +51,7 @@ Inform the nextjs page that the component is a Threejs component. For that, simp
 const Page = () => {
   return (
     <>
-      <h1>Hello !</h1>
+      <div>Hello !</div>
       {/* Simply add the r3f prop to the parent component -> */}
       <MeshComponent r3f />
     </>

@@ -16,22 +16,15 @@ if (process.env.NODE_ENV === 'production') {
   LCanvas = require('@/components/layout/_canvas').default
 }
 
-function SplitApp({ canvas, dom }) {
-  return (
-    <>
-      <Header />
-      {dom && <Dom dom={dom} />}
-      <LCanvas>{canvas && <group>{canvas}</group>}</LCanvas>
-    </>
-  )
+function Layout({ dom }) {
+  return <>{dom && <Dom>{dom}</Dom>}</>
 }
 
-function MyApp({ Component, pageProps }) {
-  const router = useRouter()
-
+const ForwardPropsToR3fComponent = ({ comp, pageProps }) => {
   let r3fArr = []
   let compArr = []
-  Children.forEach(Component(pageProps).props.children, (child) => {
+
+  Children.forEach(comp(pageProps).props.children, (child) => {
     if (child.props && child.props.r3f) {
       r3fArr.push(child)
     } else {
@@ -39,15 +32,25 @@ function MyApp({ Component, pageProps }) {
     }
   })
 
-  useEffect(() => {
-    useStore.setState({ router })
-  }, [router])
-
-  return r3fArr.length > 0 ? (
-    <SplitApp canvas={r3fArr} dom={compArr} />
-  ) : (
-    <Component {...pageProps} />
+  return (
+    <>
+      {compArr && <Layout dom={compArr} />}
+      {r3fArr && <LCanvas>{r3fArr}</LCanvas>}
+    </>
   )
 }
 
-export default MyApp
+function App({ Component, pageProps = {} }) {
+  const router = useRouter()
+  useEffect(() => {
+    useStore.setState({ router })
+  }, [router])
+  return (
+    <>
+      <Header title={pageProps.title} />
+      <ForwardPropsToR3fComponent comp={Component} pageProps={pageProps} />
+    </>
+  )
+}
+
+export default App

@@ -4,7 +4,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 const withOffline = require('next-offline')
-const path = require('path')
 
 function esbuildLoader(config, options) {
   const jsLoader = config.module.rules.find(
@@ -27,6 +26,9 @@ function esbuildLoader(config, options) {
 const nextConfig =
   process.env.EXPORT !== 'true'
     ? {
+        future: {
+          webpack5: true,
+        },
         webpack(config, { webpack, dev, isServer }) {
           config.plugins.push(
             new webpack.ProvidePlugin({
