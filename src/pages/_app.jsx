@@ -25,7 +25,7 @@ const ForwardPropsToR3fComponent = ({ comp, pageProps }) => {
   let compArr = []
 
   Children.forEach(comp(pageProps).props.children, (child) => {
-    if (child.props && child.props.r3f) {
+    if (child?.props && child.props.r3f) {
       r3fArr.push(child)
     } else {
       compArr.push(child)
