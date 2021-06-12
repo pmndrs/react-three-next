@@ -7,7 +7,7 @@
   "private": false,
   "scripts": {
     "lint": "yarn prettier && yarn eslint",
-    "eslint": "eslint --fix 'src/**/*.{js,jsx}' --ext jsconfig.json",
+    "eslint": "eslint --fix \"src/**/*.{js,jsx}\" --ext jsconfig.json",
     "prettier": "prettier --list-different '**/*.{js,jsx,md}'",
     "dev": "next dev",
     "build": "next build",
