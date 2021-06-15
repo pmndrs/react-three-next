@@ -25,14 +25,14 @@
   },
   "dependencies": {
     "@react-three/a11y": "^2.0.2",
-    "@react-three/drei": "^5.3.0",
-    "@react-three/fiber": "^6.2.2",
+    "@react-three/drei": "^6.1.2",
+    "@react-three/fiber": "^7.0.1",
     "esbuild-loader": "^2.13.1",
-    "next": "^10.2.3",
-    "react": "^0.0.0-experimental-1a2d79250",
+    "next": "^11.0.0",
+    "react": "^0.0.0-experimental-dbe3363cc",
     "react-dom": "^17.0.2",
     "three": "^0.129.0",
-    "three-stdlib": "^2.0.5"
+    "three-stdlib": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",

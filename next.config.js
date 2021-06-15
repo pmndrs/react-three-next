@@ -26,9 +26,7 @@ function esbuildLoader(config, options) {
 const nextConfig =
   process.env.EXPORT !== 'true'
     ? {
-        future: {
-          webpack5: true,
-        },
+        webpack5: true,
         webpack(config, { webpack, dev, isServer }) {
           config.plugins.push(
             new webpack.ProvidePlugin({
