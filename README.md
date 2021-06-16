@@ -2,7 +2,7 @@
 
 # :japanese_castle: React-Three-Next starter
 
-First Load JS of 76Kb. This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
+First Load JS of 74Kb. This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
 
 ### ⚫ Demo :
 
