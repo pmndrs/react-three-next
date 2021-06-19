@@ -1068,10 +1068,10 @@
     utility-types "^3.10.0"
     zustand "^3.2.0"
 
-"@react-three/drei@^6.1.2":
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-6.1.2.tgz#b1b32b078550427e4673c46dc8ed26860f2844f5"
-  integrity sha512-RkFDsfUWOIpzPdJycrA7hLwJQ4mXPNuzfjM2KflvsbgZNM7jlbGGT23hDQj4GnouMNH6wTDO/nNfoSSGSUc37A==
+"@react-three/drei@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-6.1.0.tgz#e81f65b20ac25bf99107d169aca8820b12615e11"
+  integrity sha512-3PuVt5JJgY0EZkxbid9Nqum4fGBhuZyWSxtjOvbw9xfcyyl9BNxzbYEKRCnjdYKrqpo8phjZHEVecNLo88NHcA==
   dependencies:
     "@babel/runtime" "^7.11.2"
     blob-polyfill "^5.0.20210201"
@@ -1081,7 +1081,7 @@
     lodash.pick "^4.4.0"
     react-merge-refs "^1.0.0"
     stats.js "^0.17.0"
-    three-stdlib "^2.2.0"
+    three-stdlib "^2.0.8"
     troika-three-text "^0.42.0"
     use-asset "^1.0.4"
     utility-types "^3.10.0"
@@ -6253,7 +6253,7 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-three-stdlib@^2.2.0:
+three-stdlib@^2.0.8, three-stdlib@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.2.0.tgz#89243f52d4c911d99528268b795bd650a0b47146"
   integrity sha512-2ywaUEuqxP5UR25pevVUWtNgVJ0t/IPFHZi5k8JLfzBG7MAZ1uRVu0zy6M7lZx38zSDqVxZTYGUCX1A4eFmm5A==
