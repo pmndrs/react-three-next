@@ -11,10 +11,7 @@ export default function Instructions() {
       </p>
       <pre>
         Step 1 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
-        <bold style={{ color: 'rgb(249, 196, 232)' }}>
-          {' '}
-          src/pages/index.tsx{' '}
-        </bold>
+        <bold style={{ color: 'rgb(249, 196, 232)' }}> @/pages/index.tsx </bold>
         <br />
         Step 2 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
         <bold style={{ color: 'rgb(249, 196, 232)' }}>
@@ -23,11 +20,11 @@ export default function Instructions() {
         </bold>
         <br />
         Step 3 - <span style={{ color: 'rgb(84, 90, 114)' }}>delete:</span>
-        <bold style={{ color: 'rgb(249, 196, 232)' }}> src/pages/box.jsx </bold>
+        <bold style={{ color: 'rgb(249, 196, 232)' }}> @/pages/box.jsx </bold>
         <br />
         Step 4 -{' '}
         <span style={{ color: 'rgb(84, 90, 114)' }}>update header:</span>
-        <bold style={{ color: 'rgb(249, 196, 232)' }}> src/config.js </bold>
+        <bold style={{ color: 'rgb(249, 196, 232)' }}> @/config.js </bold>
         <br />
         Step 5 - <span style={{ color: 'rgb(84, 90, 114)' }}>delete:</span>
         <bold style={{ color: 'rgb(249, 196, 232)' }}>
