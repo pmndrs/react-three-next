@@ -32,7 +32,7 @@ export default function Instructions() {
         Step 5 - <span style={{ color: 'rgb(84, 90, 114)' }}>delete:</span>
         <bold style={{ color: 'rgb(249, 196, 232)' }}>
           {' '}
-          @components/dom/instructions.jsx
+          @/components/dom/instructions.jsx
         </bold>
       </pre>
     </div>
