@@ -32,7 +32,6 @@ npx create-r3f-app next my-app
 - [x] Layout for Canvas and DOM
 - [x] Template for the meta data and header
 - [x] Clean code using ESlint and Prettier
-- [x] Use esbuild in development for faster HMR
 - [x] VSCode debug profiles for the server, Chrome, and Firefox
 
 ### :passport_control: Typescript
