@@ -1,15 +1,18 @@
 export default function Instructions() {
   return (
     <div
-      className='absolute max-w-lg px-4 py-2 shadow-xl top-8 left-1/2 text-gray-50 rounded-xl transform -translate-x-1/2'
-      style={{ backgroundColor: 'rgb(27, 30, 40)' }}
+      className='absolute max-w-lg px-4 py-2 text-sm shadow-xl pointer-events-none select-none md:text-base top-8 left-1/2 text-gray-50 rounded-xl transform -translate-x-1/2'
+      style={{
+        backgroundColor: 'rgb(27, 30, 40)',
+        maxWidth: 'calc(100% - 28px)',
+      }}
     >
       <p className='mb-8'>
         This is a minimal starter for Nextjs + Threejs. A11y is included to
-        provide a basic layer of accessibility. If you click on the cube it will
-        navigate to a dummy `/box` page.
+        provide a basic accessibility layer. If you click on the cube it will
+        navigate to the `/box` page.
       </p>
-      <pre>
+      <div className='tracking-wider'>
         Step 1 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
         <bold style={{ color: 'rgb(249, 196, 232)' }}> @/pages/index.tsx </bold>
         <br />
@@ -31,7 +34,7 @@ export default function Instructions() {
           {' '}
           @/components/dom/instructions.jsx
         </bold>
-      </pre>
+      </div>
     </div>
   )
 }
