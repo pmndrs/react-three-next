@@ -5,24 +5,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const withOffline = require('next-offline')
 
-// esbuild to speed up dev
-function esbuildLoader(config, options) {
-  const jsLoader = config.module.rules.find(
-    (rule) => rule.test && rule.test.test('.js')
-  )
-  if (jsLoader && jsLoader.use) {
-    if (jsLoader.use.length > 0) {
-      jsLoader.use.forEach((e) => {
-        e.loader = 'esbuild-loader'
-        e.options = options
-      })
-    } else {
-      jsLoader.use.loader = 'esbuild-loader'
-      jsLoader.use.options = options
-    }
-  }
-}
-
 const nextConfig = {
   webpack(config, { webpack, dev, isServer }) {
     config.plugins.push(
@@ -30,13 +12,6 @@ const nextConfig = {
         React: 'react',
       })
     )
-    // use esbuild in dev for faster HMR
-    if (dev) {
-      esbuildLoader(config, {
-        loader: 'jsx',
-        target: 'es2017',
-      })
-    }
 
     // audio support
     config.module.rules.push({
