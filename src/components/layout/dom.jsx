@@ -1,9 +1,9 @@
 import useStore from '@/helpers/store'
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const Dom = ({ children }) => {
   const ref = useRef(null)
-  useLayoutEffect(() => {
+  useEffect(() => {
     useStore.setState({ dom: ref })
   }, [])
   return (
