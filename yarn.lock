@@ -1082,10 +1082,10 @@
     utility-types "^3.10.0"
     zustand "^3.2.0"
 
-"@react-three/drei@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-7.1.0.tgz#828c7aabe8bb6f7d0db363b86f0bf81c471e6e43"
-  integrity sha512-26WCVEnlnLlkcNsjT5f6G0ttSSdEjRdDBIUZLfvVmYdLUuEshDUn+8P70XUQ0dp/GCGfynomYcCseNm2njfHPA==
+"@react-three/drei@^7.2.1":
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-7.2.1.tgz#e7cbfaba00ca37d7c0b7982fcd43aaafb37c4170"
+  integrity sha512-B++BFNnwLVv2sG+m2lAOlrt6VTXusCynK/tIc+v4TuBa/kcIbN92nNYNzQCRKj5UnKSkn5kq9kw9PP+gDF6Gmg==
   dependencies:
     "@babel/runtime" "^7.11.2"
     blob-polyfill "^5.0.20210201"
@@ -1096,16 +1096,16 @@
     react-merge-refs "^1.0.0"
     stats.js "^0.17.0"
     three-mesh-bvh "^0.4.1"
-    three-stdlib "^2.3.0"
+    three-stdlib "^2.3.1"
     troika-three-text "^0.42.0"
     use-asset "^1.0.4"
     utility-types "^3.10.0"
     zustand "^3.5.1"
 
-"@react-three/fiber@^7.0.4":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-7.0.4.tgz#1db16bf936fd894c94598fbdf743533bba3a43dd"
-  integrity sha512-6dscg4m4f+zFmHGqpmWNNrWM+3h197pTd1HQ9bcOCODe3hMIQnQJjr9VX3PJug7hAaxVNwD4N6HcNPnGZu2CxA==
+"@react-three/fiber@^7.0.6":
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-7.0.6.tgz#faa5aa5d496ae778a89fe2d3f503428a0e3c841b"
+  integrity sha512-GSMmnk66B/xGGfbSj5lGiZCxGQD0i8rm0Bt/Xp6TD2b9cYe2Lxb2wegU04zIeN89aoUYMHXhL1GNXsZvvOjfUA==
   dependencies:
     "@babel/runtime" "^7.13.10"
     react-merge-refs "^1.1.0"
@@ -6257,22 +6257,6 @@ three-mesh-bvh@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.4.1.tgz#ba0bf1dac7cbd41f2132c8446545c8ad9fbeb892"
   integrity sha512-1ALlGVjArZpi0SdqZhjwFA3DZHgBF/Uo4LnL8G7PczI7rpOoBK87CaBL073DVrrbIE4OONJvpq/PEzluKoRHbg==
-
-three-stdlib@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.3.0.tgz#cf669e50e4a766a0c9af28c2f36680a298c749b0"
-  integrity sha512-XnbTdH72aTB+lLV5y5IKr5bkLv9mHqn4913sY3YNiL3ZwzIl3TPqxRpPuJ7A93IUqo/T2U+fUvLuAaN9tOkM6A==
-  dependencies:
-    "@babel/runtime" "^7.14.6"
-    "@webgpu/glslang" "^0.0.15"
-    "@webxr-input-profiles/motion-controllers" "^1.0.0"
-    chevrotain "^9.0.2"
-    fflate "^0.6.9"
-    ktx-parse "^0.2.1"
-    mmd-parser "^1.0.4"
-    opentype.js "^1.3.3"
-    potpack "^1.0.1"
-    zstddec "^0.0.2"
 
 three-stdlib@^2.3.1:
   version "2.3.1"

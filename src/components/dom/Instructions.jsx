@@ -14,7 +14,7 @@ export default function Instructions() {
       </p>
       <div className='tracking-wider'>
         Step 1 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
-        <bold style={{ color: 'rgb(249, 196, 232)' }}> @/pages/index.tsx </bold>
+        <bold style={{ color: 'rgb(249, 196, 232)' }}> @/pages/index.jsx </bold>
         <br />
         Step 2 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
         <bold style={{ color: 'rgb(249, 196, 232)' }}>
@@ -27,12 +27,12 @@ export default function Instructions() {
         <br />
         Step 4 -{' '}
         <span style={{ color: 'rgb(84, 90, 114)' }}>update header:</span>
-        <bold style={{ color: 'rgb(249, 196, 232)' }}> @/config.js </bold>
+        <bold style={{ color: 'rgb(249, 196, 232)' }}> @/config.jsx </bold>
         <br />
         Step 5 - <span style={{ color: 'rgb(84, 90, 114)' }}>delete:</span>
         <bold style={{ color: 'rgb(249, 196, 232)' }}>
           {' '}
-          @/components/dom/instructions.jsx
+          @/components/dom/Instructions.jsx
         </bold>
       </div>
     </div>

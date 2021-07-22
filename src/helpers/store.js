@@ -1,6 +1,6 @@
 import create from 'zustand'
 
-const useStore = create((set) => {
+const useStore = create(() => {
   return {
     router: {},
     dom: null,
