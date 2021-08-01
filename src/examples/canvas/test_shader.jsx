@@ -1,11 +1,11 @@
 import * as THREE from 'three'
 import { useFrame, extend } from '@react-three/fiber'
-import { a, useSpring } from '@react-spring/three'
 import { useRef, useState } from 'react'
 import useStore from '@/helpers/store'
 import { shaderMaterial } from '@react-three/drei'
 import glsl from 'glslify'
 
+// @ts-ignore
 import vertex from './glsl/shader.vert'
 
 // yarn add -D glsl-random to try pragma
@@ -32,26 +32,24 @@ const ColorShiftMaterial = shaderMaterial(
 extend({ ColorShiftMaterial })
 
 const TestShader = (props) => {
-  const mesh = useRef(null)
+  const meshRef = useRef(null)
   const [hovered, setHover] = useState(false)
   const router = useStore((state) => state.router)
 
-  const { scale } = useSpring({ scale: hovered ? 7 : 5, from: { scale: 5 } })
-
   useFrame((state, delta) => {
-    if (mesh.current) {
-      mesh.current.rotation.x = mesh.current.rotation.y += 0.01
+    if (meshRef.current) {
+      meshRef.current.rotation.x = meshRef.current.rotation.y += 0.01
     }
-    if (mesh.current.material) {
-      mesh.current.material.uniforms.time.value +=
+    if (meshRef.current.material) {
+      meshRef.current.material.uniforms.time.value +=
         Math.sin(delta / 2) * Math.cos(delta / 2)
     }
   })
 
   return (
-    <a.mesh
-      ref={mesh}
-      scale={scale.to((s) => [s, s, s])}
+    <mesh
+      ref={meshRef}
+      scale={hovered ? 7 : 5}
       onClick={() => {
         router.push(`/box`)
       }}
@@ -60,8 +58,9 @@ const TestShader = (props) => {
       {...props}
     >
       <boxBufferGeometry args={[0.5, 0.5, 0.5]} />
+      {/* @ts-ignore */}
       <colorShiftMaterial attach='material' time={3} />
-    </a.mesh>
+    </mesh>
   )
 }
 
