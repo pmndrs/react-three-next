@@ -1,13 +1,13 @@
 export default function Instructions() {
   return (
     <div
-      className='absolute max-w-lg px-4 py-2 text-sm shadow-xl pointer-events-none select-none md:text-base top-8 left-1/2 text-gray-50 rounded-xl transform -translate-x-1/2'
+      className='absolute max-w-lg px-4 py-2 text-sm shadow-xl pointer-events-none select-none md:text-base top-8 left-1/2 text-gray-50 transform -translate-x-1/2'
       style={{
         backgroundColor: 'rgb(27, 30, 40)',
         maxWidth: 'calc(100% - 28px)',
       }}
     >
-      <p className='mb-8'>
+      <p className='hidden mb-8 md:block'>
         This is a minimal starter for Nextjs + Threejs. A11y is included to
         provide a basic accessibility layer. If you click on the cube it will
         navigate to the `/box` page.

@@ -24,6 +24,14 @@ or
 npx create-r3f-app next my-app
 ```
 
+### :passport_control: Typescript
+
+For typescript add the parameter `-ts` or `--typescript`:
+
+```sh
+yarn create r3f-app next my-app -ts
+```
+
 ### :mount_fuji: Features
 
 - [x] Automatically inject r3f component in the Canvas
@@ -33,14 +41,6 @@ npx create-r3f-app next my-app
 - [x] Template for the meta data and header
 - [x] Clean code using ESlint and Prettier
 - [x] VSCode debug profiles for the server, Chrome, and Firefox
-
-### :passport_control: Typescript
-
-If you want to use typescript:
-- create a tsconfig.json file
-- start the dev server, next will fill the tsconfig.json and tell you to install typescript
-- yarn add --dev typescript @types/react
-- copy the path aliases from jsconfig.json to tsconfig.json
 
 ### :bullettrain_side: Architecture
 
