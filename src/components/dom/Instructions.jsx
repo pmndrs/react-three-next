@@ -14,25 +14,25 @@ export default function Instructions() {
       </p>
       <div className='tracking-wider'>
         Step 1 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
-        <span style={{ color: 'rgb(249, 196, 232)' }}> @/pages/index.jsx </span>
+        <span style={{ color: 'rgb(249, 196, 232)' }}> @/pages/index </span>
         <br />
         Step 2 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
         <span style={{ color: 'rgb(249, 196, 232)' }}>
           {' '}
-          @/components/canvas/Box.jsx{' '}
+          @/components/canvas/Box{' '}
         </span>
         <br />
         Step 3 - <span style={{ color: 'rgb(84, 90, 114)' }}>delete:</span>
-        <span style={{ color: 'rgb(249, 196, 232)' }}> @/pages/box.jsx </span>
+        <span style={{ color: 'rgb(249, 196, 232)' }}> @/pages/box </span>
         <br />
         Step 4 -{' '}
         <span style={{ color: 'rgb(84, 90, 114)' }}>update header:</span>
-        <span style={{ color: 'rgb(249, 196, 232)' }}> @/config.jsx </span>
+        <span style={{ color: 'rgb(249, 196, 232)' }}> @/config </span>
         <br />
         Step 5 - <span style={{ color: 'rgb(84, 90, 114)' }}>delete:</span>
         <span style={{ color: 'rgb(249, 196, 232)' }}>
           {' '}
-          @/components/dom/Instructions.jsx
+          @/components/dom/Instructions
         </span>
       </div>
     </div>
