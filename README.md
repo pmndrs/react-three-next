@@ -6,7 +6,7 @@ First Load JS of 74Kb. This starter will automatically pick the marked R3F compo
 
 ### ⚫ Demo :
 
-[![image](https://user-images.githubusercontent.com/15867665/122166808-0d271680-ceb5-11eb-8822-d30b59e4ed5e.png)](https://react-three-next.vercel.app/)
+[![image](https://user-images.githubusercontent.com/15867665/127765411-68bf8f2d-f13b-42de-90db-d40b84d89e92.png)](https://react-three-next.vercel.app/)
 
 ### How to use
 
