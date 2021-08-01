@@ -61,6 +61,7 @@ const TestShader = (props) => {
       {...props}
     >
       <boxBufferGeometry args={[0.5, 0.5, 0.5]} />
+      {/* @ts-ignore */}
       <colorShiftMaterial attach='material' time={3} />
     </a.mesh>
   )
