@@ -3,10 +3,10 @@ import { A11y } from '@react-three/a11y'
 import { useFrame } from '@react-three/fiber'
 import { useRef, useState } from 'react'
 
-const BoxComponent = ({ route }) => {
+const BoxComponent = ({ route, r3f }) => {
   const router = useStore((s) => s.router)
   // This reference will give us direct access to the THREE.Mesh object
-  const mesh = useRef()
+  const mesh = useRef(null)
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
   // Subscribe this component to the render-loop, rotate the mesh every frame
@@ -19,6 +19,7 @@ const BoxComponent = ({ route }) => {
   return (
     <A11y
       role='link'
+      description='click on the box to navigate'
       href={route}
       actionCall={() => {
         router.push(route)

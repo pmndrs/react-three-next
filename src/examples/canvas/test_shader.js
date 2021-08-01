@@ -32,7 +32,7 @@ const ColorShiftMaterial = shaderMaterial(
 extend({ ColorShiftMaterial })
 
 const TestShader = (props) => {
-  const mesh = useRef(false)
+  const mesh = useRef(null)
   const [hovered, setHover] = useState(false)
   const router = useStore((state) => state.router)
 

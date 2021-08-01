@@ -2,7 +2,7 @@ import create from 'zustand'
 
 const useStore = create(() => {
   return {
-    router: {},
+    router: null,
     dom: null,
   }
 })

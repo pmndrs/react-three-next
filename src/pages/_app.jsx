@@ -41,11 +41,12 @@ const ForwardPropsToR3fComponent = ({ comp, pageProps }) => {
     )
   } catch (error) {
     // fallback security for SSG
+    // @ts-ignore
     return <comp {...pageProps} />
   }
 }
 
-function App({ Component, pageProps = {} }) {
+function App({ Component, pageProps = { title: 'index' } }) {
   const router = useRouter()
   useEffect(() => {
     useStore.setState({ router })
