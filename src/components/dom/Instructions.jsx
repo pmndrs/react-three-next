@@ -8,9 +8,8 @@ export default function Instructions() {
       }}
     >
       <p className='hidden mb-8 md:block'>
-        This is a minimal starter for Nextjs + Threejs. A11y is included to
-        provide a basic accessibility layer. If you click on the cube it will
-        navigate to the `/box` page.
+        This is a minimal starter for Nextjs + Threejs. Click on the cube to
+        navigate to the `/box` page. OrbitControls is enabled by default.
       </p>
       <div className='tracking-wider'>
         Step 1 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
