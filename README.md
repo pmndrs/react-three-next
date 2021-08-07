@@ -12,10 +12,11 @@ First Load JS of 74Kb. This starter will automatically pick the marked R3F compo
 
 #### Installation
 
-_Tailwind is the default and only stable_
+_Tailwind is the default style. styled-components (styled) is also available._
 
 ```sh
 yarn create r3f-app next my-app
+# yarn create r3f-app <next> my-app <tailwind|styled>? -ts?
 ```
 
 or
