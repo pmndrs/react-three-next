@@ -5,11 +5,26 @@ const Box = dynamic(() => import('@/components/canvas/Box'), {
   ssr: false,
 })
 
+const DOM = () => {
+  return (
+    // Step 5 - delete Instructions components
+    <Instructions />
+  )
+}
+
+const R3F = () => {
+  return (
+    <>
+      <Box route='/' />
+    </>
+  )
+}
+
 const Page = () => {
   return (
     <>
-      <Box r3f route='/' />
-      <Instructions />
+      <DOM />
+      <R3F r3f />
     </>
   )
 }

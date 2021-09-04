@@ -3,22 +3,11 @@ import { useFrame, extend } from '@react-three/fiber'
 import { useRef, useState } from 'react'
 import useStore from '@/helpers/store'
 import { shaderMaterial } from '@react-three/drei'
-import glsl from 'glslify'
+import guid from 'short-uuid'
 
 // @ts-ignore
 import vertex from './glsl/shader.vert'
-
-// yarn add -D glsl-random to try pragma
-const fragment = glsl`
-  uniform float time;
-  uniform vec3 color;
-  varying vec2 vUv;
-  #pragma glslify: random = require(glsl-random)
-
-  void main() {
-    gl_FragColor.rgba = vec4(0.5 + 0.3 * sin(vUv.yxx + time) + color, 1.0);
-  }
-`
+import fragment from './glsl/shader.frag'
 
 const ColorShiftMaterial = shaderMaterial(
   {
@@ -29,9 +18,13 @@ const ColorShiftMaterial = shaderMaterial(
   fragment
 )
 
+// This is the 🔑 that HMR will renew if this file is edited
+// It works for THREE.ShaderMaterial as well as for drei/shaderMaterial
+ColorShiftMaterial.key = guid.generate()
+
 extend({ ColorShiftMaterial })
 
-const TestShader = (props) => {
+const Shader = (props) => {
   const meshRef = useRef(null)
   const [hovered, setHover] = useState(false)
   const router = useStore((state) => state.router)
@@ -49,7 +42,7 @@ const TestShader = (props) => {
   return (
     <mesh
       ref={meshRef}
-      scale={hovered ? 7 : 5}
+      scale={hovered ? 1.1 : 1}
       onClick={() => {
         router.push(`/box`)
       }}
@@ -57,11 +50,11 @@ const TestShader = (props) => {
       onPointerOut={(e) => setHover(false)}
       {...props}
     >
-      <boxBufferGeometry args={[0.5, 0.5, 0.5]} />
+      <boxBufferGeometry args={[1, 1, 1]} />
       {/* @ts-ignore */}
-      <colorShiftMaterial attach='material' time={3} />
+      <colorShiftMaterial key={ColorShiftMaterial.key} time={3} />
     </mesh>
   )
 }
 
-export default TestShader
+export default Shader

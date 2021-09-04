@@ -3,16 +3,32 @@ import dynamic from 'next/dynamic'
 import Instructions from '@/components/dom/Instructions'
 
 // Step 2 - update Box components
-const Box = dynamic(() => import('@/components/canvas/Box'), {
+const Shader = dynamic(() => import('@/components/canvas/Shader/Shader'), {
   ssr: false,
 })
+
+// dom components goes here
+const DOM = () => {
+  return (
+    // Step 5 - delete Instructions components
+    <Instructions />
+  )
+}
+
+// canvas components goes here
+const R3F = () => {
+  return (
+    <>
+      <Shader />
+    </>
+  )
+}
 
 const Page = () => {
   return (
     <>
-      <Box r3f route='/box' />
-      {/* Step 5 - delete Instructions components */}
-      <Instructions />
+      <DOM />
+      <R3F r3f />
     </>
   )
 }

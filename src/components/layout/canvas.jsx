@@ -1,6 +1,5 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload } from '@react-three/drei'
-import { A11yUserPreferences } from '@react-three/a11y'
 import useStore from '@/helpers/store'
 import { useEffect, useRef } from 'react'
 
@@ -29,10 +28,8 @@ const LCanvas = ({ children }) => {
       onCreated={(state) => state.events.connect(dom.current)}
     >
       <LControl />
-      <A11yUserPreferences>
-        <Preload all />
-        {children}
-      </A11yUserPreferences>
+      <Preload all />
+      {children}
     </Canvas>
   )
 }
