@@ -18,7 +18,7 @@ export default function Instructions() {
         Step 2 - <span style={{ color: 'rgb(84, 90, 114)' }}>update:</span>
         <span style={{ color: 'rgb(249, 196, 232)' }}>
           {' '}
-          @/components/canvas/Box{' '}
+          @/components/canvas/Shader/Shader{' '}
         </span>
         <br />
         Step 3 - <span style={{ color: 'rgb(84, 90, 114)' }}>delete:</span>
