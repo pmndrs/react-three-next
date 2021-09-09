@@ -6,6 +6,9 @@
   ],
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "lint": "yarn prettier && yarn eslint",
     "eslint": "next lint --fix --dir src",
