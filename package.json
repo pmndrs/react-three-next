@@ -1,9 +1,5 @@
 {
   "name": "react-three-next",
-  "version": "2.0.0",
-  "authors": [
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
-  ],
   "license": "MIT",
   "private": true,
   "engines": {
@@ -22,17 +18,22 @@
   "dependencies": {
     "@react-three/drei": "^7.12.1",
     "@react-three/fiber": "^7.0.7",
+    "leva": "^0.9.14",
     "glsl-random": "^0.0.5",
     "next": "^11.1.2",
     "react": "^18.0.0-alpha-dbe3363cc",
     "react-dom": "^17.0.2",
     "short-uuid": "^4.2.0",
-    "three": "^0.132.2",
-    "three-stdlib": "^2.4.0"
+    "three": "^0.133.1",
+    "three-stdlib": "^2.4.2",
+    "zustand": "^3.5.13"
   },
   "devDependencies": {
     "@babel/core": "^7.15.4",
     "@next/bundle-analyzer": "^11.1.2",
+    "@types/node": "^16.10.3",
+    "@types/react": "^17.0.27",
+    "@types/three": "^0.133.0",
     "autoprefixer": "^10.3.4",
     "babel-plugin-glsl": "^1.0.0",
     "eslint": "^7.32.0",
@@ -48,6 +49,7 @@
     "prettier": "^2.3.2",
     "raw-loader": "^4.0.2",
     "tailwindcss": "^2.2.9",
+    "typescript": "^4.4.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.52.0"
   }
