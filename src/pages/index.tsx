@@ -14,8 +14,7 @@ import { Suspense } from 'react'
 const DOM = () => {
   return (
     <>
-      {/* <Hero />
-      <Socials /> */}
+      {/* <Instructions /> */}
     </>
   )
 }
