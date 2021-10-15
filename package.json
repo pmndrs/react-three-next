@@ -16,16 +16,16 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-three/drei": "^7.12.1",
-    "@react-three/fiber": "^7.0.7",
-    "leva": "^0.9.14",
+    "@react-three/drei": "^7.15.0",
+    "@react-three/fiber": "^7.0.16",
     "glsl-random": "^0.0.5",
+    "leva": "^0.9.14",
     "next": "^11.1.2",
     "react": "^18.0.0-alpha-dbe3363cc",
     "react-dom": "^17.0.2",
     "short-uuid": "^4.2.0",
     "three": "^0.133.1",
-    "three-stdlib": "^2.4.2",
+    "three-stdlib": "^2.5.4",
     "zustand": "^3.5.13"
   },
   "devDependencies": {
