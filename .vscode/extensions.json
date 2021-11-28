@@ -6,5 +6,6 @@
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
+    "slevesque.shader"
   ]
 }
