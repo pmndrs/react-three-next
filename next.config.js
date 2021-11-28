@@ -7,11 +7,6 @@ const withOffline = require('next-offline')
 
 const nextConfig = {
   webpack(config, { webpack, dev, isServer }) {
-    config.plugins.push(
-      new webpack.ProvidePlugin({
-        React: 'react',
-      })
-    )
 
     // audio support
     config.module.rules.push({

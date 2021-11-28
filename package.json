@@ -20,23 +20,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-three/drei": "^7.19.3",
-    "@react-three/fiber": "^7.0.17",
+    "@react-three/drei": "^7.22.9",
+    "@react-three/fiber": "^7.0.21",
     "glsl-random": "^0.0.5",
-    "next": "^12.0.1",
+    "next": "^12.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "short-uuid": "^4.2.0",
-    "three": "^0.134.0",
-    "three-stdlib": "^2.5.4"
+    "three": "^0.135.0",
+    "three-stdlib": "^2.5.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.4",
     "@next/bundle-analyzer": "^11.1.2",
-    "autoprefixer": "^10.3.4",
-    "babel-plugin-glsl": "^1.0.0",
+    "autoprefixer": "^10.4.0",
     "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.2",
+    "eslint-config-next": "^12.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-tailwind": "^0.2.1",
     "file-loader": "^6.2.0",
@@ -44,11 +42,11 @@
     "glslify-loader": "^2.0.0",
     "next-compose-plugins": "^2.2.1",
     "next-offline": "^5.0.5",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.4",
     "prettier": "^2.3.2",
     "raw-loader": "^4.0.2",
     "tailwindcss": "^2.2.19",
     "url-loader": "^4.1.1",
-    "webpack": "^5.61.0"
+    "webpack": "^5.64.4"
   }
 }
