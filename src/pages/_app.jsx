@@ -4,13 +4,12 @@ import { useEffect } from 'react'
 import Header from '@/config'
 import Dom from '@/components/layout/dom'
 import partition from '@/helpers/partition'
+import '@/styles/index.css'
+import dynamic from 'next/dynamic'
 
 const LCanvas = dynamic(() => import('@/components/layout/canvas'), {
   ssr: false,
 })
-
-import '@/styles/index.css'
-import dynamic from 'next/dynamic'
 
 const Balance = ({ child }) => {
   const [r3f, dom] = partition(child, (c) => c.props.r3f === true)
@@ -31,6 +30,7 @@ function App({ Component, pageProps = { title: 'index' } }) {
   }, [router])
 
   const child = Component(pageProps).props.children
+
   return (
     <>
       <Header title={pageProps.title} />

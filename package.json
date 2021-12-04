@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "yarn prettier && yarn eslint",
     "eslint": "next lint --fix --dir src",
-    "prettier": "prettier --list-different \"./src/**/*.{js,jsx,md}\"",
+    "prettier": "prettier -l \"./src/**/*.{js,jsx,md}\"",
     "dev": "next dev",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
@@ -20,10 +20,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-three/drei": "^7.22.9",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@react-three/drei": "^7.25.4",
     "@react-three/fiber": "^7.0.21",
+    "babel-plugin-glsl": "^1.0.0",
+    "babel-plugin-styled-components": "^2.0.2",
     "glsl-random": "^0.0.5",
-    "next": "^12.0.4",
+    "next": "^12.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "short-uuid": "^4.2.0",
@@ -43,7 +46,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-offline": "^5.0.5",
     "postcss": "^8.4.4",
-    "prettier": "^2.3.2",
+    "prettier": "2.5.0",
     "raw-loader": "^4.0.2",
     "tailwindcss": "^2.2.19",
     "url-loader": "^4.1.1",
