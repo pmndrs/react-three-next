@@ -32,6 +32,7 @@ const Page = () => {
   return (
     <>
       <DOM />
+      {/* @ts-ignore */}
       <R3F r3f />
     </>
   )
