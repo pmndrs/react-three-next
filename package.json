@@ -20,24 +20,24 @@
     "start": "next start"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.16.4",
-    "@react-three/drei": "^7.25.4",
-    "@react-three/fiber": "^7.0.21",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@react-three/drei": "^8.8.1",
+    "@react-three/fiber": "^7.0.26",
     "babel-plugin-glsl": "^1.0.0",
     "babel-plugin-styled-components": "^2.0.2",
     "glsl-random": "^0.0.5",
-    "next": "^12.0.5",
+    "next": "^12.0.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "short-uuid": "^4.2.0",
-    "three": "^0.135.0",
-    "three-stdlib": "^2.5.10"
+    "three": "^0.137.5",
+    "three-stdlib": "^2.8.5"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^11.1.2",
-    "autoprefixer": "^10.4.0",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^12.0.4",
+    "@next/bundle-analyzer": "^12.0.10",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.8.0",
+    "eslint-config-next": "^12.0.10",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-tailwind": "^0.2.1",
     "file-loader": "^6.2.0",
@@ -45,11 +45,10 @@
     "glslify-loader": "^2.0.0",
     "next-compose-plugins": "^2.2.1",
     "next-offline": "^5.0.5",
-    "postcss": "^8.4.4",
-    "prettier": "2.5.0",
+    "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
     "raw-loader": "^4.0.2",
-    "tailwindcss": "^2.2.19",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.64.4"
+    "tailwindcss": "^3.0.18",
+    "url-loader": "^4.1.1"
   }
 }
