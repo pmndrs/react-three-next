@@ -21,17 +21,17 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.17.0",
-    "@react-three/drei": "^8.8.1",
+    "@react-three/drei": "^8.10.4",
     "@react-three/fiber": "^7.0.26",
     "babel-plugin-glsl": "^1.0.0",
     "babel-plugin-styled-components": "^2.0.2",
     "glsl-random": "^0.0.5",
-    "next": "^12.0.10",
+    "next": "^12.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "short-uuid": "^4.2.0",
     "three": "^0.137.5",
-    "three-stdlib": "^2.8.5"
+    "three-stdlib": "^2.8.6",
+    "zustand": "^3.7.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.0.10",
