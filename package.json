@@ -23,6 +23,7 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@react-three/drei": "^8.16.5",
     "@react-three/fiber": "^7.0.26",
+    "babel-plugin-glsl": "^1.0.0",
     "glsl-random": "^0.0.5",
     "next": "^12.1.0",
     "react": "^17.0.2",
