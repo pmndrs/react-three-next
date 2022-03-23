@@ -30,15 +30,11 @@ function App({ Component, pageProps = { title: 'index' } }) {
   }, [router])
 
   const child = Component(pageProps).props.children
-
+  
   return (
     <>
       <Header title={pageProps.title} />
-      {child && child.length > 1 ? (
-        <Balance child={Component(pageProps).props.children} />
-      ) : (
-        <Component {...pageProps} />
-      )}
+      <Balance child={child} />
     </>
   )
 }
