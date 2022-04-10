@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const withOffline = require('next-offline')
 
 const nextConfig = {
-  webpack(config, { webpack, dev, isServer }) {
+  webpack(config, { isServer }) {
 
     // audio support
     config.module.rules.push({
@@ -27,6 +27,7 @@ const nextConfig = {
       ],
     })
 
+    // shader support
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
       exclude: /node_modules/,
