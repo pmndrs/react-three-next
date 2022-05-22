@@ -12,23 +12,18 @@ const DOM = () => {
   )
 }
 
-const R3F = () => {
-  return (
-    <>
-      <Box route='/' />
-    </>
-  )
-}
-
 const Page = () => {
   return (
     <>
       <DOM />
-      {/* @ts-ignore */}
-      <R3F r3f />
     </>
   )
 }
+Page.r3f = (
+  <>
+    <Box route='/' />
+  </>
+)
 
 export default Page
 

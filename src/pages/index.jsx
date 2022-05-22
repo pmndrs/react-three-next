@@ -19,24 +19,19 @@ const DOM = () => {
   )
 }
 
-// canvas components goes here
-const R3F = () => {
-  return (
-    <>
-      <Shader />
-    </>
-  )
-}
-
 const Page = () => {
   return (
     <>
       <DOM />
-      {/* @ts-ignore */}
-      <R3F r3f />
     </>
   )
 }
+// canvas components goes here
+Page.r3f = (
+  <>
+    <Shader />
+  </>
+)
 
 export default Page
 
