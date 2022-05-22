@@ -12,20 +12,14 @@ const Shader = dynamic(() => import('@/components/canvas/Shader/Shader'), {
 })
 
 // dom components goes here
-const DOM = () => {
-  return (
-    // Step 5 - delete Instructions components
-    <Instructions />
-  )
-}
-
 const Page = () => {
   return (
     <>
-      <DOM />
+      <Instructions />
     </>
   )
 }
+
 // canvas components goes here
 Page.r3f = (
   <>
