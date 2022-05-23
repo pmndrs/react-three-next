@@ -52,11 +52,16 @@ const Page = () => {
   return (
     <>
       <div>Hello !</div>
-      {/* Simply add the r3f prop to the parent component -> */}
-      <MeshComponent r3f />
+      
     </>
   )
 }
+// canvas components goes here
+Page.r3f = (
+  <>
+    <Shader />
+  </>
+)
 
 export default Page
 ```
