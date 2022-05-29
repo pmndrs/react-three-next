@@ -47,7 +47,7 @@ yarn create r3f-app next my-app -ts
 Inform the nextjs page that the component is a Threejs component. For that, simply add the **r3f** property to the parent component.
 
 ```jsx
-const Page = () => {
+const Page = (props) => {
   return (
     <>
       <div>Hello !</div>
@@ -56,7 +56,8 @@ const Page = () => {
   )
 }
 // canvas components goes here
-Page.r3f = (
+// It will receive same props as Page component (from getStaticProps, etc.)
+Page.r3f = (props) => (
   <>
     <Shader />
   </>
