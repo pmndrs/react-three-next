@@ -1,58 +1,63 @@
-import * as THREE from 'three'
-import { useFrame, extend } from '@react-three/fiber'
-import { useRef, useState } from 'react'
-import useStore from '@/helpers/store'
-import { shaderMaterial } from '@react-three/drei'
-
-import vertex from './glsl/shader.vert'
-import fragment from './glsl/shader.frag'
-
-const ColorShiftMaterial = shaderMaterial(
-  {
-    time: 0,
-    color: new THREE.Color(0.05, 0.0, 0.025),
-  },
-  vertex,
-  fragment
-)
-
-// This is the 🔑 that HMR will renew if this file is edited
-// It works for THREE.ShaderMaterial as well as for drei/shaderMaterial
-// @ts-ignore
-ColorShiftMaterial.key = THREE.MathUtils.generateUUID()
-
-extend({ ColorShiftMaterial })
+import { useEffect, useState } from 'react'
+import { FirstRenderBuildPuzzle, SecondRenderBuildPuzzle } from "../../puzzleMaker/functions";
 
 const Shader = (props) => {
-  const meshRef = useRef(null)
-  const [hovered, setHover] = useState(false)
-  const router = useStore((state) => state.router)
+  const [positions, setPositions] = useState([]);
+  const [stage, setStage] = useState(0);
 
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = meshRef.current.rotation.y += 0.01
+  const [xInteger, setXInteger] = useState(5);
+  const [yInteger, setYInteger] = useState(5);
+
+  useEffect(() => {
+    if (stage === 0) {
+      console.log('stage 1, I am just building the array')
+      setPositions(FirstRenderBuildPuzzle(xInteger, yInteger));
+      setStage(1);
+    } else if (stage === 1) {
+      console.log('stage 2, I am adding colors to the array for the user')
+      let copied_positions = positions;
+      let new_positions = SecondRenderBuildPuzzle(xInteger, yInteger, copied_positions);
+      setPositions([...new_positions])
+      setStage(2);
+    } else if (stage === 2) {
+      console.log('stage 3, I am calculating the meshes, I am not built yet')
     }
-    if (meshRef.current.material) {
-      meshRef.current.material.uniforms.time.value +=
-        Math.sin(delta / 2) * Math.cos(delta / 2)
-    }
-  })
+  }, [stage]);
 
   return (
-    <mesh
-      ref={meshRef}
-      scale={hovered ? 1.1 : 1}
-      onClick={() => {
-        router.push(`/box`)
-      }}
-      onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
-      {...props}
-    >
-      <boxBufferGeometry args={[1, 1, 1]} />
-      {/* @ts-ignore */}
-      <colorShiftMaterial key={ColorShiftMaterial.key} time={3} />
-    </mesh>
+    positions.map(({ x, y, material, first_render, index }) => (
+      <>
+        <mesh
+          position={[x, y, 0]}
+          key={index}
+        >
+          <boxBufferGeometry args={[1, 1, 1]} />
+          {first_render == "corner" &&
+            <meshBasicMaterial
+              attach="material"
+              color="black"
+              transparent
+            />
+          }
+          {first_render == "edge" &&
+            <meshBasicMaterial
+              attach="material"
+              color="blue"
+              transparent
+            />
+          }
+          {first_render == "between" &&
+            <meshBasicMaterial
+              attach="material"
+              color="red"
+              transparent
+            />
+          }
+        </mesh>
+
+      </>
+    ))
+
   )
 }
 
