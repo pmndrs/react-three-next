@@ -21,15 +21,16 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.17.0",
-    "@react-three/drei": "^9.11.2",
-    "@react-three/fiber": "^8.0.19",
+    "@react-three/drei": "^9.14.3",
+    "@react-three/fiber": "^8.0.27",
     "babel-plugin-glsl": "^1.0.0",
     "glsl-random": "^0.0.5",
     "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "three": "^0.140.2",
-    "three-stdlib": "^2.10.1",
+    "next-compose-plugins": "^2.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.141.0",
+    "three-stdlib": "^2.12.1",
     "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
@@ -42,12 +43,11 @@
     "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
-    "next-compose-plugins": "^2.2.1",
     "next-offline": "^5.0.5",
-    "postcss": "^8.4.12",
-    "prettier": "^2.6.2",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
     "raw-loader": "^4.0.2",
-    "tailwindcss": "^3.0.23",
+    "tailwindcss": "^3.1.4",
     "url-loader": "^4.1.1"
   }
 }
