@@ -25,20 +25,20 @@
     "@react-three/fiber": "^8.0.27",
     "babel-plugin-glsl": "^1.0.0",
     "glsl-random": "^0.0.5",
-    "next": "^12.1.6",
-    "next-compose-plugins": "^2.2.1",
+    "next": "^12.2.3",
+    "next-pwa": "^5.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.141.0",
+    "three": "^0.142.0",
     "three-stdlib": "^2.12.1",
-    "zustand": "^4.0.0-rc.1"
+    "zustand": "^4.0.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.0.10",
+    "@next/bundle-analyzer": "^12.2.3",
     "autoprefixer": "^10.4.2",
-    "eslint": "^8.8.0",
-    "eslint-config-next": "^12.0.10",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint": "^8.20.0",
+    "eslint-config-next": "^12.2.3",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-tailwind": "^0.2.1",
     "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
@@ -47,7 +47,7 @@
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "raw-loader": "^4.0.2",
-    "tailwindcss": "^3.1.4",
+    "tailwindcss": "^3.1.6",
     "url-loader": "^4.1.1"
   }
 }

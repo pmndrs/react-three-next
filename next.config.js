@@ -1,9 +1,8 @@
-const plugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-
-const withOffline = require('next-offline')
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 
 const nextConfig = {
   webpack(config, { isServer }) {
@@ -45,39 +44,26 @@ if (process.env.EXPORT !== 'true') {
   }
 }
 
-module.exports = plugins(
-  [
+module.exports = (_phase, { defaultConfig }) => {
+  const plugins = [
     [
-      withOffline,
+      withPWA,
       {
-        workboxOpts: {
-          swDest: process.env.NEXT_EXPORT
-            ? 'service-worker.js'
-            : 'static/service-worker.js',
-          runtimeCaching: [
-            {
-              urlPattern: /^https?.*/,
-              handler: 'NetworkFirst',
-              options: {
-                cacheName: 'offlineCache',
-                expiration: {
-                  maxEntries: 200,
-                },
-              },
-            },
-          ],
-        },
-        async rewrites() {
-          return [
-            {
-              source: '/service-worker.js',
-              destination: '/_next/static/service-worker.js',
-            },
-          ]
+        pwa: {
+          dest: 'public',
+          disable: process.env.NODE_ENV === 'development',
+          runtimeCaching,
         },
       },
     ],
-    withBundleAnalyzer,
-  ],
-  nextConfig
-)
+    [withBundleAnalyzer, {}],
+  ]
+
+  return plugins.reduce(
+    (acc, [plugin, config]) => plugin({ ...acc, ...config }),
+    {
+      ...defaultConfig,
+      ...nextConfig,
+    }
+  )
+}
