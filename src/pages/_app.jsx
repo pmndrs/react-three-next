@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import useStore from '@/helpers/store'
+import { setState } from '@/helpers/store'
 import { useEffect } from 'react'
 import Header from '@/config'
 import Dom from '@/components/layout/dom'
@@ -14,7 +14,7 @@ function App({ Component, pageProps = { title: 'index' } }) {
   const router = useRouter()
 
   useEffect(() => {
-    useStore.setState({ router })
+    setState({ router })
   }, [router])
 
   return (
