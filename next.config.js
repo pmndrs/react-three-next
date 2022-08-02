@@ -44,6 +44,21 @@ if (process.env.EXPORT !== 'true') {
   }
 }
 
+const KEYS_TO_OMIT = [
+  'webpackDevMiddleware',
+  'configOrigin',
+  'target',
+  'analyticsId',
+  'webpack5',
+  'amp',
+  'assetPrefix',
+  'basePath',
+  'generateEtags',
+  'i18n',
+  'pwa',
+  'experimental',
+]
+
 module.exports = (_phase, { defaultConfig }) => {
   const plugins = [
     [
@@ -59,11 +74,20 @@ module.exports = (_phase, { defaultConfig }) => {
     [withBundleAnalyzer, {}],
   ]
 
-  return plugins.reduce(
+  const wConfig = plugins.reduce(
     (acc, [plugin, config]) => plugin({ ...acc, ...config }),
     {
       ...defaultConfig,
       ...nextConfig,
     }
   )
+
+  const finalConfig = {}
+  Object.keys(wConfig).forEach((key) => {
+    if (!KEYS_TO_OMIT.includes(key)) {
+      finalConfig[key] = wConfig[key]
+    }
+  })
+
+  return finalConfig
 }
