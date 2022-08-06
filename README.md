@@ -32,6 +32,12 @@ For typescript add the parameter `-ts` or `--typescript`:
 yarn create r3f-app next my-app -ts
 ```
 
+or
+
+```sh
+npx create-r3f-app next my-app -ts
+```
+
 ### :mount_fuji: Features
 
 - [x] Automatically inject r3f component in the Canvas
