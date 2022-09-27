@@ -4,6 +4,8 @@
 
 A minimalist starter for React, React-three-fiber and Threejs.
 
+![](https://user-images.githubusercontent.com/2223602/192515435-a3d2c1bb-b79a-428e-92e5-f44c97a54bf7.jpg)
+
 - TTL ~ 100ms
 - First load JS ~ 85Kb
 - Lighthouse score of 100 (Performance, Accessibility, Best Practices, SEO)
@@ -12,7 +14,7 @@ This starter allows you to navigate seamlessly between pages with dynamic dom an
 
 ### ⚫ Demo :
 
-[![image](https://user-images.githubusercontent.com/15867665/127765411-68bf8f2d-f13b-42de-90db-d40b84d89e92.png)](https://react-three-next.vercel.app/)
+[![image](https://user-images.githubusercontent.com/2223602/192515587-eac9e26b-d691-4496-a614-85729764b6b0.jpg)](https://react-three-next.vercel.app/)
 
 ### How to use
 
@@ -55,7 +57,7 @@ npx create-r3f-app next my-app -ts
 
 ### :bullettrain_side: Architecture
 
-Inform the nextjs page that the component is a Threejs component. For that, simply add the **r3f** property to the parent component.
+Inform the nextjs page that the component is a Threejs component. For that, simply add the **canvas** property to the parent component.
 
 ```jsx
 export default function Page(props) {
