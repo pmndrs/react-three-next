@@ -7,9 +7,14 @@ import Instructions from '@/components/dom/Instructions'
 // https://github.com/pmndrs/react-three-next/issues/49
 const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
 
-// dom components goes here
+// dom components go here
 export default function Page(props) {
-  return <Instructions />
+  return (
+    <Instructions>
+      This is a minimal starter for Nextjs + React-three-fiber and Threejs. Click on the atoms nucleus to navigate to
+      the /box page. OrbitControls are enabled by default.
+    </Instructions>
+  )
 }
 
 // Canvas components go here

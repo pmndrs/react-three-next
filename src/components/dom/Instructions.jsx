@@ -1,12 +1,9 @@
-export default function Instructions() {
+export default function Instructions({ children }) {
   return (
     <div
-      className='absolute max-w-lg px-4 py-2 text-sm bg-gray-900 shadow-xl md:text-base top-8 left-1/2 text-gray-50 transform -translate-x-1/2'
+      className='absolute max-w-lg px-10 py-8 text-sm bg-zinc-800 rounded-md shadow-xl md:text-base top-16 left-1/2 text-gray-50 transform -translate-x-1/2'
       style={{ maxWidth: 'calc(100% - 28px)' }}>
-      <p className='hidden mb-8 md:block'>
-        This is a minimal starter for Nextjs + Threejs. Click on the cube to navigate to the `/box` page. OrbitControls
-        is enabled by default.
-      </p>
+      <p className='hidden mb-8 md:block'>{children}</p>
       <div className='tracking-wider'>
         Step 1 - <span className='text-green-200'>update:</span>
         <span className='text-red-200'> @/pages/index </span>

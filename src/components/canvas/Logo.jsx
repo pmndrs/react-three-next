@@ -12,17 +12,20 @@ export default function Logo({ route, ...props }) {
 
   useCursor(hovered)
   useFrame((state, delta) => {
-    mesh.current.rotation.y = mesh.current.rotation.x += delta / 10
+    const t = state.clock.getElapsedTime() / 2
+    mesh.current.rotation.y = Math.sin(t) * (Math.PI / 8)
+    mesh.current.rotation.x = Math.cos(t) * (Math.PI / 8)
+    mesh.current.rotation.z -= delta / 4
   })
 
   return (
     <group ref={mesh} {...props}>
-      <Line worldUnits points={points} color='turquoise' lineWidth={0.2} />
-      <Line worldUnits points={points} color='turquoise' lineWidth={0.2} rotation={[0, 0, 1]} />
-      <Line worldUnits points={points} color='turquoise' lineWidth={0.2} rotation={[0, 0, -1]} />
+      <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} />
+      <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} rotation={[0, 0, 1]} />
+      <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} rotation={[0, 0, -1]} />
       <mesh onClick={() => router.push(route)} onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}>
         <sphereGeometry args={[0.55, 64, 64]} />
-        <meshStandardMaterial color={route === '/' ? 'skyblue' : 'turquoise'} />
+        <meshBasicMaterial color={hovered ? 'hotpink' : '#1fb2f5'} />
       </mesh>
     </group>
   )
