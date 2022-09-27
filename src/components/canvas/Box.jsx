@@ -1,9 +1,9 @@
-import useStore from '@/helpers/store'
 import { useFrame } from '@react-three/fiber'
+import { useRouter } from 'next/router'
 import { useRef, useState } from 'react'
 
 const BoxComponent = ({ route }) => {
-  const router = useStore((s) => s.router)
+  const router = useRouter()
   // This reference will give us direct access to the THREE.Mesh object
   const mesh = useRef(null)
   // Set up state for the hovered and active state

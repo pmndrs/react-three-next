@@ -1,11 +1,11 @@
 import * as THREE from 'three'
 import { useFrame, extend } from '@react-three/fiber'
 import { useRef, useState } from 'react'
-import useStore from '@/helpers/store'
 import { shaderMaterial } from '@react-three/drei'
 
 import vertex from './glsl/shader.vert'
 import fragment from './glsl/shader.frag'
+import { useRouter } from 'next/router'
 
 const ColorShiftMaterial = shaderMaterial(
   {
@@ -26,7 +26,7 @@ extend({ ColorShiftMaterial })
 const Shader = (props) => {
   const meshRef = useRef(null)
   const [hovered, setHover] = useState(false)
-  const router = useStore((state) => state.router)
+  const router = useRouter()
 
   useFrame((state, delta) => {
     if (meshRef.current) {

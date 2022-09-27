@@ -3,7 +3,6 @@ import shallow from 'zustand/shallow'
 
 const useStoreImpl = create(() => {
   return {
-    router: null,
     dom: null,
   }
 })

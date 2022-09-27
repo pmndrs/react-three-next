@@ -20,8 +20,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-three/drei": "^9.29.1",
-    "@react-three/fiber": "^8.7.2",
+    "@react-three/drei": "^9.32.3",
+    "@react-three/fiber": "^8.8.4",
     "glsl-random": "^0.0.5",
     "next": "^12.3.0",
     "next-pwa": "^5.6.0",
