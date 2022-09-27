@@ -22,7 +22,7 @@ export default function Logo({ route, ...props }) {
       <Line worldUnits points={points} color='turquoise' lineWidth={0.2} rotation={[0, 0, -1]} />
       <mesh onClick={() => router.push(route)} onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}>
         <sphereGeometry args={[0.55, 64, 64]} />
-        <meshBasicMaterial color={route === '/' ? 'skyblue' : 'turquoise'} />
+        <meshStandardMaterial color={route === '/' ? 'skyblue' : 'turquoise'} />
       </mesh>
     </group>
   )
