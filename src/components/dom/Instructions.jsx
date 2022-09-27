@@ -5,20 +5,20 @@ export default function Instructions({ children }) {
       style={{ maxWidth: 'calc(100% - 28px)' }}>
       <p className='hidden mb-8 md:block'>{children}</p>
       <div className='tracking-wider'>
-        Step 1 - <span className='text-green-200'>update:</span>
-        <span className='text-red-200'> @/pages/index </span>
+        Update your header in <span className='text-green-200'> @/config </span>
         <br />
-        Step 2 - <span className='text-green-200'>update:</span>
-        <span className='text-red-200'>@/components/canvas/Shader/Shader</span>
+        The layout is set in <span className='text-green-200'>@/pages/_app</span>
         <br />
-        Step 3 - <span className='text-green-200'>delete:</span>
-        <span className='text-red-200'> @/pages/box </span>
+        The canvas is configured in <span className='text-green-200'>@/components/canvas/Canvas</span>
         <br />
-        Step 4 - <span className='text-green-200'>update header:</span>
-        <span className='text-red-200'> @/config </span>
+        Update your index component in <span className='text-green-200'>@/pages/index</span>
         <br />
-        Step 5 - <span className='text-green-200'>delete:</span>
-        <span className='text-red-200'> @/components/dom/Instructions</span>
+        Delete placeholder pages <span className='text-red-200'> @/pages/blob</span>
+        <br />
+        Delete <span className='text-red-200'> @/components/dom/Instructions</span>
+        <br />
+        Delete <span className='text-red-200'> @/components/canvas/Blob</span> &{' '}
+        <span className='text-red-200'>/Logo</span>
       </div>
     </div>
   )
