@@ -1,5 +1,5 @@
-import Instructions from '@/components/dom/Instructions'
 import dynamic from 'next/dynamic'
+import Instructions from '@/components/dom/Instructions'
 
 const Box = dynamic(() => import('@/components/canvas/Box'), { ssr: false })
 
