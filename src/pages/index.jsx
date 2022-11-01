@@ -1,39 +1,27 @@
 import dynamic from 'next/dynamic'
-// Step 5 - delete Instructions components
 import Instructions from '@/components/dom/Instructions'
-// import Shader from '@/components/canvas/Shader/Shader'
 
-// Dynamic import is used to prevent a payload when the website start that will include threejs r3f etc..
+// Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
-const Shader = dynamic(() => import('@/components/canvas/Shader/Shader'), {
-  ssr: false,
-})
+const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
 
-// dom components goes here
-const Page = (props) => {
+// Dom components go here
+export default function Page(props) {
   return (
-    <>
-      <Instructions />
-    </>
+    <Instructions>
+      This is a minimal starter for Nextjs + React-three-fiber and Threejs. Click on the{' '}
+      <span className='text-cyan-200'>atoms nucleus</span> to navigate to the{' '}
+      <span className='text-green-200'>/blob</span> page. OrbitControls are enabled by default.
+    </Instructions>
   )
 }
 
-// canvas components goes here
-// It will receive same props as Page component (from getStaticProps, etc.)
-Page.r3f = (props) => (
-  <>
-    <Shader />
-  </>
-)
-
-export default Page
+// Canvas components go here
+// It will receive same props as the Page component (from getStaticProps, etc.)
+Page.canvas = (props) => <Logo scale={0.5} route='/blob' position-y={-1} />
 
 export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Index',
-    },
-  }
+  return { props: { title: 'Index' } }
 }

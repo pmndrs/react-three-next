@@ -1,22 +1,28 @@
-import Header from '@/config'
-import Dom from '@/components/layout/dom'
-import '@/styles/index.css'
+import { useRef } from 'react'
 import dynamic from 'next/dynamic'
+import Header from '@/config'
+import '@/styles/index.css'
 
-const LCanvas = dynamic(() => import('@/components/layout/canvas'), {
-  ssr: true,
-})
+const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: true })
 
-function App({ Component, pageProps = { title: 'index' } }) {
+export default function App({ Component, pageProps = { title: 'index' } }) {
+  const ref = useRef()
   return (
     <>
       <Header title={pageProps.title} />
-      <Dom>
+      <div
+        ref={ref}
+        className='absolute top-0 left-0 z-10 w-screen h-screen overflow-hidden dom bg-zinc-900 text-gray-50'>
         <Component {...pageProps} />
-      </Dom>
-      {Component?.r3f && <LCanvas>{Component.r3f(pageProps)}</LCanvas>}
+        {/* The canvas can either be in front of the dom or behind. If it is in front it can overlay contents.
+         * Setting the event source to a shared parent allows both the dom and the canvas to receive events.
+         * Since the event source is now shared, the canvas would block events, we prevent that with pointerEvents: none. */}
+        {Component?.canvas && (
+          <Scene className='pointer-events-none' eventSource={ref} eventPrefix='client'>
+            {Component.canvas(pageProps)}
+          </Scene>
+        )}
+      </div>
     </>
   )
 }
-
-export default App

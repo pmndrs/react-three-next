@@ -1,11 +1,20 @@
 [![Downloads](https://img.shields.io/npm/dt/create-r3f-app.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/create-r3f-app) [![Discord Shield](https://img.shields.io/discord/740090768164651008?style=flat&colorA=000000&colorB=000000&label=discord&logo=discord&logoColor=ffffff)](https://discord.gg/ZZjjNvJ)
+
 # :japanese_castle: React-Three-Next starter
 
-Minimalist starter, First Load JS of 85Kb. This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
+A minimalist starter for React, React-three-fiber and Threejs.
+
+![](https://user-images.githubusercontent.com/2223602/192515435-a3d2c1bb-b79a-428e-92e5-f44c97a54bf7.jpg)
+
+- TTL ~ 100ms
+- First load JS ~ 85Kb
+- Lighthouse score of 100 (Performance, Accessibility, Best Practices, SEO)
+
+This starter allows you to navigate seamlessly between pages with dynamic dom and/or canvas content without reloading or creating a new canvas every time.
 
 ### ⚫ Demo :
 
-[![image](https://user-images.githubusercontent.com/15867665/127765411-68bf8f2d-f13b-42de-90db-d40b84d89e92.png)](https://react-three-next.vercel.app/)
+[![image](https://user-images.githubusercontent.com/2223602/192515587-eac9e26b-d691-4496-a614-85729764b6b0.jpg)](https://react-three-next.vercel.app/)
 
 ### How to use
 
@@ -38,38 +47,37 @@ or
 npx create-r3f-app next my-app -ts
 ```
 
+### :memo: Note:
+
+_Regarding the new layout system in next@13_:
+While the app directory is still in beta we are still investigating on the layout implementation, but for now it's more stable to use pages.
+An alternative branch will be available in the near future with the app directory architecture. It will be accessible through the starter CLI. Contribution is welcome
+[Follow the progress of layout implementation here.](https://github.com/pmndrs/react-three-next/issues/103)
+
 ### :mount_fuji: Features
 
-- [x] Automatically inject r3f component in the Canvas
-- [x] Support glsl imports
-- [x] PWA Support
-- [x] Layout for Canvas and DOM
-- [x] Template for the meta data and header
+- [x] GLSL imports
+- [x] Template for meta data and header
 - [x] Clean code using ESlint and Prettier
 - [x] VSCode debug profiles for the server, Chrome, and Firefox
+- [x] PWA Support
 
 ### :bullettrain_side: Architecture
 
-Inform the nextjs page that the component is a Threejs component. For that, simply add the **r3f** property to the parent component.
+Inform the nextjs page that the component is a Threejs component. For that, simply add the **canvas** property to the parent component.
 
 ```jsx
-const Page = (props) => {
-  return (
-    <>
-      <div>Hello !</div>
-      
-    </>
-  )
+export default function Page(props) {
+  return <div>Hello !</div>
 }
-// canvas components goes here
+// Canvas contents go here
 // It will receive same props as Page component (from getStaticProps, etc.)
-Page.r3f = (props) => (
-  <>
-    <Shader />
-  </>
+Page.canvas = (props) => (
+  <mesh>
+    <boxGeometry />
+    <meshBasicMaterial color='hotpink' />
+  </mesh>
 )
-
-export default Page
 ```
 
 ### :control_knobs: Available Scripts
