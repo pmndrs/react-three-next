@@ -47,6 +47,13 @@ or
 npx create-r3f-app next my-app -ts
 ```
 
+### :memo: Note:
+
+_Regarding the new layout system in next@13_:
+While the app directory is still in beta we are still investigating on the layout implementation, but for now it's more stable to use pages.
+An alternative branch will be available in the near future with the app directory architecture. It will be accessible through the starter CLI. Contribution is welcome
+[Follow the progress of layout implementation here.](https://github.com/pmndrs/react-three-next/issues/103)
+
 ### :mount_fuji: Features
 
 - [x] GLSL imports
