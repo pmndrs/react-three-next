@@ -7,7 +7,7 @@ A minimalist starter for React, React-three-fiber and Threejs.
 ![](https://user-images.githubusercontent.com/2223602/192515435-a3d2c1bb-b79a-428e-92e5-f44c97a54bf7.jpg)
 
 - TTL ~ 100ms
-- First load JS ~ 85Kb
+- First load JS ~ 79kb
 - Lighthouse score of 100 (Performance, Accessibility, Best Practices, SEO)
 
 This starter allows you to navigate seamlessly between pages with dynamic dom and/or canvas content without reloading or creating a new canvas every time.
@@ -49,7 +49,8 @@ npx create-r3f-app next my-app -ts
 
 ### :memo: Note:
 
-_Regarding the new layout system in next@13_:
+**Regarding the new layout system in next@13**:
+
 While the app directory is still in beta we are still investigating on the layout implementation, but for now it's more stable to use pages.
 An alternative branch will be available in the near future with the app directory architecture. It will be accessible through the starter CLI. Contribution is welcome
 [Follow the progress of layout implementation here.](https://github.com/pmndrs/react-three-next/issues/103)
