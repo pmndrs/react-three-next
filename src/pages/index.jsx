@@ -20,7 +20,7 @@ export default function Page(props) {
 
 // Canvas components go here
 // It will receive same props as the Page component (from getStaticProps, etc.)
-Page.canvas = (props) => <Logo scale={0.5} route='/blob' />
+Page.canvas = (props) => <Logo scale={0.5} route='/blob' position-y={-1} />
 
 export async function getStaticProps() {
   return { props: { title: 'Index' } }
