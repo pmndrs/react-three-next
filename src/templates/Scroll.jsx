@@ -1,5 +1,8 @@
 // https://github.com/studio-freight/lenis
 // yarn add @studio-freight/lenis
+// 1 - wrap <Component {...pageProps} /> with <Scroll /> in _app.jsx
+// 2 - add <ScrollTicker /> wherever in the canvas
+// 3 - enjoy
 import { addEffect, useFrame } from '@react-three/fiber'
 import Lenis from '@studio-freight/lenis'
 import { useEffect } from 'react'
