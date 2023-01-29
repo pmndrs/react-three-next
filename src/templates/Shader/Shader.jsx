@@ -2,10 +2,9 @@
 import * as THREE from 'three'
 import { extend, useFrame } from '@react-three/fiber'
 import { shaderMaterial } from '@react-three/drei'
-import { mergeRefs } from 'react-merge-refs'
 import vertex from './glsl/shader.vert'
 import fragment from './glsl/shader.frag'
-import { forwardRef, useRef } from 'react'
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 
 const ShaderImpl = shaderMaterial(
   {
@@ -27,10 +26,10 @@ extend({ ShaderImpl })
 const Shader = forwardRef(({ children, ...props }, ref) => {
   const localRef = useRef()
 
+  useImperativeHandle(ref, () => localRef.current)
+
   useFrame((_, delta) => (localRef.current.time += delta))
-  return (
-    <shaderImpl ref={mergeRefs([localRef, ref])} glsl={THREE.GLSL3} key={ShaderImpl.key} {...props} attach='material' />
-  )
+  return <shaderImpl ref={localRef} glsl={THREE.GLSL3} key={ShaderImpl.key} {...props} attach='material' />
 })
 
 export default Shader
