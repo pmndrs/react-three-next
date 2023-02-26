@@ -1,9 +1,9 @@
 export default function Instructions({ children }) {
   return (
     <div
-      className='absolute max-w-lg px-10 py-8 text-sm bg-zinc-800 rounded-lg shadow-xl md:text-base top-16 left-1/2 transform -translate-x-1/2'
+      className='absolute top-16 left-1/2 max-w-lg -translate-x-1/2 rounded-lg bg-zinc-800 px-10 py-8 text-sm shadow-xl md:text-base'
       style={{ maxWidth: 'calc(100% - 28px)' }}>
-      <p className='hidden mb-8 md:block'>{children}</p>
+      <p className='mb-8 hidden md:block'>{children}</p>
       <div className='tracking-wider'>
         Update your header in <span className='text-green-200'> @/config </span>
         <br />

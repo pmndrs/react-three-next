@@ -78,7 +78,7 @@ const usePostProcess = () => {
     screen.material.uniforms.diffuse.value = renderTarget.texture
 
     return [screenCamera, screenScene, screen, renderTarget]
-  }, [])
+  }, [gl.encoding])
   useEffect(() => {
     const { width, height } = size
     const { w, h } = {
