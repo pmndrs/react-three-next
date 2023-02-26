@@ -12,9 +12,12 @@ const nextConfig = {
   // compiler: {
   //   styledComponents: true,
   // },
-  experimental: {},
-  images: {},
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  experimental: {
+    reactRoot: 'concurrent',
+    appDir: true,
+  },
+  images: {},
   webpack(config, { isServer }) {
     // audio support
     config.module.rules.push({

@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { useMemo, useRef, useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useFrame } from '@react-three/fiber'
 import { Line, useCursor } from '@react-three/drei'
 
