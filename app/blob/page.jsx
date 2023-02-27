@@ -7,7 +7,8 @@ export const metadata = {
   description: 'A minimal starter for Nextjs + React-three-fiber and Threejs.',
 }
 
-export default function Page({ params }) {
+// This is rendered server side
+export default function Page() {
   return (
     <div>
       <Instructions>

@@ -1,9 +1,8 @@
-// @js-ignore
 {
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["app/*", "src/*"]
     }
   }
 }
