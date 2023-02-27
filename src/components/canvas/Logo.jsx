@@ -1,3 +1,5 @@
+'use client'
+
 import * as THREE from 'three'
 import { useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'

@@ -1,8 +1,11 @@
-'use client'
-
 import Blob from '@/components/canvas/Blob'
 import Instructions from '@/components/dom/Instructions'
-import { r3f } from '@/helpers/global'
+import { Three } from '@/helpers/components/Three'
+
+export const metadata = {
+  title: 'Next.js + Three.js | Blob',
+  description: 'A minimal starter for Nextjs + React-three-fiber and Threejs.',
+}
 
 export default function Page({ params }) {
   return (
@@ -12,9 +15,9 @@ export default function Page({ params }) {
         was not unmounted between route changes, only its contents. If you want scene contents to persist, put them into{' '}
         <span className='text-green-200'>@/components/canvas/Scene</span>.
       </Instructions>
-      <r3f.In>
+      <Three>
         <Blob route='/' position-y={-0.75} />
-      </r3f.In>
+      </Three>
     </div>
   )
 }
