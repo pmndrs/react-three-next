@@ -1,3 +1,5 @@
+'use client'
+
 const Instructions = ({ children }) => {
   return (
     <div
@@ -11,7 +13,7 @@ const Instructions = ({ children }) => {
         <br />
         The canvas is configured in <span className='text-green-200'> src/components/canvas/Scene</span>
         <br />
-        Update your index component in <span className='text-green-200'> app/page</span>
+        Update your index component in <span className='text-green-200'>app/page</span>
         <br />
         Delete placeholder page <span className='text-red-200'> app/blob/page</span>
         <br />
