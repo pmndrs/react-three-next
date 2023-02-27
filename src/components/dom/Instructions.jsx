@@ -5,13 +5,13 @@ const Instructions = ({ children }) => {
       style={{ maxWidth: 'calc(100% - 28px)' }}>
       <p className='mb-8 hidden md:block'>{children}</p>
       <div className='tracking-wider'>
-        Update your header in <span className='text-green-200'>app/head</span>
+        Update your header in <span className='text-green-200'> app/head</span>
         <br />
-        The layout is set in <span className='text-green-200'>app/layout</span>
+        The layout is set in <span className='text-green-200'> app/layout</span>
         <br />
-        The canvas is configured in <span className='text-green-200'>src/components/canvas/Scene</span>
+        The canvas is configured in <span className='text-green-200'> src/components/canvas/Scene</span>
         <br />
-        Update your index component in <span className='text-green-200'>app/page</span>
+        Update your index component in <span className='text-green-200'> app/page</span>
         <br />
         Delete placeholder page <span className='text-red-200'> app/blob/page</span>
         <br />
