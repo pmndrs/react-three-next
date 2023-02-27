@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "yarn prettier && yarn eslint",
     "eslint": "next lint --fix --dir app",
-    "prettier": "prettier -l \"./app/**/*.{js,jsx,md}\"",
+    "prettier": "npx prettier --list-different \"./src/**/*.{js,jsx,md}\" \"./app/**/*.{js,jsx,md}\"",
     "dev": "next dev",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",

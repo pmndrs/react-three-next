@@ -1,5 +1,5 @@
-import Logo from '@/components/canvas/Logo'
-import Instructions from '@/components/dom/Instructions'
+import { Logo } from '@/components/canvas/Logo'
+import { Instructions } from '@/components/dom/Instructions'
 import { Three } from '@/helpers/components/Three'
 
 export default function Page() {

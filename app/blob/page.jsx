@@ -1,5 +1,5 @@
-import Blob from '@/components/canvas/Blob'
-import Instructions from '@/components/dom/Instructions'
+import { Blob } from '@/components/canvas/Blob'
+import { Instructions } from '@/components/dom/Instructions'
 import { Three } from '@/helpers/components/Three'
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default function Page() {
       <Instructions>
         This is the <span className='text-green-200'>/blob</span> route. Click on the blob to navigate back. The canvas
         was not unmounted between route changes, only its contents. If you want scene contents to persist, put them into{' '}
-        <span className='text-green-200'>@/components/canvas/Scene</span>.
+        <span className='text-green-200'>src/components/canvas/Scene</span>.
       </Instructions>
       <Three>
         <Blob route='/' position-y={-0.75} />

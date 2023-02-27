@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCursor, MeshDistortMaterial } from '@react-three/drei'
 
-export default function Blob({ route, ...props }) {
+const Blob = ({ route, ...props }) => {
   const router = useRouter()
   const [hovered, hover] = useState(false)
   useCursor(hovered)
@@ -19,3 +19,5 @@ export default function Blob({ route, ...props }) {
     </mesh>
   )
 }
+
+export { Blob }

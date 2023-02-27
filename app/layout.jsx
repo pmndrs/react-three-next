@@ -1,4 +1,5 @@
 import Scene from '@/components/canvas/Scene'
+import { Layout } from '@/components/dom/Layout'
 import '@/global.css'
 
 export const metadata = {
@@ -15,10 +16,10 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body>
-        <div className='absolute top-0 left-0 z-10 h-screen w-screen overflow-hidden bg-zinc-900 text-gray-50'>
+        <Layout>
           {children}
           <Scene />
-        </div>
+        </Layout>
       </body>
     </html>
   )

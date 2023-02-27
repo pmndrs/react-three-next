@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useFrame } from '@react-three/fiber'
 import { Line, useCursor } from '@react-three/drei'
 
-export default function Logo({ route, ...props }) {
+const Logo = ({ route, ...props }) => {
   const router = useRouter()
   const mesh = useRef(null)
   const [hovered, hover] = useState(false)
@@ -35,3 +35,5 @@ export default function Logo({ route, ...props }) {
     </group>
   )
 }
+
+export { Logo }
