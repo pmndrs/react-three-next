@@ -4,6 +4,6 @@
     "import/prefer-default-export": "off",
     "no-console": "warn",
     "no-var": "error",
-    "no-html-link-for-pages": "off" // app directories are not in pages folder
+    "no-html-link-for-pages": "off"
   }
 }
