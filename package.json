@@ -20,11 +20,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^8.0.0",
     "@react-three/drei": "^9.56.27",
     "@react-three/fiber": "^8.11.5",
     "glsl-random": "^0.0.5",
     "next": "^13.2.1",
-    "next-pwa": "^5.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.150.0",
