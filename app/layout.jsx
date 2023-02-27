@@ -1,4 +1,3 @@
-import Scene from '@/components/canvas/Scene'
 import { Layout } from '@/components/dom/Layout'
 import '@/global.css'
 
@@ -16,10 +15,7 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body>
-        <Layout>
-          {children}
-          <Scene />
-        </Layout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   )
