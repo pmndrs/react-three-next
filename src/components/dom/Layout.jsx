@@ -9,7 +9,13 @@ const Layout = ({ children }) => {
   return (
     <div ref={ref} className='absolute top-0 left-0 z-10 h-screen w-screen overflow-hidden bg-zinc-900 text-gray-50'>
       {children}
-      <Scene className='pointer-events-none' eventSource={ref} eventPrefix='client' />
+      <Scene
+        style={{
+          pointerEvents: 'none',
+        }}
+        eventSource={ref}
+        eventPrefix='client'
+      />
     </div>
   )
 }
