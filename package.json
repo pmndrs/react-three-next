@@ -29,7 +29,7 @@
     "react-dom": "^18.2.0",
     "three": "^0.150.0",
     "three-stdlib": "^2.21.8",
-    "tunnel-rat": "^0.1.0"
+    "tunnel-rat": "^0.1.1"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.1.6",
