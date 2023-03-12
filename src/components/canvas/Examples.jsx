@@ -1,13 +1,12 @@
 'use client'
 
+import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useMemo, useRef, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { useFrame } from '@react-three/fiber'
 import { Line, useCursor } from '@react-three/drei'
 
-const Logo = ({ route, ...props }) => {
-  const router = useRouter()
+export const Logo = ({ route, ...props }) => {
   const mesh = useRef(null)
   const [hovered, hover] = useState(false)
   const points = useMemo(() => new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(100), [])
@@ -28,7 +27,7 @@ const Logo = ({ route, ...props }) => {
       <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} rotation={[0, 0, 1]} />
       {/* @ts-ignore */}
       <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} rotation={[0, 0, -1]} />
-      <mesh onClick={() => router.push(route)} onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}>
+      <mesh onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}>
         <sphereGeometry args={[0.55, 64, 64]} />
         <meshPhysicalMaterial roughness={0} color={hovered ? 'hotpink' : '#1fb2f5'} />
       </mesh>
@@ -36,4 +35,15 @@ const Logo = ({ route, ...props }) => {
   )
 }
 
-export { Logo }
+export function Duck(props) {
+  const { scene } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/duck/model.gltf')
+
+  useFrame((state, delta) => (scene.rotation.y += delta))
+
+  return <primitive object={scene} {...props} />
+}
+export function Dog(props) {
+  const { scene } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/dog/model.gltf')
+
+  return <primitive object={scene} {...props} />
+}
