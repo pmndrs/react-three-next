@@ -36,14 +36,14 @@ export const Logo = ({ route, ...props }) => {
 }
 
 export function Duck(props) {
-  const { scene } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/duck/model.gltf')
+  const { scene } = useGLTF('/duck.glb')
 
   useFrame((state, delta) => (scene.rotation.y += delta))
 
   return <primitive object={scene} {...props} />
 }
 export function Dog(props) {
-  const { scene } = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/dog/model.gltf')
+  const { scene } = useGLTF('/dog.glb')
 
   return <primitive object={scene} {...props} />
 }
