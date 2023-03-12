@@ -5,14 +5,14 @@ import { Environment, OrbitControls, PerspectiveCamera, PivotControls, View as V
 import { Three } from '@/helpers/components/Three'
 
 export const Common = ({ color }) => (
-  <>
+  <Suspense fallback={null}>
     {color && <color attach='background' args={[color]} />}
     <ambientLight intensity={0.5} />
     <pointLight position={[20, 30, 10]} intensity={1} />
     <pointLight position={[-10, -10, -10]} color='blue' />
     <Environment preset='dawn' />
     <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
-  </>
+  </Suspense>
 )
 
 const View = forwardRef(({ children, orbit, ...props }, ref) => {
@@ -24,7 +24,7 @@ const View = forwardRef(({ children, orbit, ...props }, ref) => {
       <div ref={localRef} {...props} />
       <Three>
         <ViewImpl track={localRef}>
-          <Suspense fallback={null}>{children}</Suspense>
+          {children}
           {orbit && <OrbitControls />}
         </ViewImpl>
       </Three>
