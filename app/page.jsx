@@ -34,7 +34,7 @@ export default function Page() {
           <p className='mb-8 text-2xl leading-normal'>A minimalist starter for React, React-three-fiber and Threejs.</p>
         </div>
 
-        <div className='mb-12 w-full py-6 text-center md:w-3/5'>
+        <div className='w-full text-center md:w-3/5'>
           <View className='flex h-96 w-full flex-col items-center justify-center'>
             <Suspense fallback={null}>
               <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
