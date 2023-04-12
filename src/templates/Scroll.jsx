@@ -21,18 +21,7 @@ export default function Scroll({ children }) {
   const wrapper = useRef(null)
 
   useEffect(() => {
-    const lenis = new Lenis({
-      wrapper: wrapper.current,
-      content: content.current,
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-      direction: 'vertical', // vertical, horizontal
-      gestureDirection: 'vertical', // vertical, horizontal, both
-      smooth: true,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    })
+    const lenis = new Lenis()
 
     lenis.on('scroll', ({ scroll, progress }) => {
       state.top = scroll
@@ -50,7 +39,7 @@ export default function Scroll({ children }) {
       ref={wrapper}
       style={{
         position: 'absolute',
-        overflow: 'hidden',
+        overflowY: 'auto',
         width: '100%',
         height: '100%',
         top: 0,
