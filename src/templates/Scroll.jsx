@@ -1,5 +1,7 @@
 // https://github.com/studio-freight/lenis
-// yarn add @studio-freight/lenis
+// TODO refactor for app-directory
+// See https://github.com/pmndrs/react-three-next/pull/123
+
 // 1 - wrap <Component {...pageProps} /> with <Scroll /> in _app.jsx
 // 2 - add <ScrollTicker /> wherever in the canvas
 // 3 - enjoy
