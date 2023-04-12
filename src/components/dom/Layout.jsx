@@ -1,19 +1,36 @@
-import { useRef, forwardRef, useImperativeHandle } from 'react'
+'use client'
 
-const Layout = forwardRef(({ children, ...props }, ref) => {
-  const localRef = useRef()
+import { useRef } from 'react'
+import dynamic from 'next/dynamic'
+const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
 
-  useImperativeHandle(ref, () => localRef.current)
+const Layout = ({ children }) => {
+  const ref = useRef()
 
   return (
     <div
-      {...props}
-      ref={localRef}
-      className='absolute top-0 left-0 z-10 h-screen w-screen overflow-hidden bg-zinc-900 text-gray-50'>
+      ref={ref}
+      style={{
+        position: 'relative',
+        width: ' 100%',
+        height: '100%',
+        overflow: 'auto',
+      }}>
       {children}
+      <Scene
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          pointerEvents: 'none',
+        }}
+        eventSource={ref}
+        eventPrefix='client'
+      />
     </div>
   )
-})
-Layout.displayName = 'Layout'
+}
 
-export default Layout
+export { Layout }
