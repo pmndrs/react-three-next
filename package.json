@@ -10,12 +10,9 @@
     "node": ">=14"
   },
   "scripts": {
-    "lint": "yarn prettier && yarn eslint",
-    "eslint": "next lint --fix --dir app",
-    "prettier": "npx prettier --list-different \"./src/**/*.{js,jsx,md}\" \"./app/**/*.{js,jsx,md}\"",
+    "lint": "next lint --fix --dir app",
     "dev": "next dev",
     "build": "next build",
-    "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "ANALYZE=true next build",
     "start": "next start"
   },

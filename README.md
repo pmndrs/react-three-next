@@ -2,7 +2,7 @@
 
 # :japanese_castle: React-Three-Next starter
 
-A minimalist starter for React, React-three-fiber and Threejs.
+A minimalist starter for NextJS, @react-three/fiber and Threejs.
 
 ![](https://user-images.githubusercontent.com/2223602/192515435-a3d2c1bb-b79a-428e-92e5-f44c97a54bf7.jpg)
 
@@ -10,17 +10,17 @@ A minimalist starter for React, React-three-fiber and Threejs.
 - First load JS ~ 79kb
 - Lighthouse score of 100 (Performance, Accessibility, Best Practices, SEO)
 
-This starter allows you to navigate seamlessly between pages with dynamic dom and/or canvas content without reloading or creating a new canvas every time.
+This starter allows you to navigate seamlessly between pages with dynamic dom and/or canvas content without reloading or creating a new canvas every time. 3D components are usable anywhere in the dom. The events, dom, viewport, everything is synchronized!
 
 ### ⚫ Demo :
 
-[![image](https://user-images.githubusercontent.com/2223602/192515587-eac9e26b-d691-4496-a614-85729764b6b0.jpg)](https://react-three-next.vercel.app/)
+[![image](https://user-images.githubusercontent.com/15867665/231395343-fd4770e3-0e39-4f5c-ac30-71d823a9ef1c.png)](https://react-three-next.vercel.app/)
 
 ### How to use
 
 #### Installation
 
-_Tailwind is the default style. styled-components (styled) is also available._
+_Tailwind is the default style. styled-components (styled) are also available._
 
 ```sh
 yarn create r3f-app next my-app
@@ -47,38 +47,25 @@ or
 npx create-r3f-app next my-app -ts
 ```
 
-### :memo: Note:
-
-**Regarding the new layout system in next@13**:
-
-While the app directory is still in beta we are still investigating on the layout implementation, but for now it's more stable to use pages.
-An alternative branch will be available in the near future with the app directory architecture. It will be accessible through the starter CLI. Contribution is welcome
-[Follow the progress of layout implementation here.](https://github.com/pmndrs/react-three-next/issues/103)
-
 ### :mount_fuji: Features
 
 - [x] GLSL imports
-- [x] Template for meta data and header
-- [x] Clean code using ESlint and Prettier
-- [x] VSCode debug profiles for the server, Chrome, and Firefox
+- [x] Canvas is not getting unmounted while navigating between pages
+- [x] Canvas components usable in any div of the page
+- [x] Based on the App directory architecture
 - [x] PWA Support
 
 ### :bullettrain_side: Architecture
 
-Inform the nextjs page that the component is a Threejs component. For that, simply add the **canvas** property to the parent component.
+Thanks to [tunnel-rat](https://github.com/pmndrs/tunnel-rat) the starter can portal components between separate renderers. Anything rendered inside the `<View/>` component of the starter will be rendered in the 3D Context. For better performances it uses gl.scissor to cut the viewport into segments.
 
 ```jsx
-export default function Page(props) {
-  return <div>Hello !</div>
-}
-// Canvas contents go here
-// It will receive same props as Page component (from getStaticProps, etc.)
-Page.canvas = (props) => (
-  <mesh>
-    <boxGeometry />
-    <meshBasicMaterial color='hotpink' />
-  </mesh>
-)
+<div className='relative'>
+  <View orbit className='relative sm:h-48 sm:w-full'>
+    <Dog scale={2} />
+    // Some 3D components will be rendered here
+  </View>
+</div>
 ```
 
 ### :control_knobs: Available Scripts
@@ -88,7 +75,6 @@ Page.canvas = (props) => (
 - `yarn lint` - Audit code quality
 - `yarn build` - Next build
 - `yarn start` - Next start
-- `yarn export` - Export to static HTML
 
 ### ⬛ Stack
 
