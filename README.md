@@ -27,24 +27,12 @@ yarn create r3f-app next my-app
 # yarn create r3f-app <next> my-app <tailwind|styled>? -ts?
 ```
 
-or
-
-```sh
-npx create-r3f-app next my-app
-```
-
 ### :passport_control: Typescript
 
 For typescript add the parameter `-ts` or `--typescript`:
 
 ```sh
 yarn create r3f-app next my-app -ts
-```
-
-or
-
-```sh
-npx create-r3f-app next my-app -ts
 ```
 
 ### :mount_fuji: Features
