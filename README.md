@@ -25,6 +25,7 @@ _Tailwind is the default style. styled-components (styled) are also available._
 ```sh
 yarn create r3f-app next my-app
 # yarn create r3f-app <next> my-app <tailwind|styled>? -ts?
+# npx create-r3f-app next my-app
 ```
 
 ### :passport_control: Typescript
@@ -33,6 +34,7 @@ For typescript add the parameter `-ts` or `--typescript`:
 
 ```sh
 yarn create r3f-app next my-app -ts
+# npx create-r3f-app next my-app -ts
 ```
 
 ### :mount_fuji: Features
