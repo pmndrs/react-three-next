@@ -23,6 +23,10 @@ const nextConfig = {
   },
   images: {},
   webpack(config, { isServer }) {
+    if (!isServer) {
+      // We're in the browser build, so we can safely exclude the sharp module
+      config.externals.push('sharp')
+    }
     // audio support
     config.module.rules.push({
       test: /\.(ogg|mp3|wav|mpe?g)$/i,
