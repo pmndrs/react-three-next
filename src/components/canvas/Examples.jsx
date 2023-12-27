@@ -18,7 +18,7 @@ export const Blob = ({ route = '/', ...props }) => {
       onPointerOut={() => hover(false)}
       {...props}>
       <sphereGeometry args={[1, 64, 64]} />
-      <MeshDistortMaterial roughness={0} color={hovered ? 'hotpink' : '#1fb2f5'} />
+      <MeshDistortMaterial roughness={0.5} color={hovered ? 'hotpink' : '#1fb2f5'} />
     </mesh>
   )
 }
@@ -48,7 +48,7 @@ export const Logo = ({ route = '/blob', ...props }) => {
       <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} rotation={[0, 0, -1]} />
       <mesh onClick={() => router.push(route)} onPointerOver={() => hover(true)} onPointerOut={() => hover(false)}>
         <sphereGeometry args={[0.55, 64, 64]} />
-        <meshPhysicalMaterial roughness={0} color={hovered ? 'hotpink' : '#1fb2f5'} />
+        <meshPhysicalMaterial roughness={0.5} color={hovered ? 'hotpink' : '#1fb2f5'} />
       </mesh>
     </group>
   )
