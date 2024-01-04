@@ -20,6 +20,7 @@
     "@ducanh2912/next-pwa": "^10.0.0",
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.12",
+    "ecctrl": "^1.0.60",
     "glsl-random": "^0.0.5",
     "next": "^14.0.4",
     "react": "^18.2.0",
