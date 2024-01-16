@@ -45,7 +45,7 @@ yarn create r3f-app next my-app -ts
 
 ### :bullettrain_side: Architecture
 
-Thanks to [tunnel-rat](https://github.com/pmndrs/tunnel-rat) the starter can portal components between separate renderers. Anything rendered inside the `<View/>` component of the starter will be rendered in the 3D Context. For better performances it uses gl.scissor to cut the viewport into segments.
+Thanks to [drei/view](https://github.com/pmndrs/drei?tab=readme-ov-file#view) the starter can portal components between separate renderers. Anything rendered inside the `<View/>` component of the starter will be rendered in the 3D Context. For better performance it uses gl.scissor to cut the viewport into segments. Your canvas contents live inside your DOM graph, the separation between HTML and canvas falls away!
 
 ```jsx
 <div className='relative'>
