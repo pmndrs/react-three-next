@@ -1,30 +1,14 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-import Ecctrl, { EcctrlAnimation } from "ecctrl";
-import { KeyboardControls, Html } from "@react-three/drei";
+import { Suspense, useRef, useEffect, useState } from 'react'
+import { Center, Html, OrbitControls, Environment } from "@react-three/drei";
 import { Physics } from "@react-three/rapier";
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber';
+import ButtonContext from '@/components/dom/ButtonContext';
+import Panel from '@/components/dom/Panel'
 
-/**
- * Keyboard control preset
- */
-const keyboardMap = [
-  { name: "forward", keys: ["ArrowUp", "KeyW"] },
-  { name: "backward", keys: ["ArrowDown", "KeyS"] },
-  { name: "leftward", keys: ["ArrowLeft", "KeyA"] },
-  { name: "rightward", keys: ["ArrowRight", "KeyD"] },
-  { name: "jump", keys: ["Space"] },
-  { name: "run", keys: ["Shift"] },
-  // Optional animation key map
-  { name: "action1", keys: ["1"] },
-  { name: "action2", keys: ["2"] },
-  { name: "action3", keys: ["3"] },
-  { name: "action4", keys: ["KeyF"] },
-];
-
-const Room = dynamic(() => import('@/components/canvas/Objects').then((mod) => mod.Room), { ssr: false })
+const Room = dynamic(() => import('@/components/canvas/Room').then((mod) => mod.Room), { ssr: false })
 const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
   ssr: false,
   loading: () => (
@@ -41,52 +25,35 @@ const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.
   ),
 })
 const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
+// const Panel = dynamic(() => import('@/components/dom/Panel').then((mod) => mod.Panel), { ssr: false })
 
 export default function Page() {
+  const meshRef = useRef(); // Create a ref
+  const [isButtonOn, setButtonOn] = useState(true);
+
+  const toggleButton = () => {
+    setButtonOn(!isButtonOn);
+  };
+
   return (
     <div className='flex h-full w-full items-center justify-center'> {/* Simplified wrapper */}
-      <div className='h-full w-full text-center'> {/* Removed redundant className */}
-        {/* <View className='flex h-full w-full items-center justify-center'> */}
-        <Canvas>
+      <ButtonContext.Provider value={{ isButtonOn, toggleButton }}>
+        <div className='h-full w-full text-center'> {/* Removed redundant className */}
+          {/* <View className='flex h-full w-full items-center justify-center'> */}
+          <Canvas>
             <Physics timeStep="vary">
-            <Suspense fallback={null}>
-
-              <KeyboardControls map={keyboardMap}>
-                <Ecctrl
-                  debug
-                  animated
-                  followLight
-                  springK={2}
-                  dampingC={0.2}
-                  camCollision={true}
-                  fallingGravityScale={0.1}
-                  autoBalanceSpringK={1.2}
-                  autoBalanceDampingC={0.04}
-                  autoBalanceSpringOnY={0.7}
-                  autoBalanceDampingOnY={0.05}
-                  position={[0, 80, 0]}>
-                    <Capsule />
-                </Ecctrl>
-              </KeyboardControls>
-              <Room scale={0.6} position={[0, -10, 0]} />
-              <Common />
+              <Suspense fallback={null}>
+                <Environment preset="warehouse" />
+                <Room />
+                <Common color={"#343434"} />
+                <OrbitControls />
               </Suspense>
-
             </Physics>
-        {/* </View> */}
-        </Canvas>
-      </div>
-    </div>
+            {/* </View> */}
+          </Canvas>
+        </div>
+        <Panel />
+      </ButtonContext.Provider>
+    </div >
   );
-}
-
-function Capsule() {
-  return (
-    <group>
-      <mesh>
-        <cylinderGeometry args={[0.5, 0.5, 2, 32]} />
-        <meshStandardMaterial color='orange' />
-      </mesh>
-    </group>
-  )
 }

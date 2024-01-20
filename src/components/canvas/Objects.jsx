@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useMemo, useRef, useState } from 'react'
-import { Line, useCursor, MeshDistortMaterial } from '@react-three/drei'
+import { Line, useCursor, MeshDistortMaterial, Resize } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
 import { RigidBody } from "@react-three/rapier";
 
@@ -39,30 +39,15 @@ export const Logo = ({ ...props }) => {
   )
 }
 
-export function Room(props) {
-  const { scene } = useGLTF('/room.glb')
-  // return <primitive object={scene} {...props} />
-
-  return (
-      <RigidBody type="fixed" colliders="trimesh">
-      <group>
-
-        <primitive object={scene} {...props} />
-    </group>
-      </RigidBody >
-
-  )
-}
-
 export function Duck(props) {
-  const { scene } = useGLTF('/duck.glb')
+  const { scene } = useGLTF('/models/duck.glb')
 
   useFrame((state, delta) => (scene.rotation.y += delta))
 
   return <primitive object={scene} {...props} />
 }
 export function Dog(props) {
-  const { scene } = useGLTF('/dog.glb')
+  const { scene } = useGLTF('/models/dog.glb')
 
   return <primitive object={scene} {...props} />
 }
