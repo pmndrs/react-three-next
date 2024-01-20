@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Box } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 
 const Wall = ({ position, dimensions, color }) => (
     <Box position={position} args={dimensions}>
@@ -31,11 +32,11 @@ const Room = ({ position = [0, 0, 0], id, width = 10, length = 10, height = 5, w
         console.log(`Center position: ${position}`);
     
         // Move the camera to the room's position
-        camera.position.x = position[0] - 1;
+        camera.position.x = position[0];
         camera.position.y = position[1];
-        camera.position.z = position[2] - 1;
+        camera.position.z = position[2];
 
-        console.log(`Camera position: ${camera}`);
+        console.log(camera);
     };
     return (
         <group ref={ref} onClick={handleClick} name={id}>
