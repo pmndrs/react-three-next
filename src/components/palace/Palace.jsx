@@ -9,31 +9,71 @@ import { RigidBody, BoxCollider } from "@react-three/rapier";
 import { BoxGeometry, MeshStandardMaterial } from 'three';
 import { Vector3 } from 'three';
 import { Center } from '@react-three/drei';
-import ButtonContext from '../dom/ButtonContext'
+import ButtonContext from '../dom/ButtonContext';
+import Room from './Room';
 
-// Room
-export const Room = ({ ...props }) => {
+export const Palace = ({ ...props }) => {
+    const generateRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
+    const generateRandomSize = () => Math.random() * 10 + 5; // random size between 5 and 15
+
+    const rooms = []; // array to store the existing rooms
+
+    const generateRoom = () => {
+        const width = generateRandomSize();
+        const length = generateRandomSize();
+
+        let position;
+        let overlap;
+
+        do {
+            position = [Math.random() * 30, 0, Math.random() * 50]; // generate a random position
+
+            // check if the new room would overlap with any existing room
+            overlap = rooms.some(room => {
+                const [x, y, z] = room.position;
+                return (
+                    position[0] < x + room.width && position[0] + width > x &&
+                    position[2] < z + room.length && position[2] + length > z
+                );
+            });
+        } while (overlap); // if the new room would overlap, generate a new position
+
+        // add the new room to the array of existing rooms
+        rooms.push({ position, width, length });
+        console.log(rooms);
+
+        return <Room key={rooms.length - 1} position={position} id={(rooms.length - 1).toString()} wallColor={generateRandomColor()} floorColor={generateRandomColor()} width={width} length={length} />;
+    };
+
     return (
         <>
-            < Center>
-                {/* Floor */}
-                <Floor />
+            <Center>
+                <PalaceFloor />
+                {Array.from({ length: 8 }).map(generateRoom)}
             </Center>
         </>
     );
 };
 
-export const Floor = ({ ...props }) => {
+export const PalaceFloor = ({ ...props }) => {
     const [lines, setLines] = useState([]);
 
-    const floorMaterial = new MeshStandardMaterial({ color: "#F7FFF7" });
-    const floorGeometry = new BoxGeometry(30, 50, 0.3); // Reduce the size of the room
+    const PalaceFloorMaterial = new MeshStandardMaterial({ color: "#F7FFF7" });
+    const PalaceFloorGeometry = new BoxGeometry(30, 50, 0.3); // Reduce the size of the Palace
 
-    // Assuming the floor is centered at [0, 0, 0] and rotated to lie flat
+    // Assuming the PalaceFloor is centered at [0, 0, 0] and rotated to lie flat
     const originPosition = [0, 0, 0];
-    const floorOffset = [15, 0, 25];
-    const floorPosition = originPosition.map((value, index) => value + floorOffset[index]);
-    const floorRotation = [Math.PI / 2, 0, 0]; // Rotate to lie flat
+    const PalaceFloorOffset = [15, -0.15, 25];
+    const PalaceFloorPosition = originPosition.map((value, index) => value + PalaceFloorOffset[index]);
+    const PalaceFloorRotation = [Math.PI / 2, 0, 0]; // Rotate to lie flat
 
     useEffect(() => {
         console.log(lines);
@@ -41,10 +81,10 @@ export const Floor = ({ ...props }) => {
 
     return (
         <>
-            {/* Floor */}
-            <mesh geometry={floorGeometry} material={floorMaterial} position={floorPosition} rotation={[Math.PI / 2, 0, 0]} />
+            {/* PalaceFloor */}
+            <mesh geometry={PalaceFloorGeometry} material={PalaceFloorMaterial} position={PalaceFloorPosition} rotation={[Math.PI / 2, 0, 0]} />
             {/* Grid */}
-            <Grid setLines={setLines} position={originPosition} rotation={floorRotation} />
+            {/* <Grid setLines={setLines} position={originPosition} rotation={PalaceFloorRotation} /> */}
         </>
     );
 }
@@ -126,7 +166,7 @@ export const Grid = ({ setLines, position, rotation, ...props }) => {
     }, []); // Empty dependency array means the lines array will only be created once
 
 
-    // Update the lines state in the Room component
+    // Update the lines state in the Palace component
     useEffect(() => {
         setLines(lines);
     }, [lines, setLines]);

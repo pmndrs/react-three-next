@@ -7,8 +7,10 @@ import { Physics } from "@react-three/rapier";
 import { Canvas, useFrame } from '@react-three/fiber';
 import ButtonContext from '@/components/dom/ButtonContext';
 import Panel from '@/components/dom/Panel'
+import { GizmoHelper, GizmoViewport } from '@react-three/drei';
 
-const Room = dynamic(() => import('@/components/canvas/Room').then((mod) => mod.Room), { ssr: false })
+
+const Palace = dynamic(() => import('@/components/palace/Palace').then((mod) => mod.Palace), { ssr: false })
 const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
   ssr: false,
   loading: () => (
@@ -44,12 +46,21 @@ export default function Page() {
             <Physics timeStep="vary">
               <Suspense fallback={null}>
                 <Environment preset="warehouse" />
-                <Room />
+                <Palace />
                 <Common color={"#343434"} />
                 <OrbitControls />
               </Suspense>
             </Physics>
-            {/* </View> */}
+            <GizmoHelper
+              align="bottom-right" // position of the gizmo
+              margin={[80, 80]} // margin from the edge of the canvas
+              onUpdate={() => null} // required prop, but can be a no-op
+            >
+              <GizmoViewport
+                axisColors={["red", "green", "blue"]} // colors of the axes
+                labelColor="white" // color of the labels
+              />
+            </GizmoHelper>
           </Canvas>
         </div>
         <Panel />
