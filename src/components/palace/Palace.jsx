@@ -55,10 +55,10 @@ export const Palace = ({ ...props }) => {
 
     return (
         <>
-            <Center>
+            {/* <Center> */}
                 <PalaceFloor />
                 {Array.from({ length: 8 }).map(generateRoom)}
-            </Center>
+            {/* </Center> */}
         </>
     );
 };
