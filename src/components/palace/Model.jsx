@@ -8,7 +8,7 @@ import { Line, useCursor, MeshDistortMaterial, Resize } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
 import { RigidBody } from "@react-three/rapier";
 
-export function House(props) {
+export function Model(props) {
     const { scene } = useGLTF('/models/house.glb')
 
     return (

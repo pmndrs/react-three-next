@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Box } from '@react-three/drei';
-import { useThree } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
 
 const Wall = ({ position, dimensions, color }) => (
     <Box position={position} args={dimensions}>
@@ -15,7 +13,7 @@ const Floor = ({ position, dimensions, color }) => (
     </Box>
 );
 
-const Room = ({ position = [0, 0, 0], id, width = 10, length = 10, height = 5, wallColor = 'gray', floorColor = 'brown' }) => {
+const Room = ({ onRoomClick, position = [0, 0, 0], id, width = 10, length = 10, height = 5, wallColor = 'gray', floorColor = 'brown' }) => {
     const dimensions = { width, length, height };
     const ref = useRef();
 
@@ -25,21 +23,12 @@ const Room = ({ position = [0, 0, 0], id, width = 10, length = 10, height = 5, w
         }
     }, [position]);
 
-    const { camera } = useThree();
-
     const handleClick = () => {
-        console.log(`Clicked component id: ${id}`);
-        console.log(`Center position: ${position}`);
-    
-        // Move the camera to the room's position
-        camera.position.x = position[0];
-        camera.position.y = position[1];
-        camera.position.z = position[2];
+        onRoomClick([position[0], 0.5, position[2]])
+    }
 
-        console.log(camera);
-    };
     return (
-        <group ref={ref} onClick={handleClick} name={id}>
+        <group ref={ref} name={id} onClick={handleClick}>
             <Wall position={[-dimensions.width / 2, dimensions.height / 2, 0]} dimensions={[0.1, dimensions.height, dimensions.length]} color={wallColor} />
             <Wall position={[dimensions.width / 2, dimensions.height / 2, 0]} dimensions={[0.1, dimensions.height, dimensions.length]} color={wallColor} />
             <Wall position={[0, dimensions.height / 2, -dimensions.length / 2]} dimensions={[dimensions.width, dimensions.height, 0.1]} color={wallColor} />

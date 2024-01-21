@@ -21,6 +21,7 @@
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.12",
     "@react-three/rapier": "^1.2.1",
+    "dexie": "^3.2.4",
     "ecctrl": "^1.0.60",
     "glsl-random": "^0.0.5",
     "next": "^14.0.4",

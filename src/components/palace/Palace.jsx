@@ -11,8 +11,17 @@ import { Vector3 } from 'three';
 import { Center } from '@react-three/drei';
 import ButtonContext from '../dom/ButtonContext';
 import Room from './Room';
+import { db } from '../../database/rooms';
 
 export const Palace = ({ ...props }) => {
+    const [boxPosition, setBoxPosition] = useState([0, 0.5, 0])
+
+    const handleRoomClick = (roomPosition, roomWidth, roomLength) => {
+        const centerX = roomPosition[0] + roomWidth / 2;
+        const centerZ = roomPosition[2] + roomLength / 2;
+        setBoxPosition([centerX, 0.5, centerZ]);
+    }
+
     const generateRandomColor = () => {
         const letters = '0123456789ABCDEF';
         let color = '#';
@@ -50,15 +59,13 @@ export const Palace = ({ ...props }) => {
         rooms.push({ position, width, length });
         console.log(rooms);
 
-        return <Room key={rooms.length - 1} position={position} id={(rooms.length - 1).toString()} wallColor={generateRandomColor()} floorColor={generateRandomColor()} width={width} length={length} />;
+        return <Room key={rooms.length - 1} position={position} id={(rooms.length - 1).toString()} wallColor={generateRandomColor()} floorColor={generateRandomColor()} width={width} length={length} onRoomClick={setBoxPosition} />;
     };
 
     return (
         <>
-            {/* <Center> */}
                 <PalaceFloor />
                 {Array.from({ length: 8 }).map(generateRoom)}
-            {/* </Center> */}
         </>
     );
 };
@@ -89,116 +96,116 @@ export const PalaceFloor = ({ ...props }) => {
     );
 }
 
-export const GridLine = ({ start, end, rotation }) => {
-    const [enabled, setEnabled] = useState(false);
-    const { isButtonOn, toggleButton } = useContext(ButtonContext);
-    const color = enabled ? "#ffffff" : "#A3A3A3";
-    const points = [new Vector3(...start), new Vector3(...end)];
+// export const GridLine = ({ start, end, rotation }) => {
+//     const [enabled, setEnabled] = useState(false);
+//     const { isButtonOn, toggleButton } = useContext(ButtonContext);
+//     const color = enabled ? "#ffffff" : "#A3A3A3";
+//     const points = [new Vector3(...start), new Vector3(...end)];
 
-    const handleClick = () => {
-        setEnabled(!enabled); // Toggle the state
-    };
+//     const handleClick = () => {
+//         setEnabled(!enabled); // Toggle the state
+//     };
 
-    // Create a larger, invisible box around the line to serve as a click target
-    const clickTargetGeometry = new THREE.CylinderGeometry(0.2, 0.2, new Vector3(...start).distanceTo(new Vector3(...end)), 32);
-    const clickTargetMaterial = new THREE.MeshBasicMaterial({ visible: false });
+//     // Create a larger, invisible box around the line to serve as a click target
+//     const clickTargetGeometry = new THREE.CylinderGeometry(0.2, 0.2, new Vector3(...start).distanceTo(new Vector3(...end)), 32);
+//     const clickTargetMaterial = new THREE.MeshBasicMaterial({ visible: false });
 
-    return (
-        <>
-            {isButtonOn && (
-                <>
-                    <Line
-                        points={points}
-                        color={color}
-                    />
-                    <mesh
-                        geometry={clickTargetGeometry}
-                        material={clickTargetMaterial}
-                        position={[(start[0] + end[0]) / 2, (start[1] + end[1]) / 2, (start[2] + end[2]) / 2]}
-                        rotation={rotation}
-                        onClick={handleClick} // Attach the click handler to the invisible mesh
-                    />
-                </>
-            )}
-            <Wall
-                start={start}
-                end={end}
-                enabled={enabled}
-            />
-        </>
-    );
-};
-
-
-export const Grid = ({ setLines, position, rotation, ...props }) => {
-    const yOffset = 0.2; // Offset along the y-axis
-
-    const lines = useMemo(() => {
-        const newLines = [];
-        for (let i = 0; i < 10; i++) {
-            for (let j = 0; j < 10; j++) {
-                const enabled = Math.random() > 0.5; // Randomly enable or disable each line
-
-                // Vertical line
-                newLines.push(
-                    <GridLine
-                        key={`v${i}-${j}`}
-                        start={[i * 3, yOffset, j * 5]}
-                        end={[(i + 1) * 3, yOffset, j * 5]}
-                        rotation={[0, 0, Math.PI / 2]}
-                        enabled={enabled}
-                    />
-                );
-
-                // Horizontal line
-                newLines.push(
-                    <GridLine
-                        key={`h${i}-${j}`}
-                        start={[i * 3, yOffset, j * 5]}
-                        end={[i * 3, yOffset, (j + 1) * 5]}
-                        rotation={[Math.PI / 2, 0, 0]}
-                        enabled={enabled}
-                    />
-                );
-            }
-        }
-        return newLines;
-    }, []); // Empty dependency array means the lines array will only be created once
+//     return (
+//         <>
+//             {isButtonOn && (
+//                 <>
+//                     <Line
+//                         points={points}
+//                         color={color}
+//                     />
+//                     <mesh
+//                         geometry={clickTargetGeometry}
+//                         material={clickTargetMaterial}
+//                         position={[(start[0] + end[0]) / 2, (start[1] + end[1]) / 2, (start[2] + end[2]) / 2]}
+//                         rotation={rotation}
+//                         onClick={handleClick} // Attach the click handler to the invisible mesh
+//                     />
+//                 </>
+//             )}
+//             <Wall
+//                 start={start}
+//                 end={end}
+//                 enabled={enabled}
+//             />
+//         </>
+//     );
+// };
 
 
-    // Update the lines state in the Palace component
-    useEffect(() => {
-        setLines(lines);
-    }, [lines, setLines]);
+// export const Grid = ({ setLines, position, rotation, ...props }) => {
+//     const yOffset = 0.2; // Offset along the y-axis
 
-    return (
-        <group position={position}>
-            {lines}
-        </group>
-    );
-};
+//     const lines = useMemo(() => {
+//         const newLines = [];
+//         for (let i = 0; i < 10; i++) {
+//             for (let j = 0; j < 10; j++) {
+//                 const enabled = Math.random() > 0.5; // Randomly enable or disable each line
 
-export const Wall = ({ start, end, enabled }) => {
-    // Only render the wall if the grid line is enabled
-    if (!enabled) {
-        return null;
-    }
+//                 // Vertical line
+//                 newLines.push(
+//                     <GridLine
+//                         key={`v${i}-${j}`}
+//                         start={[i * 3, yOffset, j * 5]}
+//                         end={[(i + 1) * 3, yOffset, j * 5]}
+//                         rotation={[0, 0, Math.PI / 2]}
+//                         enabled={enabled}
+//                     />
+//                 );
 
-    const wallHeight = 3;
+//                 // Horizontal line
+//                 newLines.push(
+//                     <GridLine
+//                         key={`h${i}-${j}`}
+//                         start={[i * 3, yOffset, j * 5]}
+//                         end={[i * 3, yOffset, (j + 1) * 5]}
+//                         rotation={[Math.PI / 2, 0, 0]}
+//                         enabled={enabled}
+//                     />
+//                 );
+//             }
+//         }
+//         return newLines;
+//     }, []); // Empty dependency array means the lines array will only be created once
 
-    // Calculate the position and size of the wall
-    const position = [(start[0] + end[0]) / 2, (start[1] + end[1]) / 2 + wallHeight / 2, (start[2] + end[2]) / 2];
-    const size = [Math.abs(end[0] - start[0]), wallHeight, Math.abs(end[2] - start[2])];
 
-    // Create the wall geometry and material
-    const wallGeometry = new THREE.BoxGeometry(...size);
-    const wallMaterial = new THREE.MeshStandardMaterial({ color: "#F7FFF7" });
+//     // Update the lines state in the Palace component
+//     useEffect(() => {
+//         setLines(lines);
+//     }, [lines, setLines]);
 
-    return (
-        <mesh
-            geometry={wallGeometry}
-            material={wallMaterial}
-            position={position}
-        />
-    );
-};
+//     return (
+//         <group position={position}>
+//             {lines}
+//         </group>
+//     );
+// };
+
+// export const Wall = ({ start, end, enabled }) => {
+//     // Only render the wall if the grid line is enabled
+//     if (!enabled) {
+//         return null;
+//     }
+
+//     const wallHeight = 3;
+
+//     // Calculate the position and size of the wall
+//     const position = [(start[0] + end[0]) / 2, (start[1] + end[1]) / 2 + wallHeight / 2, (start[2] + end[2]) / 2];
+//     const size = [Math.abs(end[0] - start[0]), wallHeight, Math.abs(end[2] - start[2])];
+
+//     // Create the wall geometry and material
+//     const wallGeometry = new THREE.BoxGeometry(...size);
+//     const wallMaterial = new THREE.MeshStandardMaterial({ color: "#F7FFF7" });
+
+//     return (
+//         <mesh
+//             geometry={wallGeometry}
+//             material={wallMaterial}
+//             position={position}
+//         />
+//     );
+// };
