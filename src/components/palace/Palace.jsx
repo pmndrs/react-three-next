@@ -1,7 +1,7 @@
 'use client'
 
 import { useGLTF, Line, useCursor, MeshDistortMaterial } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useMemo, useRef, useState, useEffect, useContext } from 'react'
 import { useRouter } from 'next/navigation'
@@ -12,15 +12,19 @@ import { Center } from '@react-three/drei';
 import ButtonContext from '../dom/ButtonContext';
 import Room from './Room';
 import { db } from '../../database/rooms';
+import { OrbitControls } from '@react-three/drei';
 
-export const Palace = ({ ...props }) => {
-    const [boxPosition, setBoxPosition] = useState([0, 0.5, 0])
-
-    const handleRoomClick = (roomPosition, roomWidth, roomLength) => {
-        const centerX = roomPosition[0] + roomWidth / 2;
-        const centerZ = roomPosition[2] + roomLength / 2;
-        setBoxPosition([centerX, 0.5, centerZ]);
-    }
+export const Palace = ({ controlsRef, ...props }) => {
+    // useEffect(() => {
+    //     if (controlsRef.current) {
+    //         // You can access the OrbitControls instance here
+    //         console.log(controlsRef.current);
+    //         controlsRef.current.target.set(15, 0, 25);
+    //         controlsRef.current.update();
+    //         // For example, to disable the orbit controls, you could do:
+    //         // controlsRef.current.enabled = false;
+    //     }
+    // }, [controlsRef]);
 
     const generateRandomColor = () => {
         const letters = '0123456789ABCDEF';
@@ -59,13 +63,24 @@ export const Palace = ({ ...props }) => {
         rooms.push({ position, width, length });
         console.log(rooms);
 
-        return <Room key={rooms.length - 1} position={position} id={(rooms.length - 1).toString()} wallColor={generateRandomColor()} floorColor={generateRandomColor()} width={width} length={length} onRoomClick={setBoxPosition} />;
+        return (
+            <Room
+                key={rooms.length - 1}
+                position={position}
+                id={(rooms.length - 1).toString()}
+                wallColor={generateRandomColor()}
+                floorColor={generateRandomColor()}
+                width={width}
+                length={length}
+                controlsRef={controlsRef}// Pass the room's position when clicked
+            />
+        );
     };
 
     return (
         <>
-                <PalaceFloor />
-                {Array.from({ length: 8 }).map(generateRoom)}
+            <PalaceFloor />
+            {Array.from({ length: 8 }).map(generateRoom)}
         </>
     );
 };
