@@ -20,6 +20,7 @@
     "@ducanh2912/next-pwa": "^10.2.2",
     "@react-three/drei": "^9.94.1",
     "@react-three/fiber": "^8.15.14",
+    "@studio-freight/react-lenis": "^0.0.43",
     "glsl-random": "^0.0.5",
     "next": "^14.0.4",
     "react": "^18.2.0",

@@ -56,6 +56,8 @@ Thanks to [drei/view](https://github.com/pmndrs/drei?tab=readme-ov-file#view) th
 </div>
 ```
 
+If you use `<OrbitControls/>` inside a `<View/>`, you may need `data-lenis-prevent` to prevent jittering.
+
 ### :control_knobs: Available Scripts
 
 - `yarn dev` - Next dev
