@@ -8,17 +8,9 @@ import Lenis from '@studio-freight/lenis'
 
 export default function Scene({ ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
-
   useEffect(() => {
-    const lenis = new Lenis({
-      smoothWheel: true,
-      syncTouch: true,
-    })
-
-    const removeEffect = addEffect((time) => {
-      lenis.raf(time)
-    })
-
+    const lenis = new Lenis({ smoothWheel: true, syncTouch: true })
+    const removeEffect = addEffect((time) => lenis.raf(time))
     return () => {
       lenis.destroy()
       removeEffect()
@@ -26,7 +18,13 @@ export default function Scene({ ...props }) {
   }, [])
 
   return (
-    <Canvas shadows {...props} onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}>
+    <Canvas
+      shadows
+      {...props}
+      eventSource={document.body}
+      eventPrefix='client'
+      onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}
+    >
       <View.Port />
       <Preload all />
     </Canvas>
