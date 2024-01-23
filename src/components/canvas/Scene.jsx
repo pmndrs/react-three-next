@@ -1,11 +1,30 @@
 'use client'
 
 import * as THREE from 'three'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, addEffect } from '@react-three/fiber'
 import { PerspectiveCamera, OrbitControls, Preload, View } from '@react-three/drei'
+import { useEffect } from 'react'
+import Lenis from '@studio-freight/lenis'
 
 export default function Scene({ ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      smoothWheel: true,
+      syncTouch: true,
+    })
+
+    const removeEffect = addEffect((time) => {
+      lenis.raf(time)
+    })
+
+    return () => {
+      lenis.destroy()
+      removeEffect()
+    }
+  }, [])
+
   return (
     <Canvas shadows {...props} onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}>
       <View.Port />

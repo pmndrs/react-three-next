@@ -1321,36 +1321,10 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.6.1.tgz#9ab8f811930d7af3e3d549183a50884f9eb83f36"
   integrity sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==
 
-"@studio-freight/hamo@^0.6.24":
-  version "0.6.28"
-  resolved "https://registry.yarnpkg.com/@studio-freight/hamo/-/hamo-0.6.28.tgz#da8af3edb22c9d70d985c45f2d5aa28f37baf4aa"
-  integrity sha512-LVXYJwPToVa4ZVIbFnicg8bmZF8xWebbdtx10/1HAQAjN8xGsTWAdc3BmUUOHtLWFvNJNLSuwdX24njrp7LF7g==
-  dependencies:
-    "@studio-freight/tempus" "^0.0.38"
-    just-debounce-it "^3.2.0"
-    nanoevents "^9.0.0"
-    zustand "^4.4.7"
-
-"@studio-freight/lenis@^1.0.33":
+"@studio-freight/lenis@^1.0.34":
   version "1.0.34"
   resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.34.tgz#1078ee81aa8a2a1ab9f332d60d9148b8909b53af"
   integrity sha512-sEyzEjfAsTlFgDebMYT5G7tlB0ZHhWkHEoJj0g7W0YYZO093Mh4MU65o1qbNKwRacspdU04ZrA+5Wxwt4dsS7Q==
-
-"@studio-freight/react-lenis@^0.0.43":
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/@studio-freight/react-lenis/-/react-lenis-0.0.43.tgz#a70b6401b18fb7d195e6924d768426418ce526b9"
-  integrity sha512-kgRif4MGcmPWuyIWLBc9ghOIQ/ql7lO2YTIZMv2UCohz37G4fCR8+PLCzJl9/q5iP7481pWdAuFJVYf3xJ/rpg==
-  dependencies:
-    "@studio-freight/hamo" "^0.6.24"
-    "@studio-freight/lenis" "^1.0.33"
-    clsx "^2.0.0"
-    prop-types "^15.8.1"
-    zustand "^4.4.7"
-
-"@studio-freight/tempus@^0.0.38":
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/@studio-freight/tempus/-/tempus-0.0.38.tgz#170e0b3de4b123917b04943dd95e7c452ec63e39"
-  integrity sha512-AO1O2fEmfUqWGjEofmPNMQRlwgZ96eB5OFsVJjeH8/RKd1/Yf4zbPnXO+r2TD4aueA6X9JRCJU2GUprI9+m8uQ==
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
@@ -1961,11 +1935,6 @@ client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
-
-clsx@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.0.tgz#e851283bcb5c80ee7608db18487433f7b23f77cb"
-  integrity sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -3540,11 +3509,6 @@ jsonpointer@^5.0.0:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
-just-debounce-it@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/just-debounce-it/-/just-debounce-it-3.2.0.tgz#4352265f4af44188624ce9fdbc6bff4d49c63a80"
-  integrity sha512-WXzwLL0745uNuedrCsCs3rpmfD6DBaf7uuVwaq98/8dafURfgQaBsSpjiPp5+CW6Vjltwy9cOGI6qE71b3T8iQ==
-
 keyv@^4.5.3:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"
@@ -3791,11 +3755,6 @@ mz@^2.7.0:
     any-promise "^1.0.0"
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
-
-nanoevents@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/nanoevents/-/nanoevents-9.0.0.tgz#c44fa7dde1615ac092023d5c881a3ee0b0a8c8fd"
-  integrity sha512-X8pU7IOpgKXVLPxYUI55ymXc8XuBE+uypfEyEFBtHkD1EX9KavYTVc+vXZHFyHKzA1TaZoVDqklLdQBBrxIuAw==
 
 nanoid@^3.3.6, nanoid@^3.3.7:
   version "3.3.7"
@@ -5485,12 +5444,5 @@ zustand@^4.3.2:
   version "4.4.7"
   resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.4.7.tgz#355406be6b11ab335f59a66d2cf9815e8f24038c"
   integrity sha512-QFJWJMdlETcI69paJwhSMJz7PPWjVP8Sjhclxmxmxv/RYI7ZOvR5BHX+ktH0we9gTWQMxcne8q1OY8xxz604gw==
-  dependencies:
-    use-sync-external-store "1.2.0"
-
-zustand@^4.4.7:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.5.0.tgz#141354af56f91de378aa6c4b930032ab338f3ef0"
-  integrity sha512-zlVFqS5TQ21nwijjhJlx4f9iGrXSL0o/+Dpy4txAP22miJ8Ti6c1Ol1RLNN98BMib83lmDH/2KmLwaNXpjrO1A==
   dependencies:
     use-sync-external-store "1.2.0"
