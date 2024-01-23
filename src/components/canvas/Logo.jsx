@@ -6,7 +6,7 @@ import { useMemo, useRef, useState } from 'react'
 import { Line, useCursor } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
 
-export const Logo = ({ route = '/blob', ...props }) => {
+export default function Logo({ route = '/blob', ...props }) {
   const mesh = useRef(null)
   const router = useRouter()
   const [hovered, hover] = useState(false)

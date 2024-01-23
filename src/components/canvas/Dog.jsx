@@ -7,7 +7,7 @@ Command: npx gltfjsx@6.2.16 dog.glb
 
 import { useGLTF, AccumulativeShadows, RandomizedLight } from '@react-three/drei'
 
-export function Dog(props) {
+export default function Dog(props) {
   const { nodes, materials } = useGLTF('/dog.glb')
   return (
     <group {...props} dispose={null}>

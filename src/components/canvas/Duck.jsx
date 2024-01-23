@@ -7,7 +7,7 @@ Command: npx gltfjsx@6.2.16 duck.glb
 
 import { useGLTF, AccumulativeShadows, RandomizedLight } from '@react-three/drei'
 
-export function Duck(props) {
+export default function Duck(props) {
   const { nodes, materials } = useGLTF('/duck.glb')
   return (
     <group {...props} dispose={null}>
