@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useCursor, MeshDistortMaterial, AccumulativeShadows, RandomizedLight } from '@react-three/drei'
+import { useCursor, MeshDistortMaterial } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
 
 export const Blob = ({ route = '/', ...props }) => {
