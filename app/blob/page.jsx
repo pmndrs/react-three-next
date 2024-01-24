@@ -1,11 +1,9 @@
-'use client'
-
 import dynamic from 'next/dynamic'
 import { Loading } from '@/components/dom/Loading'
 
 const Common = dynamic(() => import('@/components/canvas/Common'), { ssr: false })
 const Blob = dynamic(() => import('@/components/canvas/Blob'), { ssr: false })
-const View = dynamic(() => import('@react-three/drei').then((mod) => mod.View), { ssr: false, loading: Loading })
+const View = dynamic(() => import('@/components/canvas/View'), { ssr: false, loading: Loading })
 
 export default function Page() {
   return (
