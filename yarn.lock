@@ -1236,10 +1236,10 @@
   resolved "https://registry.npmjs.org/@react-spring/types/-/types-9.6.1.tgz"
   integrity sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==
 
-"@react-three/drei@^9.96.1":
-  version "9.96.1"
-  resolved "https://registry.npmjs.org/@react-three/drei/-/drei-9.96.1.tgz"
-  integrity sha512-aPdDCIZkqorTyGYCQNqYwlPVWAvIHHbYus9HMfR8fHdeGpSlp4sRVtIDWp9g8zKl16LRMGPYXAPC7azAS1Pyqw==
+"@react-three/drei@^9.96.4":
+  version "9.96.4"
+  resolved "https://registry.yarnpkg.com/@react-three/drei/-/drei-9.96.4.tgz#14932b00374085c2ce354da7524e2b442ebf99ca"
+  integrity sha512-Zmy5felOamD7DkD5EeLfijNkohDxHNtXomGAf3C/0G6ml/ocf1+VrJ6mLDQRE+DhRnF1RDHV+WC6nuvpPPkx1w==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@mediapipe/tasks-vision" "0.10.8"
@@ -1249,9 +1249,6 @@
     cross-env "^7.0.3"
     detect-gpu "^5.0.28"
     glsl-noise "^0.0.0"
-    lodash.clamp "^4.0.3"
-    lodash.omit "^4.5.0"
-    lodash.pick "^4.4.0"
     maath "^0.10.7"
     meshline "^3.1.6"
     react-composer "^5.0.3"
@@ -1267,10 +1264,10 @@
     uuid "^9.0.1"
     zustand "^3.7.1"
 
-"@react-three/fiber@^8.15.14":
-  version "8.15.14"
-  resolved "https://registry.npmjs.org/@react-three/fiber/-/fiber-8.15.14.tgz"
-  integrity sha512-Mtc/qG0OMFvXFttzKmYdbKU2vjiTuyJMNfm4nmiKhwd7Hmql+gk9mwhtoofFLLyANrNW8UgTFmCTjf7Fz5h00Q==
+"@react-three/fiber@^8.15.15":
+  version "8.15.15"
+  resolved "https://registry.yarnpkg.com/@react-three/fiber/-/fiber-8.15.15.tgz#28ea2ee9fcd382e3720e0ca84fcbc270c13d2f48"
+  integrity sha512-Z5POnzgpYxrgnYuiCv+8t7lpynEcGcn0/323kV1NtE7Cwq16aMqEuC6nF2Y/tK+crJpKNEqsRtvng/eJy0xxOA==
   dependencies:
     "@babel/runtime" "^7.17.8"
     "@types/react-reconciler" "^0.26.7"
@@ -3579,11 +3576,6 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
-lodash.clamp@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.npmjs.org/lodash.clamp/-/lodash.clamp-4.0.3.tgz"
-  integrity sha512-HvzRFWjtcguTW7yd8NJBshuNaCa8aqNFtnswdT7f/cMd/1YKy5Zzoq4W/Oxvnx9l7aeY258uSdDfM793+eLsVg==
-
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
@@ -3593,16 +3585,6 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-
-lodash.omit@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.npmjs.org/lodash.omit/-/lodash.omit-4.5.0.tgz"
-  integrity sha512-XeqSp49hNGmlkj2EJlfrQFIzQ6lXdNro9sddtQzcJY8QaoC2GO0DT7xaIokHeyM+mIT0mPMlPvkYzg2xCuHdZg==
-
-lodash.pick@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.npmjs.org/lodash.pick/-/lodash.pick-4.4.0.tgz"
-  integrity sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q==
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -4565,6 +4547,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==

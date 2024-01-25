@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.2",
-    "@react-three/drei": "^9.96.1",
-    "@react-three/fiber": "^8.15.14",
+    "@react-three/drei": "^9.96.4",
+    "@react-three/fiber": "^8.15.15",
     "@studio-freight/lenis": "^1.0.34",
     "glsl-random": "^0.0.5",
     "next": "^14.1.0",
