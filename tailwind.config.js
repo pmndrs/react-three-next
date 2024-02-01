@@ -4,6 +4,10 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {},
+    fontSize: {
+      xl: '2.5rem',
+      '2xl': '10rem',
+    },
   },
   variants: {
     extend: {},
