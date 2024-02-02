@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={'bg-black text-gray-400'}>
+      <body className={'bg-black text-gray-300'}>
         {/* To avoid FOUT with styled-components wrap Layout with StyledComponentsRegistry https://beta.nextjs.org/docs/styling/css-in-js#styled-components */}
         {children}
         <Scene

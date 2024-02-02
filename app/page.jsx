@@ -22,24 +22,26 @@ export default function Page() {
   return (
     <main>
       <div className='h-dvh overflow-x-hidden uppercase'>
-        <span className={cn(instrument.className, 'absolute top-0 left-0 text-2xl leading-2xl tracking-tight')}>
-          next
-        </span>
-        <span className={cn(apfel.className, 'absolute top-0 left-1/2 -translate-x-1/2 text-xl leading-xl')}>
-          next + react three fiber
-        </span>
-        <span className={cn(instrument.className, 'absolute top-0 right-0 text-2xl leading-2xl')}>THREE</span>
-        <span
-          className={cn(
-            instrument.className,
-            'absolute bottom-0 left-1/2 -translate-x-1/2 text-2xl leading-2xl tracking-tight',
-          )}
-        >
-          starter
-        </span>
-        <View className={cn('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2', 'torus')}>
-          <Torus />
-        </View>
+        <div className='absolute inset-4'>
+          <span className={cn(instrument.className, 'absolute top-0 left-0 text-2xl leading-2xl tracking-tight')}>
+            next
+          </span>
+          <span className={cn(apfel.className, 'absolute top-0 left-1/2 -translate-x-1/2 text-xl leading-xl')}>
+            next + react three fiber
+          </span>
+          <span className={cn(instrument.className, 'absolute top-0 right-0 text-2xl leading-2xl')}>THREE</span>
+          <span
+            className={cn(
+              instrument.className,
+              'absolute bottom-0 left-1/2 -translate-x-1/2 text-2xl leading-2xl tracking-tight',
+            )}
+          >
+            starter
+          </span>
+          <View className={cn('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2', 'torus')}>
+            <Torus />
+          </View>
+        </div>
       </div>
       <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 md:flex-row  lg:w-4/5'>
         {/* first row */}
