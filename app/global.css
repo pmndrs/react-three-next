@@ -9,5 +9,7 @@
 }
 
 .torus {
-  width: 750px;
+  --size: 80vh;
+  width: var(--size);
+  height: var(--size);
 }

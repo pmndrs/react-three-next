@@ -1,7 +1,7 @@
 'use client'
 
 import { OrbitControls, OrthographicCamera, useMatcapTexture } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import { useRef } from 'react'
 
 export default function Torus({ controls = true }) {
@@ -17,14 +17,16 @@ export default function Torus({ controls = true }) {
     meshRef.current.rotation.y += delta * 0.1
   })
 
+  const size = useThree((state) => state.size)
+
   return (
     <>
-      <mesh ref={meshRef}>
+      <mesh ref={meshRef} scale={size.width / 3.7}>
         <torusKnotGeometry args={[1, 0.33, 128, 128, 1, 3]} />
         <meshMatcapMaterial matcap={matcap} />
       </mesh>
-      <OrthographicCamera makeDefault position={[0, 0, 10]} zoom={200} />
-      {controls && <OrbitControls enableZoom={false} />}
+      <OrthographicCamera makeDefault position={[0, 0, size.width]} />
+      {controls && <OrbitControls enableZoom={false} enablePan={false} />}
     </>
   )
 }
