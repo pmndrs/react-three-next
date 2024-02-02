@@ -56,7 +56,7 @@ export default function Page() {
         </div>
         <div className='relative my-12 h-64 w-full py-6 sm:w-1/2 md:mb-40'>
           <View className='relative h-full sm:w-full'>
-            <Dog scale={2} rotation={[0.0, -0.3, 0]} />
+            <Dog href='/blob' scale={2} rotation={[0.0, -0.3, 0]} />
             <Common color='lightpink' controls enableZoom={true} />
           </View>
         </div>

@@ -6,7 +6,7 @@ import { useRef } from 'react'
 
 export default function Duck({ ...props }) {
   const [matcap, url] = useMatcapTexture(
-    51, // index of the matcap texture https://github.com/emmelleppi/matcaps/blob/master/matcap-list.json
+    50, // index of the matcap texture https://github.com/emmelleppi/matcaps/blob/master/matcap-list.json
     1024, // size of the texture ( 64, 128, 256, 512, 1024 )
   )
 
