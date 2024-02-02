@@ -5,10 +5,12 @@ module.exports = {
   theme: {
     extend: {},
     fontSize: {
+      xs: '1vw',
       xl: '2.5vw',
       '2xl': '10vw',
     },
     lineHeight: {
+      xs: '100%',
       xl: '80%',
       '2xl': '80%',
     },
