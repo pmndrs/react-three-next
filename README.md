@@ -23,8 +23,8 @@ This starter allows you to navigate seamlessly between pages with dynamic dom an
 _Tailwind is the default style. styled-components (styled) are also available._
 
 ```sh
-yarn create r3f-app next my-app
-# yarn create r3f-app <next> my-app <tailwind|styled>? -ts?
+npx create r3f-app next my-app
+# npx create r3f-app <next> my-app <tailwind|styled>? -ts?
 ```
 
 ### :passport_control: Typescript
@@ -32,7 +32,7 @@ yarn create r3f-app next my-app
 For typescript add the parameter `-ts` or `--typescript`:
 
 ```sh
-yarn create r3f-app next my-app -ts
+npx create r3f-app next my-app -ts
 ```
 
 ### :mount_fuji: Features
@@ -45,7 +45,7 @@ yarn create r3f-app next my-app -ts
 
 ### :bullettrain_side: Architecture
 
-Thanks to [tunnel-rat](https://github.com/pmndrs/tunnel-rat) the starter can portal components between separate renderers. Anything rendered inside the `<View/>` component of the starter will be rendered in the 3D Context. For better performances it uses gl.scissor to cut the viewport into segments.
+Thanks to [drei/view](https://github.com/pmndrs/drei?tab=readme-ov-file#view) the starter can portal components between separate renderers. Anything rendered inside the `<View/>` component of the starter will be rendered in the 3D Context. For better performance it uses gl.scissor to cut the viewport into segments. Your canvas contents live inside your DOM graph, the separation between HTML and canvas falls away!
 
 ```jsx
 <div className='relative'>
@@ -55,6 +55,8 @@ Thanks to [tunnel-rat](https://github.com/pmndrs/tunnel-rat) the starter can por
   </View>
 </div>
 ```
+
+If you use `<OrbitControls/>` inside a `<View/>`, you may need `data-lenis-prevent` to prevent jittering.
 
 ### :control_knobs: Available Scripts
 
@@ -69,7 +71,7 @@ Thanks to [tunnel-rat](https://github.com/pmndrs/tunnel-rat) the starter can por
 - [`create-r3f-app`](https://github.com/utsuboco/create-r3f-app) &ndash; Command line tool to simplify the installation.
 - [`threejs`](https://github.com/mrdoob/three.js/) &ndash; A lightweight, 3D library with a default WebGL renderer.
 - [`@react-three/fiber`](https://github.com/pmndrs/react-three-fiber) &ndash; A React renderer for Threejs on the web and react-native.
-- [`@react-three/drei` - Optional](https://github.com/pmndrs/drei) &ndash; useful helpers for react-three-fiber
+- [`@react-three/drei`](https://github.com/pmndrs/drei) &ndash; useful helpers for react-three-fiber
 - [`@react-three/a11y` - Optional](https://github.com/pmndrs/react-three-a11y/) &ndash; Accessibility tools for React Three Fiber
 - [`r3f-perf` - Optional](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
 
@@ -82,4 +84,5 @@ git clone https://github.com/pmndrs/react-three-next
 
 ### Maintainers :
 
-- [`twitter 🐈‍⬛ @onirenaud`](https://twitter.com/onirenaud)
+- [`twitter @onirenaud`](https://twitter.com/onirenaud)
+- [`twitter @0xca0a`](https://twitter.com/0xca0a')

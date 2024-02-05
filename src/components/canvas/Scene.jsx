@@ -1,18 +1,24 @@
 'use client'
 
-import { Canvas } from '@react-three/fiber'
-import { Preload } from '@react-three/drei'
-import { r3f } from '@/helpers/global'
-import * as THREE from 'three'
+import { useEffect } from 'react'
+import { Canvas, addEffect } from '@react-three/fiber'
+import { Preload, View } from '@react-three/drei'
+import Lenis from '@studio-freight/lenis'
 
-export default function Scene({ ...props }) {
+export default function Scene(props) {
+  // Use lenis to control scrolling
+  useEffect(() => {
+    const lenis = new Lenis({ smoothWheel: true, syncTouch: true })
+    const removeEffect = addEffect((time) => lenis.raf(time))
+    return () => {
+      lenis.destroy()
+      removeEffect()
+    }
+  }, [])
   // Everything defined in here will persist between route changes, only children are swapped
   return (
-    <Canvas {...props}
-      onCreated={(state) => (state.gl.toneMapping = THREE.AgXToneMapping)}
-    >
-      {/* @ts-ignore */}
-      <r3f.Out />
+    <Canvas shadows {...props} eventSource={document.body} eventPrefix='client'>
+      <View.Port />
       <Preload all />
     </Canvas>
   )
