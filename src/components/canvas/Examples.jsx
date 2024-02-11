@@ -66,3 +66,9 @@ export function Dog(props) {
 
   return <primitive object={scene} {...props} />
 }
+
+export function Mug(props) {
+  const { scene } = useGLTF('/MugModel.gltf')
+
+  return <primitive object={scene} {...props} />
+}
