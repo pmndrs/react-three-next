@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "scripts": {
     "lint": "next lint --fix --dir app",
