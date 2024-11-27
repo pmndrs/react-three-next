@@ -8,7 +8,9 @@
   }
 
   html,
-  body,
+  body {
+    background: linear-gradient(to bottom, pink, rgb(247, 153, 220));
+  }
   #root {
     width: 100%;
     height: 100%;

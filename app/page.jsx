@@ -29,9 +29,9 @@ export default function Page() {
       <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
         {/* jumbo */}
         <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
-          <p className='w-full uppercase'>Next + React Three Fiber</p>
-          <h1 className='my-4 text-5xl font-bold leading-tight'>Next 3D Starter</h1>
-          <p className='mb-8 text-2xl leading-normal'>A minimalist starter for React, React-three-fiber and Threejs.</p>
+          <p className='w-full uppercase'>Todo es PSEUDO</p>
+          <h1 className='my-4 text-5xl font-bold leading-tight'>PSEUDO estudio</h1>
+          <p className='mb-8 text-2xl leading-normal'>tecnologías 3D e inmersivas aplicadas al desarrollo web</p>
         </div>
 
         <div className='w-full text-center md:w-3/5'>
@@ -54,7 +54,7 @@ export default function Page() {
           <View orbit className='relative h-full  sm:h-48 sm:w-full'>
             <Suspense fallback={null}>
               <Dog scale={2} position={[0, -1.6, 0]} rotation={[0.0, -0.3, 0]} />
-              <Common color={'lightpink'} />
+              <Common color={'lightyellow'} />
             </Suspense>
           </View>
         </div>

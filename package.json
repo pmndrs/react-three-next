@@ -1,8 +1,8 @@
 {
-  "name": "react-three-next",
+  "name": "pseudo-app",
   "version": "2.0.0",
   "authors": [
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
+    "Chema Vicente"
   ],
   "license": "MIT",
   "private": true,
