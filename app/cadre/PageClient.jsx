@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 // import CadreSeul from '@/components/CadreSeul';
-import { CadreMixte } from '@latelier22/v8cadrebois/dist'
+import CadreMixte from '@latelier22/v8cadrebois/dist/components/CadreMixte'
 
 export default function PageClient() {
     const [frameColor, setFrameColor] = useState('#FFFF00');
@@ -16,6 +16,7 @@ export default function PageClient() {
     const [largeurBaguette, setLargeurBaguette] = useState(2);
     const [hauteurBaguette, setHauteurBaguette] = useState(2);
     const [baguetteSeule, SetBaguetteSeule] = useState(false);
+    const [opacity, setOpacity] = useState(0.5)
 
 
 
@@ -23,7 +24,9 @@ export default function PageClient() {
         <>
             <div className="container">
                 <div className="espace">
-                    <Canvas frameloop="always" shadows dpr={[1, 2]} camera={{ position: [0, 30, -5], fov: 85 }}>
+                    <Canvas
+                        className="h-screen"
+                        frameloop="always" shadows dpr={[1, 2]} camera={{ position: [0, 30, -5], fov: 85 }}>
                         <color attach="background" args={['#EFCDAB']} />
                         <ambientLight intensity={3} />
                         <directionalLight intensity={2}
@@ -42,6 +45,7 @@ export default function PageClient() {
                                 castShadow
                                 position={[0, -2.5, 0]}
                                 frameColor={frameColor}
+                                opacity={opacity}
                                 CadreExtWidth={largeurCadre}
                                 CadreExtHeight={hauteurCadre}
                                 BaguetteWidth={largeurBaguette}

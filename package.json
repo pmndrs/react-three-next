@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.0.0",
-    "@latelier22/v8cadrebois": "^0.1.2",
+    "@latelier22/v8cadrebois": "^0.1.4",
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.12",
     "fabric": "^5.3.0",

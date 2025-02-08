@@ -9,8 +9,8 @@ dependencies:
     specifier: ^10.0.0
     version: 10.2.7(next@14.2.4)(webpack@5.92.1)
   '@latelier22/v8cadrebois':
-    specifier: ^0.1.2
-    version: 0.1.2(@babel/core@7.24.7)(@types/three@0.165.0)
+    specifier: ^0.1.4
+    version: 0.1.4(@babel/core@7.24.7)(@types/three@0.165.0)
   '@react-three/drei':
     specifier: ^9.92.7
     version: 9.107.0(@react-three/fiber@8.16.8)(@types/three@0.165.0)(react-dom@18.3.1)(react@18.3.1)(three@0.160.1)
@@ -1490,8 +1490,9 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@latelier22/v8cadrebois@0.1.2(@babel/core@7.24.7)(@types/three@0.165.0):
-    resolution: {integrity: sha512-9LFsduiBuxOz2k0hZgr3y3hMtRmDRSQH0KI/2s+nrhycB3AFHOCZl8g0y1JwGUB7hMqG3JTCMtYxFgWFFJwHlg==}
+  /@latelier22/v8cadrebois@0.1.4(@babel/core@7.24.7)(@types/three@0.165.0):
+    resolution: {integrity: sha512-JnCWFAUzAm80LTHpMSqZElatTU/BQluJepedPcBpB+TO+kKQCW2lYyd5c3mDXtxrRIYdjGavXCO3b+4cQVlTbg==}
+    requiresBuild: true
     dependencies:
       '@react-three/drei': 9.107.0(@react-three/fiber@8.16.8)(@types/three@0.165.0)(react-dom@18.3.1)(react@18.3.1)(three@0.165.0)
       '@react-three/fiber': 8.16.8(react-dom@18.3.1)(react@18.3.1)(three@0.165.0)
@@ -3327,8 +3328,8 @@ packages:
       safe-array-concat: 1.1.2
     dev: true
 
-  /es-module-lexer@1.5.3:
-    resolution: {integrity: sha512-i1gCgmR9dCl6Vil6UKPI/trA69s08g/syhiDK9TG0Nf1RJjjFI+AzoWW7sPufzkgYAn861skuCwJa0pIIHYxvg==}
+  /es-module-lexer@1.5.4:
+    resolution: {integrity: sha512-MVNK56NiMrOwitFB7cqDwq0CQutbw+0BvLshJSse0MUNU+y1FC3bUS/AQg7oUng+/wKrrki7JfmwtVHkVfPLlw==}
 
   /es-object-atoms@1.0.0:
     resolution: {integrity: sha512-MZ4iQ6JwHOBQjahnjwaC1ZtIBH+2ohjamzAO3oaHcXYup7qxjF2fixyH+Q71voWHeOkI2q/TnJao/KfXYIZWbw==}
@@ -6721,7 +6722,7 @@ packages:
       browserslist: 4.23.1
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.0
-      es-module-lexer: 1.5.3
+      es-module-lexer: 1.5.4
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
