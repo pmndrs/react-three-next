@@ -1,82 +1,107 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-
-const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false })
-const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false })
-const Duck = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Duck), { ssr: false })
-const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
-  ssr: false,
-  loading: () => (
-    <div className='flex h-96 w-full flex-col items-center justify-center'>
-      <svg className='-ml-1 mr-3 h-5 w-5 animate-spin text-black' fill='none' viewBox='0 0 24 24'>
-        <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4' />
-        <path
-          className='opacity-75'
-          fill='currentColor'
-          d='M4 12a8 8 0 0 1 8-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0 1 4 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-        />
-      </svg>
-    </div>
-  ),
-})
-const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import styles from './page.module.css'
 
 export default function Page() {
+  const [answer, setAnswer] = useState(null)
+
+  useEffect(() => {
+    const playSound = async () => {
+      try {
+        const audio = new Audio('https://www.myinstants.com/media/sounds/minecraft-oof.mp3')
+        audio.volume = 0.7
+        await audio.play()
+      } catch (error) {
+        console.log("Audio playback failed:", error)
+      }
+    }
+    
+    playSound()
+  }, [])
+
+  const handleYesClick = async () => {
+    try {
+      const audio = new Audio('https://www.myinstants.com/media/sounds/anime-wow-sound-effect.mp3')
+      audio.volume = 0.7
+      await audio.play()
+    } catch (error) {
+      console.log("Audio playback failed:", error)
+    }
+    setAnswer(true)
+  }
+
+  const handleNoClick = async () => {
+    try {
+      const audio = new Audio('https://www.myinstants.com/media/sounds/emotional-damage-meme.mp3')
+      audio.volume = 0.7
+      await audio.play()
+    } catch (error) {
+      console.log("Audio playback failed:", error)
+    }
+    setAnswer(false)
+  }
+
   return (
-    <>
-      <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
-        {/* jumbo */}
-        <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
-          <p className='w-full uppercase'>Next + React Three Fiber</p>
-          <h1 className='my-4 text-5xl font-bold leading-tight'>Next 3D Starter</h1>
-          <p className='mb-8 text-2xl leading-normal'>A minimalist starter for React, React-three-fiber and Threejs.</p>
+    <div className='min-h-screen bg-pink-50'>
+      {answer === null ? (
+        <div className='flex min-h-screen flex-col items-center justify-center'>
+          <div className='mb-12 text-center'>
+            <h1 className='mb-8 text-center text-5xl font-bold text-pink-600'>will you be my valentine?</h1>
+            
+            <div className='flex justify-center gap-8'>
+              <button
+                onClick={handleYesClick}
+                className='rounded-lg bg-pink-500 px-8 py-3 text-xl font-bold text-white transition-colors hover:bg-pink-600'
+              >
+                yes! uwu
+              </button>
+              <button
+                onClick={handleNoClick}
+                className='rounded-lg bg-gray-500 px-8 py-3 text-xl font-bold text-white transition-colors hover:bg-gray-600'
+              >
+                naur
+              </button>
+            </div>
+          </div>
         </div>
-
-        <div className='w-full text-center md:w-3/5'>
-          <View className='flex h-96 w-full flex-col items-center justify-center'>
-            <Suspense fallback={null}>
-              <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
-              <Common />
-            </Suspense>
-          </View>
+      ) : (
+        <div className='flex min-h-screen flex-col items-center justify-center gap-8'>
+          <h1 className='text-4xl font-bold text-pink-600'>
+            {answer ? "yay #jesh moots ship sail " : "was crack ship anyways (click go back)"}
+          </h1>
+          {answer ? (
+            <div className={`relative size-96 ${styles.danceContainer}`}>
+              <Image 
+                src="/img/scores/chan.png"
+                alt="Happy Chan"
+                fill
+                sizes="(max-width: 768px) 100vw, 384px"
+                className={`object-contain ${styles.dance}`}
+                priority
+              />
+            </div>
+          ) : (
+            <div className='relative size-96'>
+              <Image 
+                src="/img/scores/lottie.png"
+                alt="Sad Lottie"
+                fill
+                sizes="(max-width: 768px) 100vw, 384px"
+                className={`object-contain ${styles.sad}`}
+                priority
+              />
+            </div>
+          )}
+          <button
+            onClick={() => setAnswer(null)}
+            className='rounded-lg bg-pink-500 px-6 py-2 text-lg font-bold text-white transition-colors hover:bg-pink-600'
+          >
+            Go Back
+          </button>
         </div>
-      </div>
-
-      <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 md:flex-row  lg:w-4/5'>
-        {/* first row */}
-        <div className='relative h-48 w-full py-6 sm:w-1/2 md:my-12 md:mb-40'>
-          <h2 className='mb-3 text-3xl font-bold leading-none text-gray-800'>Events are propagated</h2>
-          <p className='mb-8 text-gray-600'>Drag, scroll, pinch, and rotate the canvas to explore the 3D scene.</p>
-        </div>
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
-          <View orbit className='relative h-full  sm:h-48 sm:w-full'>
-            <Suspense fallback={null}>
-              <Dog scale={2} position={[0, -1.6, 0]} rotation={[0.0, -0.3, 0]} />
-              <Common color={'lightpink'} />
-            </Suspense>
-          </View>
-        </div>
-        {/* second row */}
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
-          <View orbit className='relative h-full animate-bounce sm:h-48 sm:w-full'>
-            <Suspense fallback={null}>
-              <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
-              <Common color={'lightblue'} />
-            </Suspense>
-          </View>
-        </div>
-        <div className='w-full p-6 sm:w-1/2'>
-          <h2 className='mb-3 text-3xl font-bold leading-none text-gray-800'>Dom and 3D are synchronized</h2>
-          <p className='mb-8 text-gray-600'>
-            3D Divs are renderer through the View component. It uses gl.scissor to cut the viewport into segments. You
-            tie a view to a tracking div which then controls the position and bounds of the viewport. This allows you to
-            have multiple views with a single, performant canvas. These views will follow their tracking elements,
-            scroll along, resize, etc.
-          </p>
-        </div>
-      </div>
-    </>
+      )}
+    </div>
   )
 }

@@ -1,0 +1,46 @@
+@keyframes rainbow {
+  0% { background-color: #ff0000; }
+  17% { background-color: #ff00ff; }
+  33% { background-color: #0000ff; }
+  50% { background-color: #00ffff; }
+  67% { background-color: #00ff00; }
+  83% { background-color: #ffff00; }
+  100% { background-color: #ff0000; }
+}
+
+@keyframes dance {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(10deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-20px) rotate(-10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes sad {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: grayscale(0);
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0.5;
+    filter: grayscale(1);
+  }
+}
+
+.danceContainer {
+  padding: 20px;
+  border-radius: 20px;
+  animation: rainbow 3s linear infinite;
+}
+
+.dance {
+  animation: dance 0.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.sad {
+  animation: sad 2s ease-in forwards;
+  transform-origin: center;
+} 
