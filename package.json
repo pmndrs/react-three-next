@@ -26,7 +26,12 @@
     "react-dom": "^18.2.0",
     "three": "^0.160.0",
     "three-stdlib": "^2.28.9",
-    "tunnel-rat": "^0.1.2"
+    "tunnel-rat": "^0.1.2",
+
+    // 📦 Añadidas para el body tracking
+    "@tensorflow-models/pose-detection": "^4.0.0",
+    "@mediapipe/pose": "^0.5.1675461677",
+    "@mediapipe/camera_utils": "^0.4.1646424915"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.0.4",
